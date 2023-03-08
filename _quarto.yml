@@ -7,7 +7,6 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
   sidebar:
       - section: "One Shot Imaging"
         contents:
@@ -15,8 +14,10 @@ website:
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme:
+      light: flatly
+      dark: darkly
+    css: slim.css
     toc: true
 
 
