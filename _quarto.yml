@@ -8,6 +8,10 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+  sidebar:
+      - section: "One Shot Imaging"
+        contents:
+        - OneShot/abstract.qmd
 
 format:
   html:
