@@ -7,32 +7,67 @@
     "text": "\\[\n    \\newcommand{\\pluseq}{\\mathrel{+}=}\n\\]"
   },
   {
-    "objectID": "OneShot/abstract.html#summary-networks-and-probabilistic-symmetry",
-    "href": "OneShot/abstract.html#summary-networks-and-probabilistic-symmetry",
+    "objectID": "OneShot/abstract.html#objectives-and-scope-100-words",
+    "href": "OneShot/abstract.html#objectives-and-scope-100-words",
     "title": "Learned one-shot imaging",
-    "section": "Summary networks and probabilistic symmetry",
-    "text": "Summary networks and probabilistic symmetry\n(Deans 2002) -Summary statistics reduce the size of incoming datasets while maintainting the same posterior distribution p(x|y) = p(x|summary) (Radev et al. 2020) -Summary networks learn to reduce the size of incoming datasets and maximize informativeness of the summarized data due to joint learning of summary network and posterior learning network. -hand waves an argument that jointly trained networks will maximize the mutual information between h(y) and x (Müller et al. 2021) -Goes in to further detail and rigoursly proves that jointly trained networks will maximize the mutual information between h(y) and x (Bloem-Reddy and Teh 2020) suggests to use learned layers that are invariant under a certain transformation. This transformation is described by the probabilistic assumption on your data.\nExample paragraph: This work takes inspiration from the concept of a summary network (Radev et al. 2020) these are networks that compress observables \\(d_{obs}\\) while maximining information useful for inference of un-observables \\(x\\). To guide the architectural design of a summary network (Bloem-Reddy and Teh 2020) suggests to use learned layers that respect the probabalistic symmetry of the data. Practically, this is accomplished by making the layers be invariant under a certain transformation. For the case active source seismic imaging, i.i.d sampling entails the assumption that the order of sources does not matter. This assumption is implicit in the sum structure of RTM/gradient calculations. Therefore it is invariant with respect to permutation transformation. Our approach is most similar to this case, since we use a UNet with many input channels that output a single channel. In our testing, having a separate network for each dataset did not perform better thatn simply inputing each dataset along a channel."
+    "section": "OBJECTIVES AND SCOPE (100 words)",
+    "text": "OBJECTIVES AND SCOPE (100 words)"
   },
   {
-    "objectID": "OneShot/abstract.html#supervised",
-    "href": "OneShot/abstract.html#supervised",
+    "objectID": "OneShot/abstract.html#methods-procedures-process-250-words",
+    "href": "OneShot/abstract.html#methods-procedures-process-250-words",
     "title": "Learned one-shot imaging",
-    "section": "Supervised",
-    "text": "Supervised\nTHe simplest formulation aims to learn the super-shot and simultenaous source that best inform the model perturbation, given the surfac recorded data. Mathematically, it means that we are trying to fit the true mode lperturbation with two networks that learn a single super-shot and simultenous source for the Jacobian from the indicudual field recorded shot records. Mathematically, the learning can be written as: \\[\n\\min_{\\theta, \\phi} \\ \\mathbb{E}\\left[ J(\\mathcal{H}_{\\phi}(\\mathcal{G}_{\\theta}(d_{\\text{obs}}))^\\top \\mathcal{G}_{\\theta}(d_{\\text{obs}}) - \\delta m \\right]\n\\tag{1}\\]\nwhere \\(\\mathcal{H}_{\\phi}, \\mathcal{G}_{\\theta}\\) are the two networks mapping the individual shot records into a single super-shot (the learned simultenous-source is learned at the receiver locations), \\(J\\) is the conventionnal adjoint Born imaging operator, \\(d_{\\text{obs}}\\) is the observed data and \\(\\delta m\\) is the model perturbation. We note that to compute an update on the two networks simultenaously, the gradient of the Jacobian with respect to its source is necessary. This derivative is however trivial to obtain with JUDI.jl thanks to its high-level linear algebra abstraction and integration with automatic differentiation framework in Julia."
+    "section": "METHODS, PROCEDURES, PROCESS (250 words)",
+    "text": "METHODS, PROCEDURES, PROCESS (250 words)"
   },
   {
-    "objectID": "OneShot/abstract.html#unsupervised",
-    "href": "OneShot/abstract.html#unsupervised",
+    "objectID": "OneShot/abstract.html#results-observations-conclusions-250-words",
+    "href": "OneShot/abstract.html#results-observations-conclusions-250-words",
     "title": "Learned one-shot imaging",
-    "section": "Unsupervised",
-    "text": "Unsupervised\n\\[\n\\min_{\\theta, \\phi} \\ \\mathbb{E}\\left[ \\tilde{J}_{\\text{rtm}} J(\\mathcal{H}_{\\phi}(\\mathcal{G}_{\\theta}(d_{\\text{obs}}))^\\top \\mathcal{G}_{\\theta}(d_{\\text{obs}}) - \\tilde{d}_{\\text{obs}} \\right ]\n\\tag{2}\\]\nWhere \\(\\tilde{d}_{\\text{obs}} = \\sum_{i=1}^{n_src} w_i d_{\\text{obs},i}\\) is a random super shot with \\(w_i := \\mathcal{N}(0, 1)\\) and \\(\\tilde{J}\\) is the corresponding simultenous source born modeling operator. While this formulation ivolves an additional demigration (and therfore and additional migration to compute hte gradient), we do not require any knowledge of the true model perturbation but only the data. We could therefore in theory use this formulation for a wide range of datasets at once to generalize to any survey."
+    "section": "RESULTS, OBSERVATIONS, CONCLUSIONS (250 words)",
+    "text": "RESULTS, OBSERVATIONS, CONCLUSIONS (250 words)"
   },
   {
-    "objectID": "OneShot/abstract.html#code-availability",
-    "href": "OneShot/abstract.html#code-availability",
+    "objectID": "OneShot/abstract.html#significancenovelty-100-words",
+    "href": "OneShot/abstract.html#significancenovelty-100-words",
     "title": "Learned one-shot imaging",
-    "section": "Code availability",
-    "text": "Code availability\nTBD"
+    "section": "SIGNIFICANCE/NOVELTY (100 words)",
+    "text": "SIGNIFICANCE/NOVELTY (100 words)"
+  },
+  {
+    "objectID": "OneShot/abstract.html#introduction",
+    "href": "OneShot/abstract.html#introduction",
+    "title": "Learned one-shot imaging",
+    "section": "Introduction",
+    "text": "Introduction\nbla"
+  },
+  {
+    "objectID": "OneShot/abstract.html#methodology",
+    "href": "OneShot/abstract.html#methodology",
+    "title": "Learned one-shot imaging",
+    "section": "Methodology",
+    "text": "Methodology\nWe now introduce the formulation of aour learned simultenous source-data pair for seismic imaging. We derive two training problem where the first onbe rely on the knowledge of the true perturbation, while the second one solely rely on the observed data. Fundamentally, we are introducing a formulation that learns the most informative single super-shot and correspoinding source given either a subsurface refelctivity model or the surface recorded data.\n\nSummary networks and probabilistic symmetry\n(Deans 2002) -Summary statistics reduce the size of incoming datasets while maintainting the same posterior distribution p(x|y) = p(x|summary) (Radev et al. 2020) -Summary networks learn to reduce the size of incoming datasets and maximize informativeness of the summarized data due to joint learning of summary network and posterior learning network. -hand waves an argument that jointly trained networks will maximize the mutual information between h(y) and x (Müller et al. 2021) -Goes in to further detail and rigoursly proves that jointly trained networks will maximize the mutual information between h(y) and x (Bloem-Reddy and Teh 2020) suggests to use learned layers that are invariant under a certain transformation. This transformation is described by the probabilistic assumption on your data.\nExample paragraph: This work takes inspiration from the concept of a summary network (Radev et al. 2020) these are networks that compress observables \\(d_{obs}\\) while maximining information useful for inference of un-observables \\(x\\). To guide the architectural design of a summary network (Bloem-Reddy and Teh 2020) suggests to use learned layers that respect the probabalistic symmetry of the data. Practically, this is accomplished by making the layers be invariant under a certain transformation. For the case active source seismic imaging, i.i.d sampling entails the assumption that the order of sources does not matter. This assumption is implicit in the sum structure of RTM/gradient calculations. Therefore it is invariant with respect to permutation transformation. Our approach is most similar to this case, since we use a UNet with many input channels that output a single channel. In our testing, having a separate network for each dataset did not perform better thatn simply inputing each dataset along a channel.\n\n\nSupervised\nTHe simplest formulation aims to learn the super-shot and simultenaous source that best inform the model perturbation, given the surfac recorded data. Mathematically, it means that we are trying to fit the true mode lperturbation with two networks that learn a single super-shot and simultenous source for the Jacobian from the indicudual field recorded shot records. Mathematically, the learning can be written as: \\[\n\\min_{\\theta, \\phi} \\ \\mathbb{E}\\left[ J(\\mathcal{H}_{\\phi}(\\mathcal{G}_{\\theta}(d_{\\text{obs}}))^\\top \\mathcal{G}_{\\theta}(d_{\\text{obs}}) - \\delta m \\right]\n\\tag{1}\\]\nwhere \\(\\mathcal{H}_{\\phi}, \\mathcal{G}_{\\theta}\\) are the two networks mapping the individual shot records into a single super-shot (the learned simultenous-source is learned at the receiver locations), \\(J\\) is the conventionnal adjoint Born imaging operator, \\(d_{\\text{obs}}\\) is the observed data and \\(\\delta m\\) is the model perturbation. We note that to compute an update on the two networks simultenaously, the gradient of the Jacobian with respect to its source is necessary. This derivative is however trivial to obtain with JUDI.jl thanks to its high-level linear algebra abstraction and integration with automatic differentiation framework in Julia.\n\n\nUnsupervised\n\\[\n\\min_{\\theta, \\phi} \\ \\mathbb{E}\\left[ \\tilde{J}_{\\text{rtm}} J(\\mathcal{H}_{\\phi}(\\mathcal{G}_{\\theta}(d_{\\text{obs}}))^\\top \\mathcal{G}_{\\theta}(d_{\\text{obs}}) - \\tilde{d}_{\\text{obs}} \\right ]\n\\tag{2}\\]\nWhere \\(\\tilde{d}_{\\text{obs}} = \\sum_{i=1}^{n_src} w_i d_{\\text{obs},i}\\) is a random super shot with \\(w_i := \\mathcal{N}(0, 1)\\) and \\(\\tilde{J}\\) is the corresponding simultenous source born modeling operator. While this formulation ivolves an additional demigration (and therfore and additional migration to compute hte gradient), we do not require any knowledge of the true model perturbation but only the data. We could therefore in theory use this formulation for a wide range of datasets at once to generalize to any survey."
+  },
+  {
+    "objectID": "OneShot/abstract.html#synthetic-case-studies",
+    "href": "OneShot/abstract.html#synthetic-case-studies",
+    "title": "Learned one-shot imaging",
+    "section": "Synthetic case studies",
+    "text": "Synthetic case studies\nWe illustrate our method on a realstic 2D imaging problem. We created a dataset of 2000 2D slices by extracting slices out of the 3D overthrust model. We then split this dataset into 1600 slices for trainng and 400 slices for testing. For each 2D slice, we generate 21 shot records. One of the main advantage of our one-shot imaging method is that we only require a single migration-demigration per iteration. Therefore, we can perform 21 epochs before arriving to a computationnal cost equivalent to the plain standard RTM imaging of each slice. Since we only perform 15 epochs, our method is overall cheapper than computing the RTM on every single shot if we include the cost of training.\nWe trained the networks, both in the supervised and unsupervised case, for 15 epochs with a learning rate of \\(.0004\\) using the Adam optimizer.\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\n\nRTMs\n\n\n\n\nFigure 1: Learned super-shot and simultenous sources on a testing slice. We show a shot record and the moirated image with a random supershot and with sequential shots for reference.\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\n\nRTMs\n\n\n\n\nFigure 2: Learned super-shot and simultenous sources on a testing slice. We show a shot record and the moirated image with a random supershot and with sequential shots for reference.\n\n\n\nCode availability\nTBD"
+  },
+  {
+    "objectID": "OneShot/abstract.html#discussion-and-conclusions",
+    "href": "OneShot/abstract.html#discussion-and-conclusions",
+    "title": "Learned one-shot imaging",
+    "section": "Discussion and conclusions",
+    "text": "Discussion and conclusions\nWe introduced data-domain learning method that provides high accuracy imagies of the subsurface through one-shot imaging. We trained a network that learns the simultenous source and super-shot that most inform the subsurface from the field recorded data. We showed that we obtain high accuracy images of the subsurface that contain broader frequency range than standard imaging and does not require prior knowledge of the source. Additionnally, the overall computationnal cost of training does not exceed the traditionnal cost of imaging."
+  },
+  {
+    "objectID": "OneShot/abstract.html#acknowledgement",
+    "href": "OneShot/abstract.html#acknowledgement",
+    "title": "Learned one-shot imaging",
+    "section": "Acknowledgement",
+    "text": "Acknowledgement\nThis research was carried out with the support of Georgia Research Alliance and partners of the ML4Seismic Center.\n\nReferences\n\n\nBloem-Reddy, Benjamin, and Yee Whye Teh. 2020. “Probabilistic Symmetries and Invariant Neural Networks.” J. Mach. Learn. Res. 21: 90–91.\n\n\nDeans, Matthew C. 2002. “Maximally Informative Statistics for Localization and Mapping.” In Proceedings 2002 IEEE International Conference on Robotics and Automation (Cat. No. 02CH37292), 2:1824–29. IEEE.\n\n\nMüller, Jens, Robert Schmier, Lynton Ardizzone, Carsten Rother, and Ullrich Köthe. 2021. “Learning Robust Models Using the Principle of Independent Causal Mechanisms.” In DAGM German Conference on Pattern Recognition, 79–110. Springer.\n\n\nRadev, Stefan T, Ulf K Mertens, Andreas Voss, Lynton Ardizzone, and Ullrich Köthe. 2020. “BayesFlow: Learning Complex Stochastic Models with Invertible Neural Networks.” IEEE Transactions on Neural Networks and Learning Systems."
   },
   {
     "objectID": "index.html",
