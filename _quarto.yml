@@ -17,7 +17,7 @@ format:
     theme:
       light: flatly
       dark: darkly
-    css: slim.css
+    css: styles.css
     toc: true
 
 
