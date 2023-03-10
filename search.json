@@ -11,28 +11,28 @@
     "href": "OneShot/abstract.html#objectives-and-scope-100-words",
     "title": "Learned one-shot imaging",
     "section": "OBJECTIVES AND SCOPE (100 words)",
-    "text": "OBJECTIVES AND SCOPE (100 words)"
+    "text": "OBJECTIVES AND SCOPE (100 words)\nSeismic imaging’s main limiting factor is the scale of the involved dataset and the number of independent wave-equations solves required for each source. We introduce a learned framework that extends the conventional computationally reductive linear source superpositions (simultaneous sources) to a non-linear learned superposition and its corresponding super-shot. With this method, we can obtain an image of the subsurface at the cost of a single shot migration by learning the most informative superposition of shots."
   },
   {
     "objectID": "OneShot/abstract.html#methods-procedures-process-250-words",
     "href": "OneShot/abstract.html#methods-procedures-process-250-words",
     "title": "Learned one-shot imaging",
     "section": "METHODS, PROCEDURES, PROCESS (250 words)",
-    "text": "METHODS, PROCEDURES, PROCESS (250 words)"
+    "text": "METHODS, PROCEDURES, PROCESS (250 words)\nSimultenous source imaging takes advantage of the linearity of the wave equation to add different shot records together reducing the cost of imaging. Because of the linearity, the same linear transformation can be applied both to the source and data to keep the problem well posed. Here, we introduce a non-linear superposition, and to compensate for the inability to apply the corrsponding transform to the source, we simultenously learn both the non-linear source and non-linear data with a neural network. This networks takes the shot records as input and outputs the learned supershot and simultenous source. The network is trained in two ways. First we train a supervised network minimizing the difference between the migrated non-linear supershot and the true model perturbation which requires access to the true model. Since in practice the true subsurface image is unknown, we train a second unsupervised network minimizing the difference between the true data and the migrated-demingrated supershot."
   },
   {
     "objectID": "OneShot/abstract.html#results-observations-conclusions-250-words",
     "href": "OneShot/abstract.html#results-observations-conclusions-250-words",
     "title": "Learned one-shot imaging",
     "section": "RESULTS, OBSERVATIONS, CONCLUSIONS (250 words)",
-    "text": "RESULTS, OBSERVATIONS, CONCLUSIONS (250 words)"
+    "text": "RESULTS, OBSERVATIONS, CONCLUSIONS (250 words)\nWe show on Figure 1 the results with the supervised training and on Figure 2 with unsupervised trainging. We shot the learned super-shot and simultenous source next to the true observed data and compare the obtained one-shot subsurface image with standard multi-source RTM and conventional random simultenous sources imaging. We see that the image is not only less noisy that the standard simultenous source image but also a better representation of the subsurface than the conventional RTM. This demonstrate that we can obtain a good image of the earth at the cost of a single source migration while avoiding the artifacts associated with conventional simultenous source imaging."
   },
   {
     "objectID": "OneShot/abstract.html#significancenovelty-100-words",
     "href": "OneShot/abstract.html#significancenovelty-100-words",
     "title": "Learned one-shot imaging",
     "section": "SIGNIFICANCE/NOVELTY (100 words)",
-    "text": "SIGNIFICANCE/NOVELTY (100 words)"
+    "text": "SIGNIFICANCE/NOVELTY (100 words)\nWe introduced the first instance of non-linear simuktenous source imaging. Because only linear transforms can be applied to the source and data using the linearity of the wave-equation, we introduced a neural network capable of creating a pair of simultenous source and super-shot that is most informative for migration. This learned on-shot imaging framework allows to drastically reduce the cost of seismic imaging while requiring limited training resources since only single-shot are migrated."
   },
   {
     "objectID": "OneShot/abstract.html#introduction",
