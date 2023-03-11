@@ -6,8 +6,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ziyi Yin">
+<meta name="author" content="Mathias Louboutin">
+<meta name="author" content="Olav Mønyer">
+<meta name="author" content="Felix J. Herrmann">
 
-<title>Image2023</title>
+<title>Image2023 - Coupled physics inversion for geological carbon storage monitoring</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +24,46 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -72,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Image2023</span>
     </a>
   </div>
@@ -82,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link" href="../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -95,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Image2023</h1>
+      <h1 class="quarto-secondary-nav-title">Coupled physics inversion for geological carbon storage monitoring</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -110,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./OneShot/abstract.html" class="sidebar-item-text sidebar-link">Learned one-shot imaging</a>
+  <a href="../OneShot/abstract.html" class="sidebar-item-text sidebar-link">Learned one-shot imaging</a>
   </div>
 </li>
     </ul>
@@ -118,21 +141,67 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objectivesscope-100-words" id="toc-objectivesscope-100-words" class="nav-link active" data-scroll-target="#objectivesscope-100-words">Objectives/Scope (100 words)</a></li>
+  <li><a href="#methods-procedures-process-250-words" id="toc-methods-procedures-process-250-words" class="nav-link" data-scroll-target="#methods-procedures-process-250-words">Methods, Procedures, Process (250 words)</a></li>
+  <li><a href="#results-observations-conclusions-250-words" id="toc-results-observations-conclusions-250-words" class="nav-link" data-scroll-target="#results-observations-conclusions-250-words">Results, Observations, Conclusions (250 words)</a></li>
+  <li><a href="#significancenovelty-100-words" id="toc-significancenovelty-100-words" class="nav-link" data-scroll-target="#significancenovelty-100-words">Significance/Novelty (100 words)</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Image2023</h1>
+<h1 class="title d-none d-lg-block">Coupled physics inversion for geological carbon storage monitoring</h1>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    Ziyi Yin 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Georgia Institute of Technology
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    Mathias Louboutin 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Georgia Institute of Technology
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    Olav Mønyer 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            SINTEF
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    Felix J. Herrmann 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Georgia Institute of Technology
+          </p>
+      </div>
+    </div>
 
 <div class="quarto-title-meta">
 
-    
+      
   
     
   </div>
@@ -140,17 +209,64 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This is a Quarto website.</p>
-<p>All submissions to the Image23 conference with additional figures, references, …</p>
-<p>List of abstracts:</p>
-<ul>
-<li><p><a href="./OneShot/abstract.html">Learned one-shot imaging</a> Learned non-linear simultenous source and corresponding supershot for seismic imaging.</p></li>
-<li><p><a href="./yin2023IMAGEend2end/abstract.html">Coupled physics inversion</a> Coupled physics inversion for geological carbon storage monitoring.</p></li>
-</ul>
+<section id="objectivesscope-100-words" class="level2">
+<h2 class="anchored" data-anchor-id="objectivesscope-100-words">Objectives/Scope (100 words)</h2>
+<p>Before injecting CO<sub>2</sub> into the Earth subsurface, reservoir engineers can predict the CO<sub>2</sub> dynamics in the geological carbon storage project via fluid-flow simulation. However, the wrong perception of the permeability model might lead to inaccurate prediction of the CO<sub>2</sub> plumes. Through the coupled physics inversion framework, we show that time-lapse seismic data can be used to correct the permeability model. This leads to better CO<sub>2</sub> prediction for the past vintages, and more accurate forecast of CO<sub>2</sub> dynamics in the future. This potentially helps practitioners to consistently update the estimate of the reservoir storage capacity along with the ongoing project.</p>
+</section>
+<section id="methods-procedures-process-250-words" class="level2">
+<h2 class="anchored" data-anchor-id="methods-procedures-process-250-words">Methods, Procedures, Process (250 words)</h2>
+<p>We adopt the coupled physics inversion framework that involves three kinds of physics: fluid-flow physics, rock physics, and wave physics. The fluid-flow equations model the CO<sub>2</sub> dynamics in the Earth subsurface according to permeability of the reservoir. The rock physics modeling maps the time-varying CO<sub>2</sub> concentration in the rocks to the time-varying changes of acoustic wavespeed of the rocks. Finally, seismic modeling generates time-lapse seismic data for each vintage based on the wavespeed of the rocks. A schematic workflow is shown in Figure 1.</p>
+<p>Given observed time-lapse seismic data, we invert the nested physics modeling operators for the permeability in an end-to-end fashion. The inverted permeability can be used to generate time-varying CO<sub>2</sub> concentration snapshots that match observed time-lapse seismic data. Without further collected seismic data after the injection is terminated, practitioners can also run fluid-flow simulation on the inverted permeability with their own choices of injection rate/location to forecast the CO<sub>2</sub> plume in the future and estimate the storage capacity of the reservoir.</p>
+</section>
+<section id="results-observations-conclusions-250-words" class="level2">
+<h2 class="anchored" data-anchor-id="results-observations-conclusions-250-words">Results, Observations, Conclusions (250 words)</h2>
+<p>We conduct a near realistic numerical study on Compass model, which is currently considered as a potential site for geological carbon storage. We convert the compressional wavespeed in the model to log permeability values to make up alternating high and low permeability layers in the reservoir with a 50m depth seal on the top. We inject 1 million metric ton CO<sub>2</sub> per year in a highly permeable layer for 25 years. CO<sub>2</sub> tends to move into high permeability layers (over 1000 millidarcies) and move up due to buoyancy effects. We shoot 5 vintages of crosswell seismic data at year 5, 10, 15, 20, and 25, with a ricker wavelet with central frequency 20 Hz.</p>
+<p>We start inversion with homogenous permeability values in the reservoir. After 12 datapass of gradient descent iterations with back-tracking line search, we recover the high permeability layers upon which CO<sub>2</sub> plume has ever touched in these 25 years, shown in Figure 2 (a). We do acknowledge errors on the recovered permeability, especially at the locations upon which CO<sub>2</sub> plume has not touched. The predicted snapshots of CO<sub>2</sub> plume from the inverted permeability are shown in Figure 2 (b), which looks drastically different than the initial prediction on the homogeneous permeability, but reasonably similar to the ground truth ones.</p>
+<p>We stop the injection at the 25th year and keep simulating the CO<sub>2</sub> plume for another 75 years. The predicted CO<sub>2</sub> plume from inverted permeability is again close to the ground truth ones with acceptable errors in especially near-future snapshots.</p>
+</section>
+<section id="significancenovelty-100-words" class="level2">
+<h2 class="anchored" data-anchor-id="significancenovelty-100-words">Significance/Novelty (100 words)</h2>
+<p>This is the first numerical case study that brings the coupled physics inversion framework to a realistic heterogenous Earth model that is currently considered as a potential geological carbon storage site. Moreover, we consider a near realistic geological carbon storage process instead of an enhanced oil recovery scenario considered by <span class="citation" data-cites="li2020coupled">(<a href="#ref-li2020coupled" role="doc-biblioref">Li et al. 2020</a>)</span>. We also show that the recovered permeability can be used to forecast the dynamics of the CO<sub>2</sub> plume in the future without any seismic observation data.</p>
+<div id="fig-1" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">fig1</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Figure 1</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-2" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">fig2</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Figure 2</figcaption><p></p>
+</figure>
+</div>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-li2020coupled" class="csl-entry" role="doc-biblioentry">
+Li, Dongzhuo, Kailai Xu, Jerry M Harris, and Eric Darve. 2020. <span>“Coupled Time-Lapse Full-Waveform Inversion for Subsurface Flow Problems Using Intrusive Automatic Differentiation.”</span> <em>Water Resources Research</em> 56 (8): e2019WR027032.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -70,10 +70,38 @@
     "text": "Acknowledgement\nThis research was carried out with the support of Georgia Research Alliance and partners of the ML4Seismic Center.\n\nReferences\n\n\nBloem-Reddy, Benjamin, and Yee Whye Teh. 2020. “Probabilistic Symmetries and Invariant Neural Networks.” J. Mach. Learn. Res. 21: 90–91.\n\n\nDeans, Matthew C. 2002. “Maximally Informative Statistics for Localization and Mapping.” In Proceedings 2002 IEEE International Conference on Robotics and Automation (Cat. No. 02CH37292), 2:1824–29. IEEE.\n\n\nMüller, Jens, Robert Schmier, Lynton Ardizzone, Carsten Rother, and Ullrich Köthe. 2021. “Learning Robust Models Using the Principle of Independent Causal Mechanisms.” In DAGM German Conference on Pattern Recognition, 79–110. Springer.\n\n\nRadev, Stefan T, Ulf K Mertens, Andreas Voss, Lynton Ardizzone, and Ullrich Köthe. 2020. “BayesFlow: Learning Complex Stochastic Models with Invertible Neural Networks.” IEEE Transactions on Neural Networks and Learning Systems."
   },
   {
+    "objectID": "yin2023IMAGEend2end/abstract.html",
+    "href": "yin2023IMAGEend2end/abstract.html",
+    "title": "Coupled physics inversion for geological carbon storage monitoring",
+    "section": "",
+    "text": "Before injecting CO2 into the Earth subsurface, reservoir engineers can predict the CO2 dynamics in the geological carbon storage project via fluid-flow simulation. However, the wrong perception of the permeability model might lead to inaccurate prediction of the CO2 plumes. Through the coupled physics inversion framework, we show that time-lapse seismic data can be used to correct the permeability model. This leads to better CO2 prediction for the past vintages, and more accurate forecast of CO2 dynamics in the future. This potentially helps practitioners to consistently update the estimate of the reservoir storage capacity along with the ongoing project."
+  },
+  {
+    "objectID": "yin2023IMAGEend2end/abstract.html#methods-procedures-process-250-words",
+    "href": "yin2023IMAGEend2end/abstract.html#methods-procedures-process-250-words",
+    "title": "Coupled physics inversion for geological carbon storage monitoring",
+    "section": "Methods, Procedures, Process (250 words)",
+    "text": "Methods, Procedures, Process (250 words)\nWe adopt the coupled physics inversion framework that involves three kinds of physics: fluid-flow physics, rock physics, and wave physics. The fluid-flow equations model the CO2 dynamics in the Earth subsurface according to permeability of the reservoir. The rock physics modeling maps the time-varying CO2 concentration in the rocks to the time-varying changes of acoustic wavespeed of the rocks. Finally, seismic modeling generates time-lapse seismic data for each vintage based on the wavespeed of the rocks. A schematic workflow is shown in Figure 1.\nGiven observed time-lapse seismic data, we invert the nested physics modeling operators for the permeability in an end-to-end fashion. The inverted permeability can be used to generate time-varying CO2 concentration snapshots that match observed time-lapse seismic data. Without further collected seismic data after the injection is terminated, practitioners can also run fluid-flow simulation on the inverted permeability with their own choices of injection rate/location to forecast the CO2 plume in the future and estimate the storage capacity of the reservoir."
+  },
+  {
+    "objectID": "yin2023IMAGEend2end/abstract.html#results-observations-conclusions-250-words",
+    "href": "yin2023IMAGEend2end/abstract.html#results-observations-conclusions-250-words",
+    "title": "Coupled physics inversion for geological carbon storage monitoring",
+    "section": "Results, Observations, Conclusions (250 words)",
+    "text": "Results, Observations, Conclusions (250 words)\nWe conduct a near realistic numerical study on Compass model, which is currently considered as a potential site for geological carbon storage. We convert the compressional wavespeed in the model to log permeability values to make up alternating high and low permeability layers in the reservoir with a 50m depth seal on the top. We inject 1 million metric ton CO2 per year in a highly permeable layer for 25 years. CO2 tends to move into high permeability layers (over 1000 millidarcies) and move up due to buoyancy effects. We shoot 5 vintages of crosswell seismic data at year 5, 10, 15, 20, and 25, with a ricker wavelet with central frequency 20 Hz.\nWe start inversion with homogenous permeability values in the reservoir. After 12 datapass of gradient descent iterations with back-tracking line search, we recover the high permeability layers upon which CO2 plume has ever touched in these 25 years, shown in Figure 2 (a). We do acknowledge errors on the recovered permeability, especially at the locations upon which CO2 plume has not touched. The predicted snapshots of CO2 plume from the inverted permeability are shown in Figure 2 (b), which looks drastically different than the initial prediction on the homogeneous permeability, but reasonably similar to the ground truth ones.\nWe stop the injection at the 25th year and keep simulating the CO2 plume for another 75 years. The predicted CO2 plume from inverted permeability is again close to the ground truth ones with acceptable errors in especially near-future snapshots."
+  },
+  {
+    "objectID": "yin2023IMAGEend2end/abstract.html#significancenovelty-100-words",
+    "href": "yin2023IMAGEend2end/abstract.html#significancenovelty-100-words",
+    "title": "Coupled physics inversion for geological carbon storage monitoring",
+    "section": "Significance/Novelty (100 words)",
+    "text": "Significance/Novelty (100 words)\nThis is the first numerical case study that brings the coupled physics inversion framework to a realistic heterogenous Earth model that is currently considered as a potential geological carbon storage site. Moreover, we consider a near realistic geological carbon storage process instead of an enhanced oil recovery scenario considered by (Li et al. 2020). We also show that the recovered permeability can be used to forecast the dynamics of the CO2 plume in the future without any seismic observation data.\n\n\n\n\n\n\n\nfig1\n\n\n\n\nFigure 1: Figure 1\n\n\n\n\n\n\n\n\n\nfig2\n\n\n\n\nFigure 2: Figure 2"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Image2023",
     "section": "",
-    "text": "This is a Quarto website.\nAll submissions to the Image23 conference with additional figures, references, …\nList of abstracts:\n\nLearned one-shot imaging Learned non-linear simultenous source and corresponding supershot for seismic imaging."
+    "text": "This is a Quarto website.\nAll submissions to the Image23 conference with additional figures, references, …\nList of abstracts:\n\nLearned one-shot imaging Learned non-linear simultenous source and corresponding supershot for seismic imaging.\nCoupled physics inversion Coupled physics inversion for geological carbon storage monitoring."
   }
 ]
