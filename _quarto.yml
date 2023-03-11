@@ -11,6 +11,9 @@ website:
       - section: "One Shot Imaging"
         contents:
         - OneShot/abstract.qmd
+      - section: "Coupled physics inversion"
+        contents:
+        - yin2023IMAGEend2end/abstract.qmd
 
 format:
   html:
