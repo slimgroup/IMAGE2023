@@ -10,3 +10,5 @@ All submissions to the Image23 conference with additional figures, references, .
 List of abstracts:
    
 - [Learned one-shot imaging](OneShot/abstract.qmd) Learned non-linear simultenous source and corresponding supershot for seismic imaging.
+
+- [Coupled physics inversion](yin2023IMAGEend2end/abstract.qmd) Coupled physics inversion for geological carbon storage monitoring.

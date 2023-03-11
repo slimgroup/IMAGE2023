@@ -1,0 +1,55 @@
+---
+title: "Coupled physics inversion for geological carbon storage monitoring"
+author:
+  - name: Ziyi Yin
+    affiliations:
+      name: Georgia Institute of Technology
+  - name: Mathias Louboutin
+    affiliations:
+      name: Georgia Institute of Technology
+  - name: Olav Mønyer
+    affiliations:
+      name: SINTEF
+  - name: Felix J. Herrmann
+    affiliations:
+      name: Georgia Institute of Technology
+bibliography: abstract.bib
+---
+
+## Objectives/Scope (100 words)
+
+Before injecting CO~2~ into the Earth subsurface, reservoir engineers can predict the CO~2~ dynamics in the geological carbon storage project via fluid-flow simulation. However, the wrong perception of the permeability model might lead to inaccurate prediction of the CO~2~ plumes. Through the coupled physics inversion framework, we show that time-lapse seismic data can be used to correct the permeability model. This leads to better CO~2~ prediction for the past vintages, and more accurate forecast of CO~2~ dynamics in the future. This potentially helps practitioners to consistently update the estimate of the reservoir storage capacity along with the ongoing project.
+
+## Methods, Procedures, Process (250 words)
+
+We adopt the coupled physics inversion framework that involves three kinds of physics: fluid-flow physics, rock physics, and wave physics. The fluid-flow equations model the CO~2~ dynamics in the Earth subsurface according to permeability of the reservoir. The rock physics modeling maps the time-varying CO~2~ concentration in the rocks to the time-varying changes of acoustic wavespeed of the rocks. Finally, seismic modeling generates time-lapse seismic data for each vintage based on the wavespeed of the rocks. A schematic workflow is shown in Figure 1.
+
+Given observed time-lapse seismic data, we invert the nested physics modeling operators for the permeability in an end-to-end fashion. The inverted permeability can be used to generate time-varying CO~2~ concentration snapshots that match observed time-lapse seismic data. Without further collected seismic data after the injection is terminated, practitioners can also run fluid-flow simulation on the inverted permeability with their own choices of injection rate/location to forecast the CO~2~ plume in the future and estimate the storage capacity of the reservoir.
+
+## Results, Observations, Conclusions (250 words)
+
+We conduct a near realistic numerical study on Compass model, which is currently considered as a potential site for geological carbon storage. We convert the compressional wavespeed in the model to log permeability values to make up alternating high and low permeability layers in the reservoir with a 50m depth seal on the top. We inject 1 million metric ton CO~2~ per year in a highly permeable layer for 25 years. CO~2~ tends to move into high permeability layers (over 1000 millidarcies) and move up due to buoyancy effects. We shoot 5 vintages of crosswell seismic data at year 5, 10, 15, 20, and 25, with a ricker wavelet with central frequency 20 Hz.
+
+We start inversion with homogenous permeability values in the reservoir. After 12 datapass of gradient descent iterations with back-tracking line search, we recover the high permeability layers upon which CO~2~ plume has ever touched in these 25 years, shown in Figure 2 (a). We do acknowledge errors on the recovered permeability, especially at the locations upon which CO~2~ plume has not touched. The predicted snapshots of CO~2~ plume from the inverted permeability are shown in Figure 2 (b), which looks drastically different than the initial prediction on the homogeneous permeability, but reasonably similar to the ground truth ones.
+
+We stop the injection at the 25th year and keep simulating the CO~2~ plume for another 75 years. The predicted CO~2~ plume from inverted permeability is again close to the ground truth ones with acceptable errors in especially near-future snapshots.
+
+## Significance/Novelty (100 words)
+
+This is the first numerical case study that brings the coupled physics inversion framework to a realistic heterogenous Earth model that is currently considered as a potential geological carbon storage site. Moreover, we consider a near realistic geological carbon storage process instead of an enhanced oil recovery scenario considered by [@li2020coupled]. We also show that the recovered permeability can be used to forecast the dynamics of the CO~2~ plume in the future without any seismic observation data.
+
+::: {#fig-1 layout-ncol=1}
+
+![fig1](figs/fig1.png){width=100%}
+
+Figure 1
+
+:::
+
+::: {#fig-2 layout-ncol=1}
+
+![fig2](figs/fig2.png){width=100%}
+
+Figure 2
+
+:::
