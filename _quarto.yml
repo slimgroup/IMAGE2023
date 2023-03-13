@@ -14,6 +14,12 @@ website:
       - section: "Coupled physics inversion"
         contents:
         - yin2023IMAGEend2end/abstract.qmd
+      - section: "Bayesian FWI"
+        contents:
+        - BayesianFWI/abstract.qmd
+      - section: "Bayesian Kriging"
+        contents:
+        - BayesianFWI/abstract.qmd
 
 format:
   html:
