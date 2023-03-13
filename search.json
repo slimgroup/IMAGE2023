@@ -11,7 +11,7 @@
     "href": "OneShot/abstract.html#objectives-and-scope-100-words",
     "title": "Learned one-shot imaging",
     "section": "OBJECTIVES AND SCOPE (100 words)",
-    "text": "OBJECTIVES AND SCOPE (100 words)\nSeismic imaging’s main limiting factor is the scale of the involved dataset and the number of independent wave-equations solves required for each source. We introduce a learned framework that extends the conventional computationally reductive linear source superpositions (simultaneous sources) to a non-linear learned superposition and its corresponding super-shot. With this method, we can obtain an image of the subsurface at the cost of a single shot migration by learning the most informative superposition of shots."
+    "text": "OBJECTIVES AND SCOPE (100 words)\nSeismic imaging’s main limiting factor is the scale of the involved dataset and the number of independent wave-equations solves required to migrate thousands of shots. To tackle this dimensionality curse, we introduce a learned framework that extends the conventional computationally reductive linear source superpositions (simultaneous sources) to a non-linear learned superposition and its corresponding super-shot. With this method, we can obtain an image of the subsurface at the cost of a single shot migration by learning the most informative superposition of shots."
   },
   {
     "objectID": "OneShot/abstract.html#methods-procedures-process-250-words",
@@ -32,14 +32,14 @@
     "href": "OneShot/abstract.html#significancenovelty-100-words",
     "title": "Learned one-shot imaging",
     "section": "SIGNIFICANCE/NOVELTY (100 words)",
-    "text": "SIGNIFICANCE/NOVELTY (100 words)\nWe introduced the first instance of non-linear simuktenous source imaging. Because only linear transforms can be applied to the source and data using the linearity of the wave-equation, we introduced a neural network capable of creating a pair of simultenous source and super-shot that is most informative for migration. This learned on-shot imaging framework allows to drastically reduce the cost of seismic imaging while requiring limited training resources since only single-shot are migrated."
+    "text": "SIGNIFICANCE/NOVELTY (100 words)\nWe introduced the first instance of non-linear simultenaous source imaging. Because only linear transforms can be applied to the source and data using the linearity of the wave-equation, we introduced a neural network capable of creating a pair of simultenous source and super-shot that is most informative for migration. This learned on-shot imaging framework allows to drastically reduce the cost of seismic imaging while requiring limited training resources since only single-shot are migrated."
   },
   {
     "objectID": "OneShot/abstract.html#introduction",
     "href": "OneShot/abstract.html#introduction",
     "title": "Learned one-shot imaging",
     "section": "Introduction",
-    "text": "Introduction\nbla"
+    "text": "Introduction"
   },
   {
     "objectID": "OneShot/abstract.html#methodology",
@@ -53,7 +53,7 @@
     "href": "OneShot/abstract.html#synthetic-case-studies",
     "title": "Learned one-shot imaging",
     "section": "Synthetic case studies",
-    "text": "Synthetic case studies\nWe illustrate our method on a realstic 2D imaging problem. We created a dataset of 2000 2D slices by extracting slices out of the 3D overthrust model. We then split this dataset into 1600 slices for trainng and 400 slices for testing. For each 2D slice, we generate 21 shot records. One of the main advantage of our one-shot imaging method is that we only require a single migration-demigration per iteration. Therefore, we can perform 21 epochs before arriving to a computationnal cost equivalent to the plain standard RTM imaging of each slice. Since we only perform 15 epochs, our method is overall cheapper than computing the RTM on every single shot if we include the cost of training.\nWe trained the networks, both in the supervised and unsupervised case, for 15 epochs with a learning rate of \\(.0004\\) using the Adam optimizer.\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\n\nRTMs\n\n\n\n\nFigure 1: Learned super-shot and simultenous sources on a testing slice. We show a shot record and the moirated image with a random supershot and with sequential shots for reference.\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\n\nRTMs\n\n\n\n\nFigure 2: Learned super-shot and simultenous sources on a testing slice. We show a shot record and the moirated image with a random supershot and with sequential shots for reference.\n\n\n\nCode availability\nTBD"
+    "text": "Synthetic case studies\nWe illustrate our method on a realstic 2D imaging problem. We created a dataset of 2000 2D slices by extracting slices out of the 3D overthrust model. We then split this dataset into 1600 slices for trainng and 400 slices for testing. For each 2D slice, we generate 21 shot records. One of the main advantage of our one-shot imaging method is that we only require a single migration-demigration per iteration. Therefore, we can perform 21 epochs before arriving to a computationnal cost equivalent to the plain standard RTM imaging of each slice. Since we only perform 15 epochs, our method is overall cheapper than computing the RTM on every single shot if we include the cost of training.\nWe trained the networks, both in the supervised and unsupervised case, for 15 epochs with a learning rate of \\(.0004\\) using the Adam optimizer.\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\n\nRTMs\n\n\n\n\nFigure 1: Learned super-shot and simultenous sources on a testing slice. We show a shot record and the moirated image with a random supershot and with sequential shots for reference.\n\n\n\n\n\n\n\n\n\nData\n\n\n\n\n\n\n\nRTMs\n\n\n\n\nFigure 2: Learned super-shot and simultenous sources on a testing slice. We show a shot record and the moirated image with a random supershot and with sequential shots for reference.\n\n\n\nCode availability\nResults presented here can be reproduced with the software and examples in OneShotImaging.jl."
   },
   {
     "objectID": "OneShot/abstract.html#discussion-and-conclusions",
