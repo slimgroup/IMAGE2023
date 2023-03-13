@@ -17,16 +17,6 @@ abstract: |
   empty
 ---
 
-HEY remember:
--need to add noise to y to justify uncertainty. 
--need to experiment with different number of n_in into cnf. Currently unet looks like Unet(n_src,1,unet_levels)
-but that is pretty serious compression. Maybe Unet(n_src,2,unet_levels) will already be better. 
---Tried with marginal sucess on the multiscale summary net. Doesnt seem to be a clear winner yet. 
--also something like this
--unet = Chain(Unet(n_c,n_c,3),MaxPool((1,16)),Unet(n_c,n_in,unet_levels))
--NEED TO NOT TAKE AWAY THE THREE AT END AND BEGINNING THESE ARE REALLY IMPORTANT.Imreisze seems to work fine. 
--try with conv instead of maxpool or meanpool 
-
 # Image 2023 abstract
 
 ## OBJECTIVES AND SCOPE (100 words)
