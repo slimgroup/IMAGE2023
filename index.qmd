@@ -12,3 +12,8 @@ List of abstracts:
 - [Learned one-shot imaging](OneShot/abstract.qmd) Learned non-linear simultenous source and corresponding supershot for seismic imaging.
 
 - [Coupled physics inversion](yin2023IMAGEend2end/abstract.qmd) Coupled physics inversion for geological carbon storage monitoring.
+
+- [Bayesian FWI](BayesianFWI/abstract.qmd) Amortized Bayesian Full Waveform Inversion and Experimental Design with Normalizing Flows
+
+- [Bayesian Kriging](BayesianFWI/abstract.qmd) Generative Seismic Kriging with Normalizing Flows
+
