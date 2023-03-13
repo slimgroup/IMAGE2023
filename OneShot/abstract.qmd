@@ -27,7 +27,7 @@ $$
 
 ## OBJECTIVES AND SCOPE (100 words)
 
-Seismic imaging's main limiting factor is the scale of the involved dataset and the number of independent wave-equations solves required for each source. We introduce a learned framework that extends the conventional computationally reductive linear source superpositions (simultaneous sources) to a non-linear learned superposition and its corresponding super-shot. With this method, we can obtain an image of the subsurface at the cost of a single shot migration by learning the most informative superposition of shots. 
+Seismic imaging's main limiting factor is the scale of the involved dataset and the number of independent wave-equations solves required to migrate thousands of shots. To tackle this dimensionality curse, we introduce a learned framework that extends the conventional computationally reductive linear source superpositions (simultaneous sources) to a non-linear learned superposition and its corresponding super-shot. With this method, we can obtain an image of the subsurface at the cost of a single shot migration by learning the most informative superposition of shots. 
 
 ## METHODS, PROCEDURES, PROCESS (250 words)
 
@@ -41,14 +41,13 @@ We show on Figure 1 the results with the supervised training and on Figure 2 wit
 ## SIGNIFICANCE/NOVELTY (100 words)
 
 
-We introduced the first instance of non-linear simuktenous source imaging. Because only linear transforms can be applied to the source and data using the linearity of the wave-equation, we introduced a neural network capable of creating a pair of simultenous source and super-shot that is most informative for migration. This learned on-shot imaging framework allows to drastically reduce the cost of seismic imaging while requiring limited training resources since only single-shot are migrated.
+We introduced the first instance of non-linear simultenaous source imaging. Because only linear transforms can be applied to the source and data using the linearity of the wave-equation, we introduced a neural network capable of creating a pair of simultenous source and super-shot that is most informative for migration. This learned on-shot imaging framework allows to drastically reduce the cost of seismic imaging while requiring limited training resources since only single-shot are migrated.
 
 
-# Suplementary material
+# Supplementary material
 
 ## Introduction
 
-bla
 
 ## Methodology
 
@@ -82,7 +81,6 @@ $$ {#eq-supervised}
 where $\mathcal{H}_{\phi}, \mathcal{G}_{\theta}$ are the two networks mapping the individual shot records into a single super-shot (the learned simultenous-source is learned at the receiver locations), $J$ is the conventionnal adjoint Born imaging operator, $d_{\text{obs}}$ is the observed data and $\delta m$ is the model perturbation. We note that to compute an update on the two networks simultenaously, the gradient of the Jacobian with respect to its source is necessary. This derivative is however trivial to obtain with [JUDI.jl] thanks to its high-level linear algebra abstraction and integration with automatic differentiation framework in Julia.
  
 ### Unsupervised
-
 
 
 $$
@@ -119,10 +117,9 @@ Learned super-shot and simultenous sources on a testing slice. We show a shot re
 
 ### Code availability
 
-TBD
+Results presented here can be reproduced with the software and examples in [OneShotImaging.jl](https://github.com/mloubout/OneShotImaging).
 
 ## Discussion and conclusions
-
 
 We introduced data-domain learning method that provides high accuracy imagies of the subsurface through one-shot imaging. We trained a network that learns the simultenous source and super-shot that most inform the subsurface from the field recorded data. We showed that we obtain high accuracy images of the subsurface that contain broader frequency range than standard imaging and does not require prior knowledge of the source. Additionnally, the overall computationnal cost of training does not exceed the traditionnal cost of imaging.
 
