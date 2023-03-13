@@ -144,6 +144,6 @@
     "href": "index.html",
     "title": "Image2023",
     "section": "",
-    "text": "This is a Quarto website.\nAll submissions to the Image23 conference with additional figures, references, …\nList of abstracts:\n\nLearned one-shot imaging Learned non-linear simultenous source and corresponding supershot for seismic imaging.\nCoupled physics inversion Coupled physics inversion for geological carbon storage monitoring."
+    "text": "This is a Quarto website.\nAll submissions to the Image23 conference with additional figures, references, …\nList of abstracts:\n\nLearned one-shot imaging Learned non-linear simultenous source and corresponding supershot for seismic imaging.\nCoupled physics inversion Coupled physics inversion for geological carbon storage monitoring.\nBayesian FWI Amortized Bayesian Full Waveform Inversion and Experimental Design with Normalizing Flows\nBayesian Kriging Generative Seismic Kriging with Normalizing Flows"
   }
 ]
