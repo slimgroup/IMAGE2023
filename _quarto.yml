@@ -30,7 +30,7 @@ website:
   page-footer:
     center:
       - file: license.qmd
-        text: "Copyright (c) SLIM @ Georgia Insitute of Technology"
+        text: "2023 Copyright (c) SLIM @ Georgia Institute of Technology"
 
 format:
   html:
