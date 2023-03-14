@@ -19,6 +19,10 @@ abstract: |
 
 # Image 2023 abstract
 
+
+
+
+
 ## OBJECTIVES AND SCOPE (638/600 characters)
 Probabilistic approaches to Full-Waveform Inversion (FWI), such as Bayesian ones, traditionally require expensive computations involving multiple wave-equation solves. To reduce this computational burden at test time, we propose to amortize the computational cost with offline training. After training, our method aims to efficiently generate probabilistic FWI solutions with uncertainty. This aim is achieved by exploiting the ability of deep networks (i.e. Normalizing Flows) to learn distributions, in our case, the Bayesian posterior. The posterior uncertainty is used during training to find the receiver optimal experimental design (OED).
 
@@ -29,14 +33,31 @@ To learn to sample from the conditional distribution, the network learns to tran
 
 The NFs training objective has been shown to be equivalent to maximizing the information gain (as defined by Bayesian OED) of the conditioned data. Thus, we propose to jointly optimize a mask M that occludes receivers of the seismic data (M.\*y) during NF training. Our optimization jointly optimizes for NF parameters and optimal mask M values in a single objective (Equation 1 in Figure 1).
 
+::: {#fig-1 layout-ncol=1}
+
+![(a)](figures/full_schematic.png){width=100%}
+
+Schematic of full training process and test time evaluation of our method. 
+
+:::
+
 ## RESULTS, OBSERVATIONS, CONCLUSIONS  (1617/1500 characters)
 After training, our method generates posterior samples at the cost of one neural network pass (10ms on our GPU). Seen in Figure 2, the posterior samples are realistic earth models that could plausibly match the seismic data. The variations between the models are due to the FWI problem being ill-posed and because of noise in the indirect observations at the subsurface. To study these variations, we take the sample variance as our uncertainty quantification. We note that the uncertainty is concentrated on vertical and deeper structures. Both these structures are difficult to image with FWI leading to the pleasing result that our uncertainty correlates with error made making our uncertainty useful and interpretable. 
 
 To make a single high-quality solution, we take the mean of the posterior samples. The posterior mean shows high-quality metrics that surpass previous benchmarks on the OPENFWI dataset while our method also produces Bayesian uncertainty and the benchmark methods do not.
 
-The OED found by our method (filled in circles in Figure 2 represent optimal receiver locations) matches prior expectations that the most important information is contained in the short offsets. This result was independently discovered by the Bayesian optimization routine.
+The OED found by our method (filled in circles in Figure 1 represent optimal receiver locations) matches prior expectations that the most important information is contained in the short offsets. This result was independently discovered by the Bayesian optimization routine.
 
 Our method is amortized since the previously mentioned computational debt associated with probabilistic FWI is paid by the forward modeling needed to compute training pairs (x,y) plus the cost of training the network. After both these costs are incurred offline, our method can efficiently sample from the Bayesian posterior for many unseen seismic datasets. 
 
+::: {#fig-2 layout-ncol=1}
+
+![(a)](figures/results.png){width=100%}
+
+Results from our method compared with exponential variogram. Our method produces realistic samples of earth models that when averaged produce high quality point estimates. 
+
+:::
+
 ## SIGNIFICANCE/NOVELTY (378/600 characters)
 To our knowledge, this is the first demonstration of conditional normalizing flows on amortized FWI with uncertainty quantification. We also showed a practical application of the uncertainty towards experimental design. While the open source dataset has small models, NFs are memory efficient due to their intrinsic invertibility so are set to scale to realistic sized problems.
+
