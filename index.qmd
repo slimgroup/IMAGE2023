@@ -17,3 +17,4 @@ List of abstracts:
 
 - [Bayesian Kriging](BayesianFWI/abstract.qmd) Generative Seismic Kriging with Normalizing Flows
 
+- [3D survey design](zhang2023IMAGEsg/abstract.qmd) 3D seismic survey design by maximizing the spectral gap

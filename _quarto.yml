@@ -8,18 +8,21 @@ website:
       - href: index.qmd
         text: Home
   sidebar:
-      - section: "One Shot Imaging"
+      style: "docked"
+      search: true
+      contents:
+      - section: "Abstracts"
         contents:
-        - OneShot/abstract.qmd
-      - section: "Coupled physics inversion"
-        contents:
-        - yin2023IMAGEend2end/abstract.qmd
-      - section: "Bayesian FWI"
-        contents:
-        - BayesianFWI/abstract.qmd
-      - section: "Bayesian Kriging"
-        contents:
-        - BayesianFWI/abstract.qmd
+        - file: OneShot/abstract.qmd
+          text: "One Shot Imaging"
+        - text: "Coupled physics inversion"
+          file: yin2023IMAGEend2end/abstract.qmd
+        - text: "Bayesian FWI"
+          file: BayesianFWI/abstract.qmd
+        - text: "Bayesian Kriging"
+          file: BayesianKrig/abstract.qmd
+        - text: "3D survey design"
+          file: zhang2023IMAGEsg/abstract.qmd
 
 format:
   html:

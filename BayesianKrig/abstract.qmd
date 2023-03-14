@@ -25,15 +25,17 @@ $$
 
 # Image 2023 abstract
 
+<!--I miss discussion to which setting this applies. As it reads now, people will dismiss as a case of overfitting. We discussed this-->
+
 ## OBJECTIVES AND SCOPE (100 words)
 
-The objective is to demonstrate Normalizing Flows for subsurface kriging from wells. We will show that after supervised training of our method, we can generate multiple realistic samples of plausible earth models that match the observed wells. We observe that these samples produce uncertainty statistics that are correlated with the error made by the method. Finally, we compare the speed and quality of our solutions with those obtained using a traditional variogram approach.
+The objective is to demonstrate Normalizing Flows (NFs) for subsurface kriging from wells. We will show that after supervised training of our method, we can generate multiple realistic samples of plausible earth models that match the observed wells. We observe that these samples produce uncertainty statistics that are correlated with the error made by the method. Finally, we compare the speed and quality of our solutions with those obtained using a traditional variogram approach.
 
 ## METHODS, PROCEDURES, PROCESS (250 words)
 
-Kriging is highly ill-posed (there is no unique solution) so the preferred method should be able to produce many models that match the well logs. Generative deep learning can be used to sample models that are conditioned on observations. A particular class of generative deep learning are normalizing flows. These are particularly attractive because they are fast to sample from and their low training memory requirements. We implemented an architecture in Julia with InvertibleNetworks.jl.
+Kriging is highly ill-posed (there is no unique solution) so the preferred method should be able to produce many models that match the observed well log data. Generative deep learning can be used to sample models that are conditioned on observations. A particular class of generative deep learning are normalizing flows. These are particularly attractive because they are fast to sample from and they have low training memory requirements. We implemented an architecture in Julia with InvertibleNetworks.jl.
 
-Our method is supervised so needs training examples of observed wells y where the corresponding earth models x. We use the compass model with a 90%/5%/5% training/validation/test split. For each training slice (nz=256, nx=512, d=10m) of the compass volume, we randomly generate well observations by selecting 5 columns at least 200 meters distance between each. This process creates the training pairs (x_i,y_i) used to train the conditional normalizing flow. 
+Our method is supervised so it needs training examples of observed wells y where the corresponding earth models x. We use the compass model with a 90%/5%/5% training/validation/test split. For each training slice (nz=256, nx=512, d=10m) of the compass volume, we randomly generate well observations by selecting 5 columns at least 200 meters distance between each. This process creates the training pairs (x_i,y_i) used to train the conditional normalizing flow. 
 
 After training, we input an unseen well log y and produce samples of the posterior p(x|y). To create single point estimate, we average all posterior samples to get the posterior mean. 
 
