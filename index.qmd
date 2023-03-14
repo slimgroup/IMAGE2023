@@ -17,3 +17,4 @@ List of abstracts:
 
 - [Bayesian Kriging](BayesianFWI/abstract.qmd) Generative Seismic Kriging with Normalizing Flows
 
+- [Detectability with Vision Classification](DetectabilityWithVision/abstract.qmd) Analysis of CO2 Leakage Detectability via Vision Classifier

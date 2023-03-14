@@ -21,6 +21,8 @@ website:
           file: BayesianFWI/abstract.qmd
         - text: "Bayesian Kriging"
           file: BayesianKrig/abstract.qmd
+        - text: "Leakage Detectibility with Vision Classifier"
+          file: DetectabilityWithVision/abstract.qmd
 
 format:
   html:
