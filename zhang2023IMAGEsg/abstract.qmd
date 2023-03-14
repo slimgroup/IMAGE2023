@@ -1,0 +1,56 @@
+---
+title: "3D seismic survey design by maximizing the spectral gap"
+author:
+  - name: Yijun Zhang
+    affiliations:
+      name: Georgia Institute of Technology
+  - name: Ziyi Yin
+    affiliations:
+      name: Georgia Institute of Technology
+  - name: Oscar Lopez
+    affiliations:
+      name: Florida Atlantic University
+  - name: Ali Siahkoohi
+    affiliations:
+      name: Rice University
+  - name: Mathias Louboutin
+    affiliations:
+      name: Georgia Institute of Technology
+  - name: Felix J. Herrmann
+    affiliations:
+      name: Georgia Institute of Technology
+---
+
+## Objectives/Scope (100 words)
+
+The huge cost of 3D seismic acquisition calls for methods to reduce the number of receivers in the acquisition by designing optimal receiver sampling masks. Recent studies on 2D seismic show that maximizing the spectral gap of the subsampling mask leads to better wavefield reconstruction results according to expander graph theory. We enrich the current study by proposing a simulation-free method to automatically generate optimal 3D seismic acquisition by maximizing the spectral gap of the subsampling mask via simulated annealing algorithm. Numerical experiments confirm the success of the proposed acquisition design method over jittered sampling scheme.
+
+## Methods, Procedures, Process (250 words)
+
+The spectral gap ratio is the ratio of the first and second singular values of a binary subsampling mask. It is a cheap-to-compute measure to predict wavefield reconstruction quality based on the binary mask. Motivated by recent success on 2D seismic survey design methods driven by spectral gap ratio minimization, we consider the 3D seismic survey design where sources are missing and receivers are fully sampled. We propose a 3D seismic survey design method via minimizing the spectral gap ratio of 3D source sampling mask.
+
+Because 3D wavefield reconstruction based on low-rank matrix completion is shown to be the best performant in the non-canonical organization domain, we aim to minimize the spectral gap ratio of subsampling mask in this domain. Fortunately, when receivers are fully sampled, each subsampled source location becomes a fully sampled square in this mask. As a result, the spectral gap ratio in the non-canonical domain is exactly the same as the spectral gap ratio in the common receiver domain (see Figure 1). Therefore, we implement the simulated annealing algorithm to iteratively find source subsampling masks that minimize the spectral gap ratio in the common receiver domain. The main computational cost of this algorithm is computing the first two singular values of the source subsampling mask, which is negligible compared to approaches that require wave simulations. The resulting optimal mask with the lowest spectral gap ratio indicates the source sampling locations that favor 3D wavefield reconstruction via matrix completion in non-cononical organization domain.
+
+## Results, Observations, Conclusions (250 words)
+
+To illustrate the efficacy of our method via a numerical experiment on a simulated 3D marine dataset over the compass model. The data volume consists of $501 \times 100 \times 100 \times 41 \times 41$ entries---i.e., $n_t \times n_{rx} \times n_{ry} \times n_{sx} \times n_{sy}$ along the time, receiver $x$, receiver $y$, source $x$, and source $y$ directions. The distance between the adjacent sources and receivers are 150m and 25m, respectively, with time interval 0.01s. By removing 90% of receivers using jittered subsampling, we obtain a binary matrix with the spectral gap ratio 0.507 in the non-canonical domain. After applying simulated annealing algorithm with 80000 iterations, the spectral gap ratio of mask effectively decreases to 0.328. To validate the efficacy of our acquisition design method, we perform data reconstruction on a 16.8Hz frequency slice via weighted matrix completion for the two subsampled datasets with jittered subsampling mask and the proposed mask, with results shown in Figure 2. The reconstruction signal-to-noise ratio from the observed data at proposed source locations is 12.27 dB, which is about 1.4 dB higher than the reconstruction signal-to-noise ratio from the observed data at jittered sampled source locations as 10.88 dB. This confirms that the proposed optimized sources sampling locations result in a superior seismic survey that leads to better wavefield reconstruction performance.
+
+## Significance/Novelty (100 words)
+
+This is the first numerical case study that applies spectral gap ratio minimization techniques for seismic acquisition design to 3D wavefield reconstruction. Rather than requiring costly wave simulations, the proposed method for optimizing binary masks is computationally inexpensive. Experiments demonstrate that the proposed method generates an improved 3D seismic survey suitable for 3D wavefield reconstruction.
+
+::: {#fig-1 layout-ncol=1}
+
+![fig1](figs/fig1.png){width=100%}
+
+Figure 1
+
+:::
+
+::: {#fig-2 layout-ncol=1}
+
+![fig2](figs/fig2.png){width=100%}
+
+Figure 2
+
+:::

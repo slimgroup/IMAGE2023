@@ -21,6 +21,8 @@ website:
           file: BayesianFWI/abstract.qmd
         - text: "Bayesian Kriging"
           file: BayesianKrig/abstract.qmd
+        - text: "3D survey design"
+          file: zhang2023IMAGEsg/abstract.qmd
 
 format:
   html:
