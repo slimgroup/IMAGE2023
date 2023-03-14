@@ -98,6 +98,13 @@
     "text": "Acknowledgement\nThis research was carried out with the support of Georgia Research Alliance and partners of the ML4Seismic Center.\n\nReferences\n\n\nBloem-Reddy, Benjamin, and Yee Whye Teh. 2020. “Probabilistic Symmetries and Invariant Neural Networks.” J. Mach. Learn. Res. 21: 90–91.\n\n\nDeans, Matthew C. 2002. “Maximally Informative Statistics for Localization and Mapping.” In Proceedings 2002 IEEE International Conference on Robotics and Automation (Cat. No. 02CH37292), 2:1824–29. IEEE.\n\n\nMüller, Jens, Robert Schmier, Lynton Ardizzone, Carsten Rother, and Ullrich Köthe. 2021. “Learning Robust Models Using the Principle of Independent Causal Mechanisms.” In DAGM German Conference on Pattern Recognition, 79–110. Springer.\n\n\nRadev, Stefan T, Ulf K Mertens, Andreas Voss, Lynton Ardizzone, and Ullrich Köthe. 2020. “BayesFlow: Learning Complex Stochastic Models with Invertible Neural Networks.” IEEE Transactions on Neural Networks and Learning Systems."
   },
   {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "License",
+    "section": "",
+    "text": "These abstracts are released under the Creative Commons License type CC BY. Copyrights (c) SLIM Group, Georgia Institute of Technology.\nAll codes used to produce these results are released under MIT license,."
+  },
+  {
     "objectID": "BayesianKrig/abstract.html",
     "href": "BayesianKrig/abstract.html",
     "title": "Generative Seismic Kriging with Normalizing Flows",
