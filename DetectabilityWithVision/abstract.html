@@ -6,12 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Rafael Orozco">
-<meta name="author" content="Mathias Louboutin">
+<meta name="author" content="Huseyin Tuna Erdinc">
+<meta name="author" content="Abhinav Prakash Gahlot">
 <meta name="author" content="Felix J. Herrmann">
-<meta name="description" content="empty">
 
-<title>Image2023 - Generative Seismic Kriging with Normalizing Flows</title>
+<title>Image2023 - Analysis of CO2 Leakage Detectability via Vision Classifier</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +64,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -100,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Generative Seismic Kriging with Normalizing Flows</h1>
+      <h1 class="quarto-secondary-nav-title">Analysis of CO2 Leakage Detectability via Vision Classifier</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -143,12 +141,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../BayesianKrig/abstract.html" class="sidebar-item-text sidebar-link active">Bayesian Kriging</a>
+  <a href="../BayesianKrig/abstract.html" class="sidebar-item-text sidebar-link">Bayesian Kriging</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../DetectabilityWithVision/abstract.html" class="sidebar-item-text sidebar-link">Leakage Detectibility with Vision Classifier</a>
+  <a href="../DetectabilityWithVision/abstract.html" class="sidebar-item-text sidebar-link active">Leakage Detectibility with Vision Classifier</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -167,13 +165,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#image-2023-abstract" id="toc-image-2023-abstract" class="nav-link active" data-scroll-target="#image-2023-abstract">Image 2023 abstract</a>
-  <ul class="collapse">
-  <li><a href="#objectives-and-scope-581600-characters" id="toc-objectives-and-scope-581600-characters" class="nav-link" data-scroll-target="#objectives-and-scope-581600-characters">OBJECTIVES AND SCOPE (581/600 characters)</a></li>
-  <li><a href="#methods-procedures-process-14061500-characters" id="toc-methods-procedures-process-14061500-characters" class="nav-link" data-scroll-target="#methods-procedures-process-14061500-characters">METHODS, PROCEDURES, PROCESS (1406/1500 characters)</a></li>
-  <li><a href="#results-observations-conclusions-16651500-characters" id="toc-results-observations-conclusions-16651500-characters" class="nav-link" data-scroll-target="#results-observations-conclusions-16651500-characters">RESULTS, OBSERVATIONS, CONCLUSIONS (1665/1500 characters)</a></li>
-  <li><a href="#significancenovelty-663600-characters" id="toc-significancenovelty-663600-characters" class="nav-link" data-scroll-target="#significancenovelty-663600-characters">SIGNIFICANCE/NOVELTY (663/600 characters)</a></li>
-  </ul></li>
+  <li><a href="#objectivesscope-100-words" id="toc-objectivesscope-100-words" class="nav-link active" data-scroll-target="#objectivesscope-100-words">Objectives/Scope (100 words)</a></li>
+  <li><a href="#methods-procedures-process-250-words" id="toc-methods-procedures-process-250-words" class="nav-link" data-scroll-target="#methods-procedures-process-250-words">Methods, Procedures, Process (250 words)</a></li>
+  <li><a href="#results-observations-conclusions-250-words" id="toc-results-observations-conclusions-250-words" class="nav-link" data-scroll-target="#results-observations-conclusions-250-words">Results, Observations, Conclusions (250 words)</a></li>
+  <li><a href="#significancenovelty-100-words" id="toc-significancenovelty-100-words" class="nav-link" data-scroll-target="#significancenovelty-100-words">Significance/Novelty (100 words)</a></li>
   </ul>
 </nav>
     </div>
@@ -182,21 +177,16 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Generative Seismic Kriging with Normalizing Flows</h1>
+<h1 class="title d-none d-lg-block">Analysis of CO2 Leakage Detectability via Vision Classifier</h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>empty</p>
-  </div>
-</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Authors</div>
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
-    Rafael Orozco 
+    Huseyin Tuna Erdinc 
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -204,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
           </p>
       </div>
       <div class="quarto-title-meta-contents">
-    Mathias Louboutin 
+    Abhinav Prakash Gahlot 
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -228,76 +218,44 @@ ul.task-list li input[type="checkbox"] {
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="abstract-title">Abstract</div>
-    <p>empty</p>
-  </div>
-</div>
 
 </header>
 
-<div class="hidden">
-<p><span class="math display">\[
-    \newcommand{\pluseq}{\mathrel{+}=}
-\]</span></p>
-</div>
-<section id="image-2023-abstract" class="level1">
-<h1>Image 2023 abstract</h1>
-<section id="objectives-and-scope-581600-characters" class="level2">
-<h2 class="anchored" data-anchor-id="objectives-and-scope-581600-characters">OBJECTIVES AND SCOPE (581/600 characters)</h2>
-<p>The objective is to demonstrate Normalizing Flows (NFs) for subsurface kriging from wells. We will show that after supervised training of our method, we can generate multiple realistic samples of plausible earth models that match the observed wells. We observe that these samples produce uncertainty statistics that are correlated with the error made by the method. The applicability of this method is for areas nearby the original survey area used for training. Finally, we compare the speed and quality of our solutions with those obtained using a traditional variogram approach.</p>
+<section id="objectivesscope-100-words" class="level2">
+<h2 class="anchored" data-anchor-id="objectivesscope-100-words">Objectives/Scope (100 words)</h2>
+<p>Global deployment of geological carbon storage(GCS) technology hinges on alleviating possible risk factors such as reservoir leakage. The reservoir leakage can successfully be observed with seismic imaging and the leakage detection process can be efficiently automized with machine learning based networks. However, the performance of the networks is contingent on building a dataset for each new receiver configuration in a seismic experiment, leading to meticulous and high-cost data collection/generation procedure. In this study, we aim to improve the detection generalization of a network, trained on only a particular seismic receiver configuration, by proposing an augmentation to its training dataset.</p>
 </section>
-<section id="methods-procedures-process-14061500-characters" class="level2">
-<h2 class="anchored" data-anchor-id="methods-procedures-process-14061500-characters">METHODS, PROCEDURES, PROCESS (1406/1500 characters)</h2>
-<p>Kriging is highly ill-posed (there is no unique solution) so the preferred method should be able to produce many models that match the observed well log data. Generative deep learning can be used to sample models that are conditioned on observations. A particular class of generative deep learning are normalizing flows. These are particularly attractive because they are fast to sample from and they have low training memory requirements. We implemented an architecture in Julia with InvertibleNetworks.jl.</p>
-<p>Our method is supervised so it needs training examples of observed wells y where the corresponding earth models x. We use the compass model with a 90%/5%/5% training/validation/test split. For each training slice (nz=256, nx=512, d=10m) of the compass volume, we randomly generate well observations by selecting 5 columns at least 200 meters distance between each. This process creates the training pairs (x_i,y_i) used to train the conditional normalizing flow.</p>
-<p>After training, we input an unseen well log y and produce samples of the posterior p(x|y). To create single point estimate, we average all posterior samples to get the posterior mean.</p>
-<p>For the variogram, we use exponential ordinary variogram from the package PyKrige. The variogram parameters are automatically selected by the well log data. We manually set the anisotropy angle to 0 to match the strongly horizontal Compass model.</p>
+<section id="methods-procedures-process-250-words" class="level2">
+<h2 class="anchored" data-anchor-id="methods-procedures-process-250-words">Methods, Procedures, Process (250 words)</h2>
+<p>The dataset generation procedure commences with multiple 2D proxy velocity models constructed as representative of potential GCS site in the South of the North Sea. We perform CO<sub>2</sub> injection by solving two-phase flow equations numerically with Full Wave inversion(FWI) and we repeat this process many times to create different regular(without leakage) and irregular(with leakage) CO<sub>2</sub> plumes. Rock physics model converts the CO<sub>2</sub> concentration in the reservoir to acoustic wavespeed and with the assistance of reverse time migration(RTM), we observe the time-lapse difference between baseline and monitor images. RTM utilizes equally spaced 162 receivers and jittered 32 sources configuration. The resulting RTM time-lapse images is used to form training dataset of network, based on Vision Transformer. The ultimate purpose of the network is to distinguish between regular and irregular seismic images of reservoir by performing binary classification and the overall training workflow can be seen in Figure 1(a).</p>
+<p>To test the network’s performance in different receiver configurations, we reiterate the RTM with different number of receivers placed periodically. The generated time-lapse difference images form the test set. As shown in Figure 1(b), 200 receiver configuration produces high-quality, artifact-free reservoir difference images, whereas for 20 receiver configuration setting the reservoir is very noisy. Therefore, before performing the testing experiment, we hypothesize that the network trained on one specific receiver configuration may face performance issues on images generated by different configurations.</p>
 </section>
-<section id="results-observations-conclusions-16651500-characters" class="level2">
-<h2 class="anchored" data-anchor-id="results-observations-conclusions-16651500-characters">RESULTS, OBSERVATIONS, CONCLUSIONS (1665/1500 characters)</h2>
-<p>In Figure 2, we show posterior samples from our method where each sample takes 10ms to compute. To validate the quality of the earth models produced by our method, we compare the posterior mean with known ground truth models from a leave-out test set. We compare various metrics (SSIM, PSNR, RSME and time-to-compute and verify that our method produces higher quality reconstructions while being faster than a variogram approach.</p>
-<p>We study the uncertainty of our approach by looking at the variation between the posterior samples. We compare our posterior variance with the calculated standard variation of the variogram. Compared against the variograms variance our method produces uncertainty results that are more interpretable and correlate with errors made in specific structures.</p>
-<p>The table in Figure 2 shows the quantitative performance of our method, in summary, our method takes less than 2 seconds to produce a high quality point estimates with an average RMSE of 0.038 compared to the variogram with an average RMSE of 0.043. The posterior mean gives less error on average, but the earth models are smoothed thus for downstream tasks, we recommend practitioners use posterior samples as they maintain realistic earth characteristics.</p>
-<p>This method has learned long range structures in the training survey area and can extrapolate them further. Generalization to other survey areas is out of the scope of this project but future work will explore this. We conclude that our method is a promising option for creating realistic earth models that match observed data wells and that it offers quantitative advantages over traditional approaches.</p>
+<section id="results-observations-conclusions-250-words" class="level2">
+<h2 class="anchored" data-anchor-id="results-observations-conclusions-250-words">Results, Observations, Conclusions (250 words)</h2>
+<p>The testing accuracy results of the network, trained initially on 162 receiver setting, is shown in Figure 2(a). It can be seen that the detection accuracy of the model is significantly high in receiver configurations more than 162 receivers and gradually decreases in the following configurations. After approximately 100 receivers, the binary classification results become equivalent to random.</p>
+<p>To uplift the general accuracy performance of the network, we enlarge the training dataset by including examples of difference images produced by random receiver configurations. Considering the fact that dataset augmentation introduces a new cost to our framework, we specifically included random, low-cost examples with number of receivers less than 162. After the dataset augmentation process, we can observe that the classification accuracy for all configurations has been significantly increased, shown in Figure(2a). Moreover, the confusion matrix performance metrics(precision, recall and F-1 score) have been substantially improved.</p>
+<p>The results show that dataset augmentation can enhance the generalization of network and contribute to its detection performance. In terms of practical use, this work suggests a dataset based on a particular seismic setting can be made more applicable to different imaging experiments with the inclusion of cheap random examples in the training dataset.</p>
 </section>
-<section id="significancenovelty-663600-characters" class="level2">
-<h2 class="anchored" data-anchor-id="significancenovelty-663600-characters">SIGNIFICANCE/NOVELTY (663/600 characters)</h2>
-<p>We introduce the first use of conditional normalizing flows for kriging. While previous implementations of conditional normalizing flows have struggled on high dimensional images, we demonstrated our software implementation allows for learning distributions over large images. This method is set to scale to 3D image volumes in future work which will further enable the application of these methods to realistic seismic problems. In contrast with traditional variogram methods, our framework produces realistic samples, that is particularly important for downstream tasks in reservoir engineering and other applications where multiple plausible models are needed.</p>
-<div id="fig-1" class="quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/full_schematic.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">fig1</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Schematic of full training process and test time evaluation of our method.</figcaption><p></p>
-</figure>
-</div>
-<div id="fig-2" class="quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/results.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">fig2</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Results from our method compared with exponential variogram. Our method produces realistic samples of earth models that when averaged produce high quality point estimates.</figcaption><p></p>
-</figure>
-</div>
+<section id="significancenovelty-100-words" class="level2">
+<h2 class="anchored" data-anchor-id="significancenovelty-100-words">Significance/Novelty (100 words)</h2>
+<p>To our knowledge, our study is the first numerical study to frame the problem of detectability of seismic CO2 leakage images in GCS reservoirs using a ML based network model. Additionally, the study proposes a dataset augmentation technique to improve the generalization of the network to scenarios with different acquisition settings, notably different number of receivers. The results suggest that our study has the potential to lower the cost associated with dataset collection, create networks applicable to general seismic imaging schemes and expedite the leakage detection process with an automatic workflow.</p>
+<!-- ::: {#fig-1 layout-ncol=1}
+
+![fig1](figs/fig1.png){width=100%}
+
+Figure 1
+
+:::
+
+::: {#fig-2 layout-ncol=1}
+
+![fig2](figs/fig2.png){width=100%}
+
+Figure 2
+
+::: -->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

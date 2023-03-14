@@ -8,8 +8,9 @@
 
 <meta name="author" content="Mathias Louboutin">
 <meta name="author" content="Rafael Orozco">
+<meta name="author" content="Ali Siahkoohi">
 <meta name="author" content="Felix J. Herrmann">
-<meta name="description" content="Learned super-shot/sim-source pair for one-shot imaging.">
+<meta name="description" content="Learned supershot/sim-source pair for one-shot imaging.">
 
 <title>Image2023 - Learned one-shot imaging</title>
 <style>
@@ -167,6 +168,11 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../DetectabilityWithVision/abstract.html" class="sidebar-item-text sidebar-link">Leakage Detectibility with Vision Classifier</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../zhang2023IMAGEsg/abstract.html" class="sidebar-item-text sidebar-link">3D survey design</a>
   </div>
 </li>
@@ -183,10 +189,10 @@ div.csl-indent {
   <ul>
   <li><a href="#image-2023-abstract" id="toc-image-2023-abstract" class="nav-link active" data-scroll-target="#image-2023-abstract">Image 2023 abstract</a>
   <ul class="collapse">
-  <li><a href="#objectives-and-scope-100-words" id="toc-objectives-and-scope-100-words" class="nav-link" data-scroll-target="#objectives-and-scope-100-words">OBJECTIVES AND SCOPE (100 words)</a></li>
-  <li><a href="#methods-procedures-process-250-words" id="toc-methods-procedures-process-250-words" class="nav-link" data-scroll-target="#methods-procedures-process-250-words">METHODS, PROCEDURES, PROCESS (250 words)</a></li>
-  <li><a href="#results-observations-conclusions-250-words" id="toc-results-observations-conclusions-250-words" class="nav-link" data-scroll-target="#results-observations-conclusions-250-words">RESULTS, OBSERVATIONS, CONCLUSIONS (250 words)</a></li>
-  <li><a href="#significancenovelty-100-words" id="toc-significancenovelty-100-words" class="nav-link" data-scroll-target="#significancenovelty-100-words">SIGNIFICANCE/NOVELTY (100 words)</a></li>
+  <li><a href="#objectives-and-scope-600-characters" id="toc-objectives-and-scope-600-characters" class="nav-link" data-scroll-target="#objectives-and-scope-600-characters">OBJECTIVES AND SCOPE (600 characters)</a></li>
+  <li><a href="#methods-procedures-process-1500-characters" id="toc-methods-procedures-process-1500-characters" class="nav-link" data-scroll-target="#methods-procedures-process-1500-characters">METHODS, PROCEDURES, PROCESS (1500 characters)</a></li>
+  <li><a href="#results-observations-conclusions-1500-characters" id="toc-results-observations-conclusions-1500-characters" class="nav-link" data-scroll-target="#results-observations-conclusions-1500-characters">RESULTS, OBSERVATIONS, CONCLUSIONS (1500 characters)</a></li>
+  <li><a href="#significancenovelty-600-characters" id="toc-significancenovelty-600-characters" class="nav-link" data-scroll-target="#significancenovelty-600-characters">SIGNIFICANCE/NOVELTY (600 characters)</a></li>
   </ul></li>
   <li><a href="#supplementary-material" id="toc-supplementary-material" class="nav-link" data-scroll-target="#supplementary-material">Supplementary material</a>
   <ul class="collapse">
@@ -220,13 +226,13 @@ div.csl-indent {
 
 <div>
   <div class="description">
-    <p>Learned super-shot/sim-source pair for one-shot imaging.</p>
+    <p>Learned supershot/sim-source pair for one-shot imaging.</p>
   </div>
 </div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Authors</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
   
     <div class="quarto-title-meta-contents">
     Mathias Louboutin 
@@ -242,6 +248,14 @@ div.csl-indent {
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Georgia Institute of Technology
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    Ali Siahkoohi 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Rice University
           </p>
       </div>
       <div class="quarto-title-meta-contents">
@@ -264,7 +278,7 @@ div.csl-indent {
 <div>
   <div class="abstract">
     <div class="abstract-title">Abstract</div>
-    <p>Learn simultenaous sources and super shot simulteanously</p>
+    <p>Learn sources and super shot simultaneously</p>
   </div>
 </div>
 
@@ -277,21 +291,21 @@ div.csl-indent {
 </div>
 <section id="image-2023-abstract" class="level1">
 <h1>Image 2023 abstract</h1>
-<section id="objectives-and-scope-100-words" class="level2">
-<h2 class="anchored" data-anchor-id="objectives-and-scope-100-words">OBJECTIVES AND SCOPE (100 words)</h2>
-<p>Seismic imaging’s main limiting factor is the scale of the involved dataset and the number of independent wave-equations solves required to migrate thousands of shots. To tackle this dimensionality curse, we introduce a learned framework that extends the conventional computationally reductive linear source superposition (e.g.&nbsp;via random simultaneous-source encoding) to a nonlinear learned source superposition and its corresponding learned super-shot. With this method, we can obtain an image of the subsurface at the cost of a one-shot migration by learning the most informative superposition of shots.</p>
+<section id="objectives-and-scope-600-characters" class="level2">
+<h2 class="anchored" data-anchor-id="objectives-and-scope-600-characters">OBJECTIVES AND SCOPE (600 characters)</h2>
+<p>Seismic imaging’s main limiting factor is the scale of the involved dataset and the number of independent wave-equation solves required to migrate thousands of shots. To tackle this dimensionality curse, we introduce a learned framework that extends the conventional computationally reductive linear source superposition (e.g., via random simultaneous-source encoding) to a nonlinear learned source superposition and its corresponding learned supershot. With this method, we can image the subsurface at the cost of a one-shot migration by learning the most informative superposition of shots.</p>
 </section>
-<section id="methods-procedures-process-250-words" class="level2">
-<h2 class="anchored" data-anchor-id="methods-procedures-process-250-words">METHODS, PROCEDURES, PROCESS (250 words)</h2>
-<p>Simultaneous-source imaging takes advantage of the linearity of the wave equation by adding different encoded (e.g., via random weights or time shifts) shot records together reducing the number of wave-equation solves and therefore the cost of imaging. Because of the linearity, the same linear transformation can be applied to both the sources and shot records to maintain source-shot record consistency. Here, we introduce a nonlinear superposition, and to compensate for the inability to apply the corresponding transform to the source, we simultaneously learn the nonlinear source and nonlinear data encodings with two neural networks. The first network takes the shot records as input and outputs learned supershots. The second network takes the nonlinearly encoded shot data as input and produces encoded simultaneous source. The network is trained in two ways. First, we train a supervised network minimizing the difference between imaged nonlinear supershots, migrated with nonlinearly simultaneous sources the true reflectivity, which requires access to the true model. Since in practice the true subsurface image is unknown, we also train a second unsupervised network minimizing the difference between the observed shot data and the migrated-demigrated supershots. In both cases, the networks learn how to encode source-shot data pairs that maximize subsurface information—i.e., the networks jointly learn how to encode and insonify to extract maximal information on the image.</p>
+<section id="methods-procedures-process-1500-characters" class="level2">
+<h2 class="anchored" data-anchor-id="methods-procedures-process-1500-characters">METHODS, PROCEDURES, PROCESS (1500 characters)</h2>
+<p>Simultaneous-source imaging takes advantage of the linearity of the wave equation by combining encoded (e.g., via random weights or time shifts) shot records together, reducing the number of wave-equation solves and therefore the cost of imaging. Because of the linearity, the same linear transformation can be applied to the sources to maintain source-shot consistency. To further reduce imaging costs, we propose using nonlinear encodings, and to compensate for the inability to apply the corresponding transform to the source, we simultaneously learn the nonlinear source and nonlinear data encodings with two neural networks. The first network takes shot records as input and outputs a learned supershot. The second network produces the associated nonlinearly encoded simultaneous source given this supershot. Lastly, we migrate the supershot using the nonlinear simultaneous source to obtain the seismic image. To jointly train these networks, we propose supervised and unsupervised formulations. In the supervised method, networks aim to minimize the difference between the predicted image and the true reflectivity, which requires access to the true model. To alleviate the need to have access to true models, our unsupervised method minimizes the difference between the observed shot data and the migrated-demigrated supershots. In both cases, the networks learn how to encode and insonify source-shot data pairs to extract maximal information on the image.</p>
 </section>
-<section id="results-observations-conclusions-250-words" class="level2">
-<h2 class="anchored" data-anchor-id="results-observations-conclusions-250-words">RESULTS, OBSERVATIONS, CONCLUSIONS (250 words)</h2>
+<section id="results-observations-conclusions-1500-characters" class="level2">
+<h2 class="anchored" data-anchor-id="results-observations-conclusions-1500-characters">RESULTS, OBSERVATIONS, CONCLUSIONS (1500 characters)</h2>
 <!-- I made it to here -->
-<p>Results for the learned supervised and unsurpervised one-shot imaging are included in Figures 1 and 2, respectively. For reference, the original shot data are included on the left, followed by the learned one-shot data and learned source. Corresponding images are plotten on the right. From the plots, the following observations can be made. First, one can see from Figure 1 that the learned one-shot reverse-time migration (RTM) result constitutes a major improvement compared to the image obtained with convensional random source encoding (juxtapose images in the first column on the left). Second, the one-shot imaging result is also better than convention sequential source RTM since it is closer to the true reflectitivity plotted at the top of the right column. This improvement in the image’s frequency content can be explained by the fact that in the supervided case the network are trained to broadband reflectivities. Third, for the unsupervised case we find that similar observations hold except that the improvement in image quality is slightly less. Because the encouded source distribution is learned, our method does not need information on the source signatures. <!--In Figure 1, we show results obtained with supervised training and an Figure 2 with unsupervised training. We juxtapose the learned nonlinear supershot and randomized simultenous source next to the true observed data and compare the obtained one-shot subsurface image with standard multi-source RTM and conventional random simultenous sources imaging. We see that the image is not only less noisy that the standard simultenous source image but also a better representation of the subsurface than the conventional RTM. This demonstrate that we can obtain a good image of the earth at the cost of a single source migration while avoiding the artifacts associated with conventional simultenous source imaging.--></p>
+<p>Results for the learned supervised and unsupervised one-shot imaging are included in Figures 1 and 2, respectively. For reference, the original shot data are included on the left, followed by the learned supershot data and learned source. Corresponding images are plotted on the right. We make the following observations from the results. First, Figure 1 shows that the learned one-shot reverse-time migration (RTM) result constitutes a major improvement compared to the image obtained with conventional random source encoding (juxtapose images in the first column on the left). Second, the one-shot imaging result is also better than convention sequential source RTM since it is closer to the true reflectivity plotted at the top of the right column. This improvement in the image’s frequency content can be explained by the fact that in the supervised case the networks are trained to broadband reflectivities. Third, for the unsupervised case we find that similar observations hold except that the improvement in image quality is slightly less. Because the encoded source distribution is learned, our method does not need information on the source signatures. <!--In Figure 1, we show results obtained with supervised training and an Figure 2 with unsupervised training. We juxtapose the learned nonlinear supershot and randomized simultenous source next to the true observed data and compare the obtained one-shot subsurface image with standard multi-source RTM and conventional random simultenous sources imaging. We see that the image is not only less noisy that the standard simultenous source image but also a better representation of the subsurface than the conventional RTM. This demonstrate that we can obtain a good image of the earth at the cost of a single source migration while avoiding the artifacts associated with conventional simultenous source imaging.--></p>
 </section>
-<section id="significancenovelty-100-words" class="level2">
-<h2 class="anchored" data-anchor-id="significancenovelty-100-words">SIGNIFICANCE/NOVELTY (100 words)</h2>
+<section id="significancenovelty-600-characters" class="level2">
+<h2 class="anchored" data-anchor-id="significancenovelty-600-characters">SIGNIFICANCE/NOVELTY (600 characters)</h2>
 <p>We introduced a first instance of a new one-shot nonlinear simultenaous source imaging paradigm. After incurring initial training costs, the method is capable of producing high-fidelity images at the cost of migrating single shot records, which entails a drastic reduction in migration costs. Training of the networks is also relatively cheap because it also involves single-source operations.</p>
 <!--Because only linear transforms can be applied to the source and data using the linearity of the wave-equation, we introduced a neural network capable of creating a pair of simultenous source and super-shot that is most informative for migration. This learned on-shot imaging framework allows to drastically reduce the cost of seismic imaging while requiring limited training resources since only single-shot are migrated.-->
 </section>
