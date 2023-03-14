@@ -6,12 +6,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Rafael Orozco">
+<meta name="author" content="Yijun Zhang">
+<meta name="author" content="Ziyi Yin">
+<meta name="author" content="Oscar Lopez">
+<meta name="author" content="Ali Siahkoohi">
 <meta name="author" content="Mathias Louboutin">
 <meta name="author" content="Felix J. Herrmann">
-<meta name="description" content="empty">
 
-<title>Image2023 - Amortized Bayesian Full Waveform Inversion and Experimental Design with Normalizing Flows</title>
+<title>Image2023 - 3D seismic survey design by maximizing the spectral gap</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,6 +67,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -99,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Amortized Bayesian Full Waveform Inversion and Experimental Design with Normalizing Flows</h1>
+      <h1 class="quarto-secondary-nav-title">3D seismic survey design by maximizing the spectral gap</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -137,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../BayesianFWI/abstract.html" class="sidebar-item-text sidebar-link active">Bayesian FWI</a>
+  <a href="../BayesianFWI/abstract.html" class="sidebar-item-text sidebar-link">Bayesian FWI</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -147,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../zhang2023IMAGEsg/abstract.html" class="sidebar-item-text sidebar-link">3D survey design</a>
+  <a href="../zhang2023IMAGEsg/abstract.html" class="sidebar-item-text sidebar-link active">3D survey design</a>
   </div>
 </li>
       </ul>
@@ -161,13 +164,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#image-2023-abstract" id="toc-image-2023-abstract" class="nav-link active" data-scroll-target="#image-2023-abstract">Image 2023 abstract</a>
-  <ul class="collapse">
-  <li><a href="#objectives-and-scope-100-words" id="toc-objectives-and-scope-100-words" class="nav-link" data-scroll-target="#objectives-and-scope-100-words">OBJECTIVES AND SCOPE (100 words)</a></li>
-  <li><a href="#methods-procedures-process-250-words" id="toc-methods-procedures-process-250-words" class="nav-link" data-scroll-target="#methods-procedures-process-250-words">METHODS, PROCEDURES, PROCESS (250 words)</a></li>
-  <li><a href="#results-observations-conclusions-250-words" id="toc-results-observations-conclusions-250-words" class="nav-link" data-scroll-target="#results-observations-conclusions-250-words">RESULTS, OBSERVATIONS, CONCLUSIONS (250 words)</a></li>
-  <li><a href="#significancenovelty-100-words" id="toc-significancenovelty-100-words" class="nav-link" data-scroll-target="#significancenovelty-100-words">SIGNIFICANCE/NOVELTY (100 words)</a></li>
-  </ul></li>
+  <li><a href="#objectivesscope-100-words" id="toc-objectivesscope-100-words" class="nav-link active" data-scroll-target="#objectivesscope-100-words">Objectives/Scope (100 words)</a></li>
+  <li><a href="#methods-procedures-process-250-words" id="toc-methods-procedures-process-250-words" class="nav-link" data-scroll-target="#methods-procedures-process-250-words">Methods, Procedures, Process (250 words)</a></li>
+  <li><a href="#results-observations-conclusions-250-words" id="toc-results-observations-conclusions-250-words" class="nav-link" data-scroll-target="#results-observations-conclusions-250-words">Results, Observations, Conclusions (250 words)</a></li>
+  <li><a href="#significancenovelty-100-words" id="toc-significancenovelty-100-words" class="nav-link" data-scroll-target="#significancenovelty-100-words">Significance/Novelty (100 words)</a></li>
   </ul>
 </nav>
     </div>
@@ -176,25 +176,44 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Amortized Bayesian Full Waveform Inversion and Experimental Design with Normalizing Flows</h1>
+<h1 class="title d-none d-lg-block">3D seismic survey design by maximizing the spectral gap</h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>empty</p>
-  </div>
-</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Authors</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
   
     <div class="quarto-title-meta-contents">
-    Rafael Orozco 
+    Yijun Zhang 
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Georgia Institute of Technology
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    Ziyi Yin 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Georgia Institute of Technology
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    Oscar Lopez 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Florida Atlantic University
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    Ali Siahkoohi 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Rice University
           </p>
       </div>
       <div class="quarto-title-meta-contents">
@@ -222,39 +241,57 @@ ul.task-list li input[type="checkbox"] {
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="abstract-title">Abstract</div>
-    <p>empty</p>
-  </div>
-</div>
 
 </header>
 
-<section id="image-2023-abstract" class="level1">
-<h1>Image 2023 abstract</h1>
-<section id="objectives-and-scope-100-words" class="level2">
-<h2 class="anchored" data-anchor-id="objectives-and-scope-100-words">OBJECTIVES AND SCOPE (100 words)</h2>
-<p>Probabistic approaches to Full-Waveform Inversion (FWI), such as Bayesian ones, traditionally require expensive computations that involve multiple wave-equation solves per iteration. To reduce this computational burden at test time, we propose to amortize the computational cost with an offline training. After training, our method aims to efficiently generate probabilistic FWI solutions with uncertainty information. This objective is achieved by exploiting the ability of deep generative neural networks (i.e.&nbsp;Normalizing Flows) to learn (conditional) distributions, in this case, the Bayesian posterior distribution. The uncertainty information in the posterior is used during offline training to find the optimal experimental design with respect to receiver placement.</p>
+<section id="objectivesscope-100-words" class="level2">
+<h2 class="anchored" data-anchor-id="objectivesscope-100-words">Objectives/Scope (100 words)</h2>
+<p>The huge cost of 3D seismic acquisition calls for methods to reduce the number of receivers in the acquisition by designing optimal receiver sampling masks. Recent studies on 2D seismic show that maximizing the spectral gap of the subsampling mask leads to better wavefield reconstruction results according to expander graph theory. We enrich the current study by proposing a simulation-free method to automatically generate optimal 3D seismic acquisition by maximizing the spectral gap of the subsampling mask via simulated annealing algorithm. Numerical experiments confirm the success of the proposed acquisition design method over jittered sampling scheme.</p>
 </section>
 <section id="methods-procedures-process-250-words" class="level2">
-<h2 class="anchored" data-anchor-id="methods-procedures-process-250-words">METHODS, PROCEDURES, PROCESS (250 words)</h2>
-<p>Normalizing flows (NFs) are generative networks that can learn to sample from conditional distributions, i.e.&nbsp;our desired Bayesian posterior p(x|y) where x are earth models are y is seismic data. To train NFs, we require training pairs of these earth models and seismic data. We use pairs from the open source dataset OPENFWI. The earth models are 64x64 size and the seismic data is simulated with 5 source experiments with 15Hz frequency and 15dB noise.</p>
-<p>The NFs training objective (illustrated in Figure 1) has been shown to be equivalent to maximizing the information gain used in Bayesian experimental design. Thus, we propose to jointly optimize a mask M that occludes receivers of the seismic data (M.*y) during NF training. Our optimization jointly optimizes for NF parameters and optimal mask M values in a single objective (Equation 1 in Figure 1).</p>
-<p>We use the CurveFault_B dataset from OPENFWI that contains 55k pairs. We use a 90/5/5 split for training, validation, and testing.</p>
+<h2 class="anchored" data-anchor-id="methods-procedures-process-250-words">Methods, Procedures, Process (250 words)</h2>
+<p>The spectral gap ratio is the ratio of the first and second singular values of a binary subsampling mask. It is a cheap-to-compute measure to predict wavefield reconstruction quality based on the binary mask. Motivated by recent success on 2D seismic survey design methods driven by spectral gap ratio minimization, we consider the 3D seismic survey design where sources are missing and receivers are fully sampled. We propose a 3D seismic survey design method via minimizing the spectral gap ratio of 3D source sampling mask.</p>
+<p>Because 3D wavefield reconstruction based on low-rank matrix completion is shown to be the best performant in the non-canonical organization domain, we aim to minimize the spectral gap ratio of subsampling mask in this domain. Fortunately, when receivers are fully sampled, each subsampled source location becomes a fully sampled square in this mask. As a result, the spectral gap ratio in the non-canonical domain is exactly the same as the spectral gap ratio in the common receiver domain (see Figure 1). Therefore, we implement the simulated annealing algorithm to iteratively find source subsampling masks that minimize the spectral gap ratio in the common receiver domain. The main computational cost of this algorithm is computing the first two singular values of the source subsampling mask, which is negligible compared to approaches that require wave simulations. The resulting optimal mask with the lowest spectral gap ratio indicates the source sampling locations that favor 3D wavefield reconstruction via matrix completion in non-cononical organization domain.</p>
 </section>
 <section id="results-observations-conclusions-250-words" class="level2">
-<h2 class="anchored" data-anchor-id="results-observations-conclusions-250-words">RESULTS, OBSERVATIONS, CONCLUSIONS (250 words)</h2>
-<p>After training, our method generates posterior samples at the cost of one neural network pass (10ms on our GPU). Seen in Figure 2, the posterior samples are realistic earth models that could plausibly match the seismic data. The small variations between the models are due to the FWI problem being ill-posed and because of noise in the indirect observations at the subsurface. To study these variations we take the sample. <!-- I do not understand this last sentence --></p>
-<p>To make a single high-quality solution, we take the mean of the posterior samples. The posterior mean shows high-quality metrics that surpass previous benchmarks on the OPENFWI dataset while our method also produces Bayesian uncertainty and the benchmark methods do not.</p>
-<p>The optimal experimental design found by our method (filled in circles in Figure 2 represent optimal receiver locations) matches prior expectations that the most important information is contained in the short offsets. This result was independently discovered by the Bayesian optimization routine.</p>
+<h2 class="anchored" data-anchor-id="results-observations-conclusions-250-words">Results, Observations, Conclusions (250 words)</h2>
+<p>To illustrate the efficacy of our method via a numerical experiment on a simulated 3D marine dataset over the compass model. The data volume consists of <span class="math inline">\(501 \times 100 \times 100 \times 41 \times 41\)</span> entries—i.e., <span class="math inline">\(n_t \times n_{rx} \times n_{ry} \times n_{sx} \times n_{sy}\)</span> along the time, receiver <span class="math inline">\(x\)</span>, receiver <span class="math inline">\(y\)</span>, source <span class="math inline">\(x\)</span>, and source <span class="math inline">\(y\)</span> directions. The distance between the adjacent sources and receivers are 150m and 25m, respectively, with time interval 0.01s. By removing 90% of receivers using jittered subsampling, we obtain a binary matrix with the spectral gap ratio 0.507 in the non-canonical domain. After applying simulated annealing algorithm with 80000 iterations, the spectral gap ratio of mask effectively decreases to 0.328. To validate the efficacy of our acquisition design method, we perform data reconstruction on a 16.8Hz frequency slice via weighted matrix completion for the two subsampled datasets with jittered subsampling mask and the proposed mask, with results shown in Figure 2. The reconstruction signal-to-noise ratio from the observed data at proposed source locations is 12.27 dB, which is about 1.4 dB higher than the reconstruction signal-to-noise ratio from the observed data at jittered sampled source locations as 10.88 dB. This confirms that the proposed optimized sources sampling locations result in a superior seismic survey that leads to better wavefield reconstruction performance.</p>
 </section>
 <section id="significancenovelty-100-words" class="level2">
-<h2 class="anchored" data-anchor-id="significancenovelty-100-words">SIGNIFICANCE/NOVELTY (100 words)</h2>
-<p>To our knowledge, this is the first demonstration of conditional normalizing flows on amortized FWI with uncertainty quantification. We also showed a practical application of the uncertainty towards experimental design. While the open source dataset has small models, NFs are memory efficient due to their intrinsic invertibility so are set to scale to realistic sized problems.</p>
+<h2 class="anchored" data-anchor-id="significancenovelty-100-words">Significance/Novelty (100 words)</h2>
+<p>This is the first numerical case study that applies spectral gap ratio minimization techniques for seismic acquisition design to 3D wavefield reconstruction. Rather than requiring costly wave simulations, the proposed method for optimizing binary masks is computationally inexpensive. Experiments demonstrate that the proposed method generates an improved 3D seismic survey suitable for 3D wavefield reconstruction.</p>
+<div id="fig-1" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">fig1</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Figure 1</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-2" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/fig2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">fig2</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Figure 2</figcaption><p></p>
+</figure>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
