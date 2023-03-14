@@ -11,6 +11,8 @@ List of abstracts:
    
 - [Learned one-shot imaging](OneShot/abstract.qmd) Learned non-linear simultenous source and corresponding supershot for seismic imaging.
 
+- [Sequential Bayesian Inference](SequentialBayes/abstract.qmd)  Plume Monitoring with Learned Sequential Bayesian Inference
+
 - [Coupled physics inversion](yin2023IMAGEend2end/abstract.qmd) Coupled physics inversion for geological carbon storage monitoring.
 
 - [Bayesian FWI](BayesianFWI/abstract.qmd) Amortized Bayesian Full Waveform Inversion and Experimental Design with Normalizing Flows
