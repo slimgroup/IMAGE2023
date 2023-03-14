@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/zhang2023IMAGEsg/abstract.html</loc>
-    <lastmod>2023-03-14T18:09:36.268Z</lastmod>
-  </url>
-  <url>
     <loc>https://github.com/slimgroup/IMAGE2023/OneShot/abstract.html</loc>
-    <lastmod>2023-03-14T18:09:38.676Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/BayesianKrig/abstract.html</loc>
-    <lastmod>2023-03-14T18:09:39.152Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/yin2023IMAGEend2end/abstract.html</loc>
-    <lastmod>2023-03-14T18:09:39.604Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/BayesianFWI/abstract.html</loc>
-    <lastmod>2023-03-14T18:09:40.072Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/index.html</loc>
-    <lastmod>2023-03-14T18:09:40.460Z</lastmod>
+    <lastmod>2023-03-14T18:14:00.290Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/slimgroup/IMAGE2023/DetectabilityWithVision/abstract.html</loc>
-    <lastmod>2023-03-14T18:09:40.876Z</lastmod>
+    <lastmod>2023-03-14T18:14:02.394Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/slimgroup/IMAGE2023/BayesianKrig/abstract.html</loc>
+    <lastmod>2023-03-14T18:14:02.838Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/slimgroup/IMAGE2023/BayesianFWI/abstract.html</loc>
+    <lastmod>2023-03-14T18:14:03.266Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/slimgroup/IMAGE2023/yin2023IMAGEend2end/abstract.html</loc>
+    <lastmod>2023-03-14T18:14:03.654Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/slimgroup/IMAGE2023/zhang2023IMAGEsg/abstract.html</loc>
+    <lastmod>2023-03-14T18:14:04.038Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/slimgroup/IMAGE2023/index.html</loc>
+    <lastmod>2023-03-14T18:14:04.374Z</lastmod>
   </url>
 </urlset>
