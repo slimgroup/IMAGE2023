@@ -35,7 +35,7 @@ These results show that dataset augmentation can indeed enhance the generalizati
 
 ## Significance/Novelty (100 words, 600)
 
-To our knowledge, this is a first study how to make neural classifiers for CO~2~ leakage detection more robust with respect to variations in receiver density. To achieve this, we propose a simple dataset augmentation technique that improves generalization of the network to changes in the acquisition geometry. The results suggest that our study has the potential to lower dataset collection costs while training classifiers capable of automatic leakage detection from time-lapse difference images computed from non-replicated and varying density acquisition geometries.
+To our knowledge, this is a first study how to make neural classifiers for CO~2~ leakage detection more robust with respect to variations in receiver density. To achieve this, we propose a simple dataset augmentation technique that improves generalization of the network to changes in the acquisition geometry. The results suggest that our study has the potential to lower dataset collection costs while training classifiers capable of automatic leakage detection from time-lapse difference images computed from non-replicated surveys with varying receiver density.
 
 
 
