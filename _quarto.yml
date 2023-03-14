@@ -27,6 +27,10 @@ website:
           file: DetectabilityWithVision/abstract.qmd
         - text: "3D survey design"
           file: zhang2023IMAGEsg/abstract.qmd
+  page-footer:
+    center:
+      - file: license.qmd
+        text: "Copyright (c) SLIM @ Georgia Insitute of Technology"
 
 format:
   html:
@@ -35,7 +39,6 @@ format:
       dark: darkly
     css: styles.css
     toc: true
-
 
 execute:
   freeze: auto
