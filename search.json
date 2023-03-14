@@ -242,6 +242,6 @@
     "href": "DetectabilityWithVision/abstract.html#significancenovelty-100-words-600",
     "title": "Analysis of CO2 Leakage Detectability via Vision Classifier",
     "section": "Significance/Novelty (100 words, 600)",
-    "text": "Significance/Novelty (100 words, 600)\nTo our knowledge, this is a first study how to make neural classifiers for CO2 leakage detection more robust with respect to variations in receiver density. To achieve this, we propose a simple dataset augmentation technique that improves generalization of the network to changes in the acquisition geometry. The results suggest that our study has the potential to lower dataset collection costs while training classifiers capable of automatic leakage detection from time-lapse difference images computed from non-replicated and varying density acquisition geometries."
+    "text": "Significance/Novelty (100 words, 600)\nTo our knowledge, this is a first study how to make neural classifiers for CO2 leakage detection more robust with respect to variations in receiver density. To achieve this, we propose a simple dataset augmentation technique that improves generalization of the network to changes in the acquisition geometry. The results suggest that our study has the potential to lower dataset collection costs while training classifiers capable of automatic leakage detection from time-lapse difference images computed from non-replicated surveys with varying receiver density."
   }
 ]
