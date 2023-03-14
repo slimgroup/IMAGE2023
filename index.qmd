@@ -17,4 +17,13 @@ List of abstracts:
 
 - [Bayesian Kriging](BayesianFWI/abstract.qmd) Generative Seismic Kriging with Normalizing Flows
 
+<<<<<<< HEAD
 - [Detectability with Vision Classification](DetectabilityWithVision/abstract.qmd) Analysis of CO2 Leakage Detectability via Vision Classifier
+=======
+- [3D survey design](zhang2023IMAGEsg/abstract.qmd) 3D seismic survey design by maximizing the spectral gap
+
+These abstracts are released under the Creative Commons License type [BY]. Copyrights (c) [SLIM Group], Georgia Institute of Technology
+
+[BY]:https://creativecommons.org/licenses/by/4.0/
+[SLIM Group]:https://slim.gatech.edu
+>>>>>>> 9ac380fb942bede2bd0d35a185b7bdbcbdd2490c
