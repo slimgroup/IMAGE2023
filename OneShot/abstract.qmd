@@ -48,38 +48,48 @@ We introduced the first instance of learned nonlinear simultaneous-source encodi
 
 <!-- We introduced a first instance of a new one-shot nonlinear simultaneous source imaging paradigm. After incurring initial training costs, the method is capable of producing high-fidelity images at the cost of migrating single shot records, which entails a drastic reduction in migration costs. Training of the networks is also relatively cheap because it also involves single-source operations.  -->
 
-<!--Because only linear transforms can be applied to the source and data using the linearity of the wave-equation, we introduced a neural network capable of creating a pair of simultenous source and super-shot that is most informative for migration. This learned on-shot imaging framework allows to drastically reduce the cost of seismic imaging while requiring limited training resources since only single-shot are migrated.-->
+<!--Because only linear transforms can be applied to the source and data using the linearity of the wave-equation, we introduced a neural network capable of creating a pair of simultenous source and supershot that is most informative for migration. This learned on-shot imaging framework allows to drastically reduce the cost of seismic imaging while requiring limited training resources since only single-shot are migrated.-->
 
 # Supplementary material
 
 ## Introduction
 
-## Methodology
-
-We now introduce the formulation of aour learned simultenous source-data pair for seismic imaging. We derive two training problem where the first onbe rely on the knowledge of the true perturbation, while the second one solely rely on the observed data. Fundamentally, we are introducing a formulation that learns the most informative single super-shot and correspoinding source given either a subsurface refelctivity model or the surface recorded data.
-
-### Summary networks and probabilistic symmetry
 
 [@deans2002maximally] -Summary statistics reduce the size of incoming datasets while maintainting the same posterior distribution p(x\|y) = p(x\|summary) [@radev2020bayesflow] -Summary networks learn to reduce the size of incoming datasets and maximize informativeness of the summarized data due to joint learning of summary network and posterior learning network. -hand waves an argument that jointly trained networks will maximize the mutual information between h(y) and x [@muller2021learning] -Goes in to further detail and rigoursly proves that jointly trained networks will maximize the mutual information between h(y) and x [@bloem2020probabilistic] suggests to use learned layers that are invariant under a certain transformation. This transformation is described by the probabilistic assumption on your data.
 
-Example paragraph: This work takes inspiration from the concept of a summary network [@radev2020bayesflow] these are networks that compress observables $d_{obs}$ while maximining information useful for inference of un-observables $x$. To guide the architectural design of a summary network [@bloem2020probabilistic] suggests to use learned layers that respect the probabalistic symmetry of the data. Practically, this is accomplished by making the layers be invariant under a certain transformation. For the case active source seismic imaging, i.i.d sampling entails the assumption that the order of sources does not matter. This assumption is implicit in the sum structure of RTM/gradient calculations. Therefore it is invariant with respect to permutation transformation. Our approach is most similar to this case, since we use a UNet with many input channels that output a single channel. In our testing, having a separate network for each dataset did not perform better thatn simply inputing each dataset along a channel.
+
+
+## Methodology
+
+Here we present our formulation for a learned simultaneous source-data pair for seismic imaging. We propose two training formulations, one that relies on knowledge of the true perturbation (supervised), and the other that solely relies on the observed data (unsupervised). Fundamentally, we are introducing a formulation that learns a single supershot and corresponding source that maximally informs seismic imaging. Next section describes the design of the deep networks that enable this goal.
+
+<!-- We now introduce the formulation of our learned simultaneous source-data pair for seismic imaging. We derive two training formulations where the first one relies on the knowledge of the true perturbation (supervised), while the second one solely rely on the observed data (unsupervised). Fundamentally, we are introducing a formulation that learns the most informative single supershot and corresponding source given either a subsurface reflectivity model or the surface recorded data. -->
+
+### Summary networks
+
+To handle the high-dimensionality of seismic data and, we use summary networks [@radev2020bayesflow] that are designed to exploit the intrinsic low-dimensional structure [ref needed to curvelet etc] of seismic data. These deep networks compress the observed seismic data $\mathbf{d}$ while maximally preserving the information useful for inferring the unknown seismic image $\delta \mathbf{m}$. A major aspect of the architectural design of a summary networks are exploiting the invariances in data, e.g., invariance to permutation [@bloem2020probabilistic]. This is achieved by choosing neural architectures with functional forms that explicitly respect the intrinsic invariances in data. For example in the case of seismic imaging, the order of shot records has no effect on the final seismic image. To make this invariance explicit in the design of our network, we sum the shot records and feed it to a deep convolutional neural network.
+
+
+<!-- Example paragraph: This work takes inspiration from the concept of a summary network [@radev2020bayesflow] these are networks that compress observables $d_{obs}$ while maximining information useful for inference of un-observables $x$. To guide the architectural design of a summary network [@bloem2020probabilistic] suggests to use learned layers that respect the symmetry of the data. Practically, this is accomplished by making the layers be invariant under a certain transformation. For the case active source seismic imaging, i.i.d sampling entails the assumption that the order of sources does not matter. This assumption is implicit in the sum structure of RTM/gradient calculations. Therefore it is invariant with respect to permutation transformation. Our approach is most similar to this case, since we use a UNet with many input channels that output a single channel. In our testing, having a separate network for each dataset did not perform better thatn simply inputing each dataset along a channel. -->
 
 ### Supervised
 
-THe simplest formulation aims to learn the super-shot and simultenaous source that best inform the model perturbation, given the surfac recorded data. Mathematically, it means that we are trying to fit the true mode lperturbation with two networks that learn a single super-shot and simultenous source for the Jacobian from the indicudual field recorded shot records. Mathematically, the learning can be written as: 
+The simplest formulation aims to learn the supershot and simultaneous source that best inform the model perturbation, given the surface recorded data. Mathematically, it means that we are trying to fit the true model  perturbation with two networks that learn a single supershot and simultaneous source for the Jacobian from the individual field recorded shot records. Mathematically, the learning can be written as: 
 $$
-\min_{\theta, \phi} \ \mathbb{E}\left[ J(\mathcal{H}_{\phi}(\mathcal{G}_{\theta}(d_{\text{obs}}))^\top \mathcal{G}_{\theta}(d_{\text{obs}}) - \delta m \right] 
+\min_{\boldsymbol{\theta}, \boldsymbol{\phi}} \ \mathbb{E}_{(\mathbf{d}, \delta \mathbf{m}) \sim p(\mathbf{d}, \delta \mathbf{m})} \left[ \frac{1}{2} \Big\| \mathbf{J}\big(\mathcal{H}_{\phi} \circ \mathcal{G}_{\theta} \left(\mathbf{d}\right)\big)^\top \mathcal{G}_{\theta}(\mathbf{d}) - \delta \mathbf{m} \Big\|_2^2 \right],
 $$ {#eq-supervised}
 
-where $\mathcal{H}_{\phi}, \mathcal{G}_{\theta}$ are the two networks mapping the individual shot records into a single super-shot (the learned simultenous-source is learned at the receiver locations), $J$ is the conventionnal adjoint Born imaging operator, $d_{\text{obs}}$ is the observed data and $\delta m$ is the model perturbation. We note that to compute an update on the two networks simultenaously, the gradient of the Jacobian with respect to its source is necessary. This derivative is however trivial to obtain with [JUDI.jl](https://github.com/slimgroup/JUDI.jl) thanks to its high-level linear algebra abstraction and integration with automatic differentiation framework in Julia.
+where $\mathcal{G}_{\theta}$ is the summary network that maps shot records to a learned, nonlinearly mixed supershot at the receiver locations, $\mathcal{H}_{\phi}$ is the neural network responsible for estimating the associated nonlinearly encoded simultaneous source, and $\circ$ is the composition operator. The objective function matches the predicted seismic image, obtained by migrating the supershot $\mathcal{G}_{\theta}(\mathbf{d})$ via the adjoint Born imaging operator,  $\mathbf{J}$, to the ground truth seismic image $\delta \mathbf{m}$. We note that to evaluate the gradient of the objective function with jointly respect to $\boldsymbol{\theta}$ and $\boldsymbol{\phi}$, the gradient of the Jacobian with respect to its input (nonlinearly encoded source) is required. This derivative is, however, trivial to obtain with [JUDI.jl](https://github.com/slimgroup/JUDI.jl) thanks to its high-level linear algebra abstraction and integration with automatic differentiation framework in Julia.
 
 ### Unsupervised
 
+To extend our approach to more realistic settings, we propose an unsupervised learning one-shot imaging approach that only requires a dataset of seismic shot records from several surveys. We formulate the problem as a minimization of the following objective function:
+
 $$
-\min_{\theta, \phi} \ \mathbb{E}\left[ \tilde{J}_{\text{rtm}} J(\mathcal{H}_{\phi}(\mathcal{G}_{\theta}(d_{\text{obs}}))^\top \mathcal{G}_{\theta}(d_{\text{obs}}) - \tilde{d}_{\text{obs}} \right ]
+\min_{\boldsymbol{\theta}, \boldsymbol{\phi}} \ \mathbb{E}_{\mathbf{d} \sim p(\mathbf{d})} \left[ \frac{1}{2} \Big\|  \tilde{\mathbf{J}} \mathbf{J}\big(\mathcal{H}_{\phi} \circ \mathcal{G}_{\theta}(\mathbf{d})\big)^\top \mathcal{G}_{\theta}(\mathbf{d}) - \tilde{\mathbf{d}} \Big\|_2^2  \right ],
 $$ {#eq-unsupervised}
 
-Where $\tilde{d}_{\text{obs}} = \sum_{i=1}^{n_src} w_i d_{\text{obs},i}$ is a random super shot with $w_i := \mathcal{N}(0, 1)$ and $\tilde{J}$ is the corresponding simultenous source born modeling operator. While this formulation ivolves an additional demigration (and therfore and additional migration to compute hte gradient), we do not require any knowledge of the true model perturbation but only the data. We could therefore in theory use this formulation for a wide range of datasets at once to generalize to any survey.
+where $\tilde{\mathbf{d}} = \sum_{i=1}^{n_{\text{src}}} w_i \mathbf{d}_{i}$ is a random super shot with $w_i := \mathcal{N}(0, 1)$ and $\tilde{\mathbf{J}}$ is the corresponding simultaneous source born modeling operator. While this formulation ivolves an additional demigration (and therfore and additional migration to compute hte gradient), we do not require any knowledge of the true model perturbation but only the data. We could therefore in theory use this formulation for a wide range of datasets at once to generalize to any survey.
 
 ## Synthetic case studies
 
@@ -92,7 +102,7 @@ We trained the networks, both in the supervised and unsupervised case, for 15 ep
 
 ![RTMs](figures/sup-im.png){width="50%"}
 
-Learned super-shot and simultenous sources on a testing slice. We show a shot record and the moirated image with a random supershot and with sequential shots for reference.
+Learned supershot and simultenous sources on a testing slice. We show a shot record and the moirated image with a random supershot and with sequential shots for reference.
 :::
 
 ::: {#fig-unsup layout-ncol="2"}
@@ -100,7 +110,7 @@ Learned super-shot and simultenous sources on a testing slice. We show a shot re
 
 ![RTMs](figures/unsup-im.png){width="50%"}
 
-Learned super-shot and simultenous sources on a testing slice. We show a shot record and the moirated image with a random supershot and with sequential shots for reference.
+Learned supershot and simultenous sources on a testing slice. We show a shot record and the moirated image with a random supershot and with sequential shots for reference.
 :::
 
 ### Code availability
@@ -109,7 +119,7 @@ Results presented here can be reproduced with the software and examples in [OneS
 
 ## Discussion and conclusions
 
-We introduced data-domain learning method that provides high accuracy imagies of the subsurface through one-shot imaging. We trained a network that learns the simultenous source and super-shot that most inform the subsurface from the field recorded data. We showed that we obtain high accuracy images of the subsurface that contain broader frequency range than standard imaging and does not require prior knowledge of the source. Additionnally, the overall computationnal cost of training does not exceed the traditionnal cost of imaging.
+We introduced data-domain learning method that provides high accuracy imagies of the subsurface through one-shot imaging. We trained a network that learns the simultenous source and supershot that most inform the subsurface from the field recorded data. We showed that we obtain high accuracy images of the subsurface that contain broader frequency range than standard imaging and does not require prior knowledge of the source. Additionnally, the overall computationnal cost of training does not exceed the traditionnal cost of imaging.
 
 ## Acknowledgement
 
