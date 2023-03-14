@@ -44,7 +44,7 @@ We apply the proposed one-shot imaging approach to a previously unseen shot data
 
 ## SIGNIFICANCE/NOVELTY (600 characters)
 
-We introduced the first instance of learned nonlinear simultaneous-source encoding, enabling one-shot simultaneous-source seismic imaging. After incurring initial training costs, the method is capable of producing high-fidelity images at the cost of a single migration, which entails a drastic reduction in migration costs. We introduced supervised and unsupervised training formulations, the latter of which does not require knowledge of true subsurface images and only relies on a dataset of shot records from several seismic surveys, making it applicable in realistic settings.
+We introduced the first instance of learned nonlinear simultaneous-source encoding, enabling one-shot simultaneous-source seismic imaging. After incurring initial training costs, the method is capable of producing high-fidelity images at the cost of migrating a single shot record, which entails a drastic reduction in migration costs. We introduced supervised and unsupervised training formulations, the latter of which does not require knowledge of true subsurface images and only relies on a dataset of shot records from several seismic surveys, making it applicable in realistic settings.
 
 <!-- We introduced a first instance of a new one-shot nonlinear simultaneous source imaging paradigm. After incurring initial training costs, the method is capable of producing high-fidelity images at the cost of migrating single shot records, which entails a drastic reduction in migration costs. Training of the networks is also relatively cheap because it also involves single-source operations.  -->
 
