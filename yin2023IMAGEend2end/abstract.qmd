@@ -17,7 +17,7 @@ author:
 
 ## Objectives/Scope (100 words)
 
-Understanding CO~2~ plume behavior is key to the success of geological carbon storage projects. While two-phase flow equations provide a good model to make predictions on future CO~2~ plume behavior, these equations rely on having access to the spatial permeability distribution. Unfortunately, accurate information on the permeability distribution is unavailable, which greatly jeopardizes our ability to predict CO~2~ plume behavior. To overcome this problem, we estimate the permeability from time-lapse seismic data via a coupled inversion methodology that is capable of producing CO~2~ plume predictions that improve as more seismic monitoring data becomes available. 
+Understanding CO~2~ plume behavior is key to the success of geological carbon storage projects. While two-phase flow equations provide a good model to make predictions on future CO~2~ plume behavior, these equations rely on having access to the spatial permeability distribution. Unfortunately, accurate information on the permeability distribution is unavailable, which greatly jeopardizes our ability to predict CO~2~ plume behavior. To overcome this problem, we estimate the permeability from time-lapse seismic data via a coupled inversion methodology that is capable of producing CO~2~ plume predictions that improve as more seismic monitoring data becomes available.
 
 <!--Before a geological carbon storage project, reservoir engineers need permeability model(s) to predict CO~2~ dynamics in the Earth subsurface via fluid-flow simulation. However, the permeability model is never known accurate enough beforehand, which can lead to wrong CO~2~ plume predictions. Through the coupled physics inversion framework, we show that time-lapse seismic data can be used to invert for the permeability model. This results in better CO~2~ plume recovery for the past vintages, and more accurate predictions for future snapshots. The accurate predictions help practitioners to estimate storage capacity of the reservoir, and prevent risks such as CO~2~ leakage through fractures.-->
 
@@ -39,20 +39,16 @@ We start the inversion with homogenous permeability values in the reservoir. Aft
 
 ## Significance/Novelty (100 words)
 
-To our knowledge, this is a first numerical study where a multiphysics inversion framework is applied to a realistic geological carbon storage site. Not only are the fluid-flow simulations based on a proxy model for the permeability derived from real imaged seismic and well data but the simulations, including sensitivity calculations, are carried out with a state-of-the art solvers ([JutulDarcy.jl]), which accounts for capillary effects and residual trapping (purple colors). <!--We convert the wavespeed model based on well logs and imaged seismic to a finely discretized permeability model with realistic heterogenous layers. We conduct the fluid-flow simulation following a professional solver based on JutulDarcy.jl, which correctly models near realistic two-phase compressible flows with capillary pressure effects.--> From this example, we observe that the proposed inversion methodology can be applied to geological carbon storage projects to estimate and forecast CO~2~ plume evolution.
+To our knowledge, this is a first numerical study where a multiphysics inversion framework is applied to a realistic geological carbon storage site. Not only are the fluid-flow simulations based on a proxy model for the permeability derived from real imaged seismic and well data but the simulations, including sensitivity calculations, are carried out with a state-of-the art solvers (\[JutulDarcy.jl\]), which accounts for capillary effects and residual trapping (purple colors). <!--We convert the wavespeed model based on well logs and imaged seismic to a finely discretized permeability model with realistic heterogenous layers. We conduct the fluid-flow simulation following a professional solver based on JutulDarcy.jl, which correctly models near realistic two-phase compressible flows with capillary pressure effects.--> From this example, we observe that the proposed inversion methodology can be applied to geological carbon storage projects to estimate and forecast CO~2~ plume evolution.
 
-::: {#fig-1 layout-ncol=1}
-
-![fig1](figs/fig1.png){width=100%}
+::: {#fig-1 layout-ncol="1"}
+![fig1](figs/fig1.png){width="100%"}
 
 Figure 1
-
 :::
 
-::: {#fig-2 layout-ncol=1}
-
-![fig2](figs/fig2.png){width=100%}
+::: {#fig-2 layout-ncol="1"}
+![fig2](figs/fig2.png){width="100%"}
 
 Figure 2
-
 :::
