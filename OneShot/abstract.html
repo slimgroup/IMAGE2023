@@ -111,6 +111,13 @@ div.csl-indent {
  <span class="menu-text">Home</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/slimgroup"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
               </div>
@@ -208,15 +215,13 @@ div.csl-indent {
   <li><a href="#supervised" id="toc-supervised" class="nav-link" data-scroll-target="#supervised">Supervised</a></li>
   <li><a href="#unsupervised" id="toc-unsupervised" class="nav-link" data-scroll-target="#unsupervised">Unsupervised</a></li>
   </ul></li>
-  <li><a href="#synthetic-case-studies" id="toc-synthetic-case-studies" class="nav-link" data-scroll-target="#synthetic-case-studies">Synthetic case studies</a>
-  <ul class="collapse">
-  <li><a href="#code-availability" id="toc-code-availability" class="nav-link" data-scroll-target="#code-availability">Code availability</a></li>
-  </ul></li>
-  <li><a href="#discussion-and-conclusions" id="toc-discussion-and-conclusions" class="nav-link" data-scroll-target="#discussion-and-conclusions">Discussion and conclusions</a></li>
-  <li><a href="#acknowledgement" id="toc-acknowledgement" class="nav-link" data-scroll-target="#acknowledgement">Acknowledgement</a>
+  <li><a href="#synthetic-case-studies" id="toc-synthetic-case-studies" class="nav-link" data-scroll-target="#synthetic-case-studies">Synthetic case studies</a></li>
+  <li><a href="#discussion-and-conclusions" id="toc-discussion-and-conclusions" class="nav-link" data-scroll-target="#discussion-and-conclusions">Discussion and conclusions</a>
   <ul class="collapse">
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
+  <li><a href="#acknowledgement" id="toc-acknowledgement" class="nav-link" data-scroll-target="#acknowledgement">Acknowledgement</a></li>
+  <li><a href="#software-availability" id="toc-software-availability" class="nav-link" data-scroll-target="#software-availability">Software availability</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -397,18 +402,10 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Figure&nbsp;2: Learned supershot and simultenous sources on a testing slice. We show a shot record and the moirated image with a random supershot and with sequential shots for reference.</figcaption><p></p>
 </figure>
 </div>
-<section id="code-availability" class="level3">
-<h3 class="anchored" data-anchor-id="code-availability">Code availability</h3>
-<p>Results presented here can be reproduced with the software and examples in <a href="https://github.com/mloubout/OneShotImaging">OneShotImaging.jl</a>.</p>
-</section>
 </section>
 <section id="discussion-and-conclusions" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-and-conclusions">Discussion and conclusions</h2>
 <p>We introduced data-domain learning method that provides high accuracy imagies of the subsurface through one-shot imaging. We trained a network that learns the simultenous source and supershot that most inform the subsurface from the field recorded data. We showed that we obtain high accuracy images of the subsurface that contain broader frequency range than standard imaging and does not require prior knowledge of the source. Additionnally, the overall computationnal cost of training does not exceed the traditionnal cost of imaging.</p>
-</section>
-<section id="acknowledgement" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgement">Acknowledgement</h2>
-<p>This research was carried out with the support of Georgia Research Alliance and partners of the ML4Seismic Center.</p>
 <section id="references" class="level3">
 <h3 class="anchored" data-anchor-id="references">References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
@@ -425,13 +422,21 @@ Müller, Jens, Robert Schmier, Lynton Ardizzone, Carsten Rother, and Ullrich Kö
 Radev, Stefan T, Ulf K Mertens, Andreas Voss, Lynton Ardizzone, and Ullrich Köthe. 2020. <span>“BayesFlow: Learning Complex Stochastic Models with Invertible Neural Networks.”</span> <em>IEEE Transactions on Neural Networks and Learning Systems</em>.
 </div>
 </div>
-
-
-</section>
 </section>
 </section>
 
-</main> <!-- /main -->
+
+</section>
+
+<div id="quarto-appendix" class="default"><section id="acknowledgement" class="level2 appendix"><h2 class="quarto-appendix-heading">Acknowledgement</h2><div class="quarto-appendix-contents">
+
+<p>This research was carried out with the support of Georgia Research Alliance and partners of the ML4Seismic Center.</p>
+</div></section><section id="software-availability" class="level2 appendix"><h2 class="quarto-appendix-heading">Software availability</h2><div class="quarto-appendix-contents">
+
+<p>Results presented here can be reproduced with the software and examples in <a href="https://github.com/mloubout/OneShotImaging">OneShotImaging.jl</a> distributed under <a href="https://github.com/mloubout/OneShotImaging/LICENSE">MIT</a> license.</p>
+
+
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
