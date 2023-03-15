@@ -16,11 +16,6 @@ author:
   - name: Felix J. Herrmann
     affiliations:
       name: Georgia Institute of Technology
-description: | 
-  empty
-bibliography: abstract.bib
-abstract: |
-  empty
 ---
 
 ::: hidden
@@ -35,7 +30,7 @@ To monitor and predict CO~2~ plume dynamics during geological carbon storage, re
 
 ## METHODS, PROCEDURES, PROCESS (1443/1500 characters)
 
-We propose a method where at each timestep, conditional neural networks are trained to generate samples of the CO~2~ saturation conditioned on current time-lapse seismic data. The method proceeds by generating training pairs consisting of the current CO~2~ saturation, which is simulated with a random injection rate from the previous timestep, and the associated reverse-time migration seismic image computed from simulated surface data. Given these training pairs, an amortized conditional normalizing flow (NF) is trained to approximate the posterior distribution for the saturation given seismic images. After training, the network is capable of drawing samples from the posterior distribution of the saturation given observed time-lapse seismic data at the current timestep. In turn, these samples for the CO~2~ saturation serve as input to two-phase flow simulations to predict the CO~2~ plume at the next timestep and the process repeats itself, recursively.
+We propose a method where at each timestep, conditional neural networks are trained to generate samples of the CO~2~ saturation conditioned on current time-lapse seismic data. The method proceeds by generating training pairs consisting of the current CO~2~ saturation, which is simulated with a random injection rate from the previous timestep, and the associated reverse-time migration seismic image computed from simulated surface data. Given these training pairs, an amortized conditional normalizing flow is trained to approximate the posterior distribution for the saturation given the seismic image. After training, the network is capable of drawing samples from the posterior distribution of the saturation given observed seismic data at the current timestep. In turn, these samples for the CO~2~ saturation serve as input to two-phase flow simulations to predict the CO~2~ plume at the next timestep and the process repeats itself, recursively.
 
 Compared to more traditional data assimilation techniques, our approach has the distinct advantage that it does not make simplifying assumptions on the statistics and linearity of the CO~2~ plume dynamics and its coupling to time-lapse seismic data. The proposed method is also likelihood free. It only needs to be able to run simulations of the plume dynamics that may contain hidden stochastic terms. In our case, this stochastic term is the randomly varying injection rate.
 
@@ -56,13 +51,13 @@ Schematic of training process for a single timestep.
 
 :::
 
-## RESULTS, OBSERVATIONS, CONCLUSIONS (1179/1500 characters)
+## RESULTS, OBSERVATIONS, CONCLUSIONS (1422/1500 characters)
 
-We make CO~2~ plume predictions using both conditioned by seismic and unconditioned simulations. The conditional mean of the posterior samples is used for the seismic-conditioned predictions, while the unconditioned predictions are given by the ensemble mean over the different fluid-flow simulations at each timestep. Figure 2 shows that seismic-conditioned predictions are more accurate in predicting the ground truth and have a smaller conditional sample variance than the unconditioned ensemble mean predictions. 
+We set up a synthetic numerical simulation as the ground truth, where we inject CO~2~ on the left-hand side and produce brine on the right-hand side. We make CO~2~ plume predictions using both conditioned by seismic and unconditioned simulations. The conditional mean estimates of the posterior samples at each timestep are used for the seismic-conditioned predictions, while the unconditioned predictions are given by the ensemble mean over the different fluid-flow simulations at each timestep. Figure 2 shows that seismic-conditioned predictions accurately predicts the boundary of the CO~2~ plume with minor errors, while unconditioned predictions tend to consistently over-estimate the extent of the plume.
 
-By studying variations between samples, we characterize the uncertainties. For the seismic-conditioned predictions, the uncertainties are located near the injection well. In addition, the plume's boundary is well-predicted by the seismic-conditioned method while the unconditioned simulations have, as expected, an increasing uncertainty at the boundary over time and tend to consistently over-estimate the plume extent.
+By studying variations between samples, we characterize the uncertainties of the CO~2~ plume. For the seismic-conditioned predictions, the uncertainties are located near the injection well and the conditional sample variance is much lower compared to the unconditional sampled variance. On the other hand, the unconditioned simulations have, as expected, an increasing uncertainty at the boundary over time.
 
-Overall, we conclude that the unconditioned simulation poorly predicts the CO~2~ plume. Our seismic-conditioned framework assimilates information and learns over time, which improves the CO~2~ forecasting and characterizes uncertainties. 
+Overall, we conclude that the unconditioned simulation poorly predicts the CO~2~ plume. Our seismic-conditioned framework assimilates information and learns over time, which improves the CO~2~ forecasting and characterizes uncertainties. More information is in https://github.com/slimgroup/IMAGE2023.
 
 ::: {#fig-2 layout-ncol=1}
 
@@ -73,4 +68,5 @@ Results from our method compared with unconditional ensemble variogram.
 :::
 
 ## SIGNIFICANCE/NOVELTY (618/600 characters)
+
 To our understanding, the seismic-conditioned framework is the first geological carbon storage monitoring model that continuously assimilates information from seismic observations, updates the CO~2~ plume predictions, and characterizes uncertainties on the plume itself. Our framework is uncertainty aware thus can be used for human in the loop frameworks where experts provide feedback when the model is uncertain of predictions. Because our predictions are conditioned by the physics, we expect this method to extend to more realistic sources of uncertainty (i.e. unknown permeability, anomalous leakage scenarios). 
