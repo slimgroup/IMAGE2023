@@ -18,6 +18,11 @@ description: |
 bibliography: abstract.bib
 abstract: |
   Learn sources and super shot simultaneously
+links:
+  - icon: github
+    text: GitHub
+    href: https://github.com/mloubout/OneShotImaging
+   
 ---
 
 ::: hidden
@@ -113,19 +118,21 @@ Learned supershot and simultenous sources on a testing slice. We show a shot rec
 Learned supershot and simultenous sources on a testing slice. We show a shot record and the moirated image with a random supershot and with sequential shots for reference.
 :::
 
-### Code availability
-
-Results presented here can be reproduced with the software and examples in [OneShotImaging.jl](https://github.com/mloubout/OneShotImaging).
 
 ## Discussion and conclusions
 
 We introduced data-domain learning method that provides high accuracy imagies of the subsurface through one-shot imaging. We trained a network that learns the simultenous source and supershot that most inform the subsurface from the field recorded data. We showed that we obtain high accuracy images of the subsurface that contain broader frequency range than standard imaging and does not require prior knowledge of the source. Additionnally, the overall computationnal cost of training does not exceed the traditionnal cost of imaging.
 
-## Acknowledgement
-
-This research was carried out with the support of Georgia Research Alliance and partners of the ML4Seismic Center.
-
 ### References
 
 ::: {#refs}
 :::
+
+## Acknowledgement {.appendix}
+
+This research was carried out with the support of Georgia Research Alliance and partners of the ML4Seismic Center.
+
+
+## Software availability {.appendix}
+
+Results presented here can be reproduced with the software and examples in [OneShotImaging.jl](https://github.com/mloubout/OneShotImaging) distributed under [MIT](https://github.com/mloubout/OneShotImaging/LICENSE) license.

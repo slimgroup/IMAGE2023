@@ -7,6 +7,9 @@ website:
     left:
       - href: index.qmd
         text: Home
+    right:
+      - icon: github
+        href: https://github.com/slimgroup
   sidebar:
       style: "docked"
       search: true
