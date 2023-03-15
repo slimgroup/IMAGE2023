@@ -9,31 +9,31 @@ author:
       name: Georgia Institute of Technology
   - name: Olav Mønyer
     affiliations:
-      name: SINTEF
+      name: SINTEF Digital
   - name: Felix J. Herrmann
     affiliations:
       name: Georgia Institute of Technology
 ---
 
-## Objectives/Scope (100 words)
+## Objectives/Scope (600 characters)
 
-Continuous understanding CO~2~ plume behavior is key to the success of geological carbon storage projects. While two-phase flow equations provide a good model to make predictions on future CO~2~ plume behavior, these equations rely on having access to the true permeability model. Unfortunately, accurate information on the permeability is unavailable, which greatly jeopardizes our ability to predict CO~2~ plume behavior. To overcome this problem, we estimate the permeability from time-lapse seismic data via a coupled inversion methodology that improve as more seismic monitoring data becomes available over time.
+Understanding CO~2~ plume behavior is key to the success of geological carbon storage projects. While two-phase flow equations provide a good model to make predictions on future CO~2~ plume behavior, these equations rely on having access to the true permeability model. Unfortunately, accurate information on the permeability is unavailable, which greatly jeopardizes our ability to predict CO~2~ plume behavior. To overcome this problem, we estimate the permeability from time-lapse seismic data via a coupled inversion methodology that improve as more monitoring data becomes available over time.
 
-## Methods, Procedures, Process (250 words)
+## Methods, Procedures, Process (1500 characters)
 
-To estimate the spatial permeability distribution, we adopt a coupled physics inversion framework that involves three kinds of physics, namely two-phase fluid-flow, rock, and wave physics. The fluid-flow equations model the time evolution of the CO~2~ saturation and pressure given the permeability distribution. The rock physics modeling converts the time-varying CO~2~ saturation into the acoustic wavespeed. Finally, seismic modeling generates time-lapse seismic data for each vintage based on the wavespeed of the rocks. A schematic of this multiphysics forward model is shown in Figure 1.
+To estimate the spatial permeability distribution, we adopt a coupled physics inversion framework that involves three kinds of physics, namely two-phase fluid-flow, rock, and wave physics. The fluid-flow equations model the time evolution of the CO~2~ concentration and pressure given the permeability distribution. The rock physics modeling converts the time-varying CO~2~ concentration into the acoustic wavespeed. Finally, seismic modeling generates time-lapse seismic data for each vintage based on the wavespeed of the rocks. A schematic of this multiphysics forward model is shown in Figure 1.
 
 Given observed time-lapse seismic data, we then directly invert for the permeability through the fully nested physics modeling operators. The inverted permeability can be used to generate time-varying CO~2~ concentration snapshots that match observed time-lapse seismic data. Aside from obtaining estimates for the CO~2~ plume's past and current behavior, constrained by the two-phase flow equations, the proposed inversion methodology is also capable of producing reliable CO~2~ forecasts from the inverted permeability. These forecasts can be produced for different injection scenarios allowing for in-situ interventions designed to optimize productivity and minimize risks.
 
-## Results, Observations, Conclusions (250 words)
+## Results, Observations, Conclusions (1500 characters)
 
-To gain insight on the performance of our inversion scheme, we conduct a realistic numerical study based on the North Sea Compass model whose geology is very similar to sites currently being considered as a potential site for geological carbon storage. For this purpose, we convert the compressional wavespeed in the model to log-permeability values to make up alternating high- and low-permeability layers in the reservoir with a seal on top. We inject 1 million metric ton CO~2~ per year in a highly permeable layer for 25 years. During and after injection, the CO~2~ tends to move into high permeability layers (over 1000 millidarcies) and move up due to buoyancy effects. To monitor the CO~2~ plume seismically, we shoot 5 surveys of crosswell data every 5th year, using a Ricker wavelet with a central frequency of 20 Hz.
+We conduct a realistic numerical study based on the North Sea Compass model whose geology is very similar to sites currently being considered as a potential site for geological carbon storage. For this purpose, we convert the wavespeed in the model to log-permeability values to make up alternating high- and low-permeability layers in the reservoir with a seal on top. We inject 1 million metric ton CO~2~ per year in a highly permeable layer for 25 years. During and after injection, the CO~2~ tends to move into high permeability layers and move up due to buoyancy effects, shown in Figure 2(a). To monitor the CO~2~ plume seismically, we shoot 5 surveys of crosswell data every 5th year, using a Ricker wavelet with a central frequency of 20 Hz.
 
-We start the inversion with homogenous permeability values in the reservoir. After 12 data passes of gradient descent, the CO~2~ plume recovery from the inverted permeability is shown in Figure 2 (a). The extent of the plume looks drastically different from the initial prediction based on the homogeneous permeability, but reasonably similar to the ground truth CO~2~ plumes simulated from the true unknown permeability distribution. As expected, we only obtain information on the permeability from regions within the CO~2~ plume during the first 25 years of injection. While the inverted permeability captures only part of the true permeability distribution, it improves drastically on plume forecasts for the next 25 years compared to those obtained from the starting model for the permeability.
+We start the inversion with homogenous permeability values in the reservoir. After 10 data passes of gradient descent, the CO~2~ plume recovery from the inverted permeability is shown in Figure 2(a). The extent of the plume looks drastically different from the initial prediction based on the homogeneous permeability, but reasonably similar to the ground truth CO~2~ plumes. As expected, we only obtain information on the permeability from regions within the CO~2~ plume during the first 25 years of injection, shown in Figure 2(b). While the inverted permeability captures only part of the true permeability model, it improves drastically on plume forecasts for the next 25 years compared to those obtained from the starting model for the permeability.
 
-## Significance/Novelty (100 words)
+## Significance/Novelty (600 characters)
 
-To our knowledge, this is a first numerical study where a multiphysics inversion framework is applied to a realistic geological carbon storage site. Not only are the fluid-flow simulations based on a proxy model for the permeability derived from real imaged seismic and well data but the simulations, including sensitivity calculations, are carried out with a state-of-the art solvers (\[JutulDarcy.jl\]), which accounts for capillary effects and residual trapping (purple colors). From this example, we observe that the proposed inversion methodology can be applied to geological carbon storage projects to estimate and forecast CO~2~ plume evolution.
+To our knowledge, this is the first numerical study that applies a multiphysics inversion framework to a realistic geological carbon storage site. The fluid-flow simulations and sensitivity calculations are conducted using state-of-the-art solvers in JutulDarcy.jl, which accounts for capillary effects and residual trapping (purple colors). Also, the simulations are based on a proxy permeability model derived from real imaged seismic and well data. Experiment shows that the proposed methodology can be applied to geological carbon storage projects to estimate and forecast CO~2~ plume evolution.
 
 ::: {#fig-1 layout-ncol="1"}
 ![fig1](figs/fig1.png){width="100%"}

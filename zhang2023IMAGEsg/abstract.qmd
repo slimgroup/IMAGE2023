@@ -21,7 +21,7 @@ author:
       name: Georgia Institute of Technology
 ---
 
-## Objectives/Scope (100 words)
+## Objectives/Scope (600 characters)
 
 The massive cost of 3D seismic acquisition calls for methods to reduce the number of receivers in the acquisition by designing optimal receiver sampling masks. Recent studies on 2D seismic showed that maximizing the spectral gap of the subsampling mask leads to better wavefield reconstruction results supported by expander graph theory. We enrich the current study by proposing a simulation-free method to automatically generate optimal 3D seismic acquisition by maximizing the spectral gap of the subsampling mask via a simulated annealing algorithm. Numerical experiments confirm improvement of the proposed acquisition design method over receiver sampling locations obtained by jittered sampling.
 
