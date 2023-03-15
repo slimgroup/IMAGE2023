@@ -1,5 +1,33 @@
 [
   {
+    "objectID": "zhang2023IMAGEsg/abstract.html",
+    "href": "zhang2023IMAGEsg/abstract.html",
+    "title": "3D seismic survey design by maximizing the spectral gap",
+    "section": "",
+    "text": "The massive cost of 3D acquisition calls for methods to reduce the number of receivers by designing optimal receiver sampling masks. Recent studies on 2D seismic showed that maximizing the spectral gap of the subsampling mask leads to better wavefield reconstruction results. We enrich the current study by proposing a simulation-free method to generate optimal 3D acquisition by maximizing the spectral gap of the subsampling mask via a simulated annealing algorithm. Numerical experiments confirm improvement of the proposed method over receiver sampling locations obtained by jittered sampling."
+  },
+  {
+    "objectID": "zhang2023IMAGEsg/abstract.html#methods-procedures-process-1500-characters",
+    "href": "zhang2023IMAGEsg/abstract.html#methods-procedures-process-1500-characters",
+    "title": "3D seismic survey design by maximizing the spectral gap",
+    "section": "Methods, Procedures, Process (1500 characters)",
+    "text": "Methods, Procedures, Process (1500 characters)\nThe spectral gap ratio is the ratio of the first and second singular values of a binary subsampling mask (binary matrix). It is a cheap-to-compute measure to predict wavefield reconstruction quality from acquisition geometry only. Motivated by recent success on 2D survey design methods driven by spectral gap ratio minimization, we consider 3D survey design where receivers are missing and sources are fully sampled. Because 3D wavefield reconstruction based on low-rank matrix completion relies on the non-canonical Source-X/Receiver-X (columns) Source-Y/Receiver-Y (rows) organization of the data into a matrix, we aim to minimize the spectral gap ratio of the subsampling mask in that domain. Fortunately, when sources are fully sampled, each single-receiver block of the global sampling matrix is either fully sampled or empty depending on whether that specific receiver is sampled. Consequently, the block structure of the global matrix leads to the exact same singular values as a single-source receiver sampling mask. We can therefore optimize a single-source mask to obtain the global optimized mask. The main computational cost is computing the first two singular values of the receiver sampling mask, which is negligible compared to approaches that require wave simulations. The resulting optimal mask with the lowest spectral gap ratio indicates the receiver sampling locations that favor 3D wavefield reconstruction via matrix completion in the non-cononical organization domain."
+  },
+  {
+    "objectID": "zhang2023IMAGEsg/abstract.html#results-observations-conclusions-1500-characters",
+    "href": "zhang2023IMAGEsg/abstract.html#results-observations-conclusions-1500-characters",
+    "title": "3D seismic survey design by maximizing the spectral gap",
+    "section": "Results, Observations, Conclusions (1500 characters)",
+    "text": "Results, Observations, Conclusions (1500 characters)\nTo illustrate the efficacy of our method via a numerical experiment on a simulated 3D marine dataset over the compass model. The data volume consists of 501 time samples, 1681 sources and 10k receivers. The distance between the adjacent sources and receivers are 150m and 25m in each direction, respectively, with a time sampling interval of 0.01s. By removing 90% of receivers using jittered subsampling, we obtain a binary matrix with the spectral gap ratio 0.507 in the non-canonical domain. After applying simulated annealing algorithm, the spectral gap ratio of mask effectively decreases to 0.328. To validate the efficacy of our acquisition design method, we perform data reconstruction on a frequency slice at 16.8Hz via weighted matrix completion for the two subsampled datasets with jittered subsampling mask and the proposed mask, with results shown in Figure 2. The reconstruction signal-to-noise ratio from the observed data at proposed receiver locations is 12.27 dB, which is about 1.4 dB higher than the reconstruction signal-to-noise ratio 10.88 dB achieved from data observed at jittered sampled receiver locations. This confirms that the proposed optimized receiver sampling locations result in a superior seismic survey that leads to better wavefield reconstruction performance. More information is in https://github.com/slimgroup/IMAGE2023."
+  },
+  {
+    "objectID": "zhang2023IMAGEsg/abstract.html#significancenovelty-600-characters",
+    "href": "zhang2023IMAGEsg/abstract.html#significancenovelty-600-characters",
+    "title": "3D seismic survey design by maximizing the spectral gap",
+    "section": "Significance/Novelty (600 characters)",
+    "text": "Significance/Novelty (600 characters)\nThis is the first numerical case study that applies spectral gap ratio minimization techniques to seismic acquisition design that favors 3D wavefield reconstruction. Rather than requiring costly wave simulations, the proposed method only relies on a single binary matrix optimization which is computationally inexpensive. Experiments demonstrate that the proposed method generates an improved 3D seismic survey better suitable for 3D wavefield reconstruction.\n\n\n\n\n\n\n\nfig1\n\n\n\n\nFigure 1: Figure 1\n\n\n\n\n\n\n\n\n\nfig2\n\n\n\n\nFigure 2: Figure 2"
+  },
+  {
     "objectID": "OneShot/abstract.html",
     "href": "OneShot/abstract.html",
     "title": "Learned one-shot imaging",
@@ -77,67 +105,11 @@
     "text": "Software availability\n\nResults presented here can be reproduced with the software and examples in OneShotImaging.jl distributed under MIT license."
   },
   {
-    "objectID": "SequentialBayes/abstract.html",
-    "href": "SequentialBayes/abstract.html",
-    "title": "Monitoring Subsurface CO2 Plumes with Sequential Bayesian Inference",
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "License",
     "section": "",
-    "text": "\\[\n    \\newcommand{\\pluseq}{\\mathrel{+}=}\n\\]"
-  },
-  {
-    "objectID": "SequentialBayes/abstract.html#objectives-and-scope-597600-characters",
-    "href": "SequentialBayes/abstract.html#objectives-and-scope-597600-characters",
-    "title": "Monitoring Subsurface CO2 Plumes with Sequential Bayesian Inference",
-    "section": "OBJECTIVES AND SCOPE (597/600 characters)",
-    "text": "OBJECTIVES AND SCOPE (597/600 characters)\nTo monitor and predict CO2 plume dynamics during geological carbon storage, reservoir engineers usually perform two-phase flow simulations. While these simulations may provide useful insights, their usefulness is limited due to numerous complicating factors including uncertainty in the dynamics of the plume itself. To study this phenomenon, we consider stochasticity in the dynamic caused by unknown random changes in the injection rate. By conditioning the CO2 plume predictions on seismic observations, we correct the CO2 plume predictions and quantify uncertainty with machine learning."
-  },
-  {
-    "objectID": "SequentialBayes/abstract.html#methods-procedures-process-14431500-characters",
-    "href": "SequentialBayes/abstract.html#methods-procedures-process-14431500-characters",
-    "title": "Monitoring Subsurface CO2 Plumes with Sequential Bayesian Inference",
-    "section": "METHODS, PROCEDURES, PROCESS (1443/1500 characters)",
-    "text": "METHODS, PROCEDURES, PROCESS (1443/1500 characters)\nWe propose a method where at each timestep conditional neural networks are trained to generate samples of the CO2 saturation conditioned on current time-lapse seismic data. The method proceeds by generating training pairs consisting of the current CO2 saturation, which is simulated with a random injection rate from the previous timestep, and the associated reverse-time migration seismic image computed from simulated surface data. Given these training pairs, an amortized conditional normalizing flow (NF) is trained to approximate the posterior distribution for the saturation given seismic images. After training, the network is capable of drawing samples from the posterior distribution of the saturation given observed time-lapse seismic data at the current timestep. In turn, these samples for the CO2 saturation serve as input to two-phase flow simulations to predict the CO2 plume at the next timestep and the process repeats itself, recursively.\nCompared to more traditional data assimilation techniques, our approach has the distinct advantage that it does not make simplifying assumptions on the statistics and linearity of the CO2 plume dynamics and its coupling to time-lapse seismic data. The proposed method is also likelihood free. It only needs to be able to run simulations of the plume dynamics that may contain hidden stochastic terms. In our case, this stochastic term in the randomly varying injection rate.\n\n\n\n\n\n\n\n\n(a)\n\n\n\n\nFigure 1: Schematic of training process for a single timestep."
-  },
-  {
-    "objectID": "SequentialBayes/abstract.html#results-observations-conclusions-11461500-characters",
-    "href": "SequentialBayes/abstract.html#results-observations-conclusions-11461500-characters",
-    "title": "Monitoring Subsurface CO2 Plumes with Sequential Bayesian Inference",
-    "section": "RESULTS, OBSERVATIONS, CONCLUSIONS (1146/1500 characters)",
-    "text": "RESULTS, OBSERVATIONS, CONCLUSIONS (1146/1500 characters)\nWe make CO2 plume predictions using both conditioned by seismic and unconditioned simulations. The conditional mean of the posterior samples is used for the seismic-conditioned predictions, while the unconditioned predictions are given by the ensemble mean over the different simulations at each timestep. Figure 2 shows that seismic-conditioned predictions are more accurate in predicting the ground truth and have a smaller conditional sample variance than the unconditioned ensemble mean predictions.\nBy examining the difference between the ground truth and predictions, we characterize the uncertainties. For the seismic-conditioned predictions, the uncertainties are located near the injection well. In addition, the plume’s boundary is well-predicted by the seismic-conditioned method while the unconditioned simulations have, as expected, an increasing uncertainty at the boundary over time and tend to consistently over-estimate the plume extent.\nOverall, we conclude that the unconditioned simulation poorly predicts the CO2 plume. Our seismic-conditioned framework assimilates information and learns over time, which improves the CO2 forecasting and characterizes uncertainties.\n\n\n\n\n\n\n\n(a)\n\n\n\n\nFigure 2: Results from our method compared with unconditional ensemble variogram."
-  },
-  {
-    "objectID": "SequentialBayes/abstract.html#significancenovelty-238600-characters",
-    "href": "SequentialBayes/abstract.html#significancenovelty-238600-characters",
-    "title": "Monitoring Subsurface CO2 Plumes with Sequential Bayesian Inference",
-    "section": "SIGNIFICANCE/NOVELTY (238/600 characters)",
-    "text": "SIGNIFICANCE/NOVELTY (238/600 characters)\nTo our understanding, the seismic-conditioned framework is the first geological carbon storage monitoring model that continuously assimilates information with seismic observations, updates the CO2 plume predictions, and characterizes uncertainties on the plume itself. Because or prediction are conditioned by the physics, we expect this method to extend to larger and more realistic model sources of uncertainty (permeability, topology, …)."
-  },
-  {
-    "objectID": "DetectabilityWithVision/abstract.html",
-    "href": "DetectabilityWithVision/abstract.html",
-    "title": "Analysis of CO2 Leakage Detectability via Vision Classifier",
-    "section": "",
-    "text": "In previous work, we have shown that neural classifiers can be trained to detect CO2 leakage from time-lapse seismic images. While such result is key to the global deployment of geological carbon storage (GCS), it success depended on relatively dense non-replicated time-lapse data acquisition. We will show that by augmenting the training set with various coarse receiver samplings, we can improve the CO2 leakage detection capabilities and accuracy while increasing the robustness with respect to low-cost coarse non-replicated receiver samplings, e.g. with ocean bottom nodes (OBNs)."
-  },
-  {
-    "objectID": "DetectabilityWithVision/abstract.html#methods-procedures-process-250-words-1500",
-    "href": "DetectabilityWithVision/abstract.html#methods-procedures-process-250-words-1500",
-    "title": "Analysis of CO2 Leakage Detectability via Vision Classifier",
-    "section": "Methods, Procedures, Process (250 words, 1500)",
-    "text": "Methods, Procedures, Process (250 words, 1500)\nTo create a suitable training set, we derive permeability models from 2D proxy models with a geology representative for potential GCS sites in the South of the North Sea. These models are derived from 3D imaged seismic and well-log data and contain realistic heterogeneity. Given these permeability models, we create a training set of seismically imaged CO2 plumes that behave regularly (without leakage) and irregularly (with leakage). After generating the baseline and monitor surveys, time-lapse seismic images of the plume are created with reverse time migration (RTM). The CO2 plumes themselves are modeled with two-phase flow equations.\nTo create high-fidelity images, we deploy 162 receivers and 32 jittered sources {ML: I’d put the sampling in meters, this could be anything}. Given these images we train our visual classifier based on a Vision Transformer network. As we can observe from Figure 1(a), this classifier meets our ultimate purpose of distinguishing between regular and irregular plumes by performing binary classification. While encouraging the training and test images all rely on high-fidelity imaging obtained with densely sampled OBNs. Unfortunately, in practice we can not rely on dense receiver sampling because of the associated high costs and the classifier performance on seismic images obtained form coarse receiver sampling drastically deteriorates (Figure 1(b)). To overcome this problem, we augment the training dataset with time-lapse seismic images computed from a plurality of acquisition geometries with varying coarse receiver samplings."
-  },
-  {
-    "objectID": "DetectabilityWithVision/abstract.html#results-observations-conclusions-250-words-1500",
-    "href": "DetectabilityWithVision/abstract.html#results-observations-conclusions-250-words-1500",
-    "title": "Analysis of CO2 Leakage Detectability via Vision Classifier",
-    "section": "Results, Observations, Conclusions (250 words, 1500)",
-    "text": "Results, Observations, Conclusions (250 words, 1500)\nFrom Figure 2(a), we observe that the testing accuracy of the network trained initially on 162 receiver setting performs well for acquisition geometries with more receivers but its accuracy degrades gradually when the number of receivers becomes smaller rendering the classifier untrustworthy for less 100 receivers. On the other hand, we see in Figure (2a) that the network trained with the augmented dataset containing images from coarse receiver sampling provides higher accuracy for all receiver geometries and better robustness to coarse acquisition. Moreover, the confusion matrix performance metrics (precision, recall and F-1 score) also improved substantially showing the improved trustworthiness new network\n\nThese results show that dataset augmentation can indeed enhance the generalization of our neural classifier and contributes to its leakage detection accuracy. In terms of practical usage, this work suggests a dataset based on a particular seismic time-lapse acquisition geometry can easily be made applicable to different geometries by adding time-lapse seismic images obtained with complementary random acquisition geometries to the training dataset."
-  },
-  {
-    "objectID": "DetectabilityWithVision/abstract.html#significancenovelty-100-words-600",
-    "href": "DetectabilityWithVision/abstract.html#significancenovelty-100-words-600",
-    "title": "Analysis of CO2 Leakage Detectability via Vision Classifier",
-    "section": "Significance/Novelty (100 words, 600)",
-    "text": "Significance/Novelty (100 words, 600)\nTo our knowledge, this is a first study how to make neural classifiers for CO2 leakage detection more robust with respect to variations in receiver geometry and density. To achieve this, we propose a simple dataset augmentation technique that improves generalization of the network to changes in the acquisition geometry. The results suggest that our study has the potential to lower dataset collection costs while training classifiers capable of automatic leakage detection from time-lapse seismic images computed from non-replicated surveys with varying coarse receiver density."
+    "text": "These abstracts are released under the Creative Commons License type CC BY. 2023 Copyrights (c) SLIM Group, Georgia Institute of Technology.\nAll codes used to produce these results are released under MIT license."
   },
   {
     "objectID": "BayesianKrig/abstract.html",
@@ -175,11 +147,67 @@
     "text": "SIGNIFICANCE/NOVELTY (663/600 characters)\nWe introduce the first use of conditional normalizing flows for kriging. While previous implementations of conditional normalizing flows have struggled on high dimensional images, we demonstrated our software implementation allows for learning distributions over large realistic models. This method is set to scale to 3D models in future work which will further enable the application of these methods to real-world seismic problems. In contrast with traditional variogram methods, our framework produces realistic samples, that is particularly important for downstream tasks in reservoir engineering and other applications where multiple plausible models are needed.\n\n\n\n\n\n\n\nfig1\n\n\n\n\nFigure 1: Schematic of full training process and test time evaluation of our method.\n\n\n\n\n\n\n\n\n\nfig2\n\n\n\n\nFigure 2: Results from our method compared with exponential variogram. Our method produces realistic samples of earth models that when averaged produce high quality point estimates."
   },
   {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "License",
+    "objectID": "yin2023IMAGEend2end/abstract.html",
+    "href": "yin2023IMAGEend2end/abstract.html",
+    "title": "Coupled physics inversion for geological carbon storage monitoring",
     "section": "",
-    "text": "These abstracts are released under the Creative Commons License type CC BY. 2023 Copyrights (c) SLIM Group, Georgia Institute of Technology.\nAll codes used to produce these results are released under MIT license."
+    "text": "Understanding CO2 plume behavior is key to the success of geological carbon storage projects. While two-phase flow equations provide a good model to make predictions on future CO2 plume behavior, these equations rely on having access to the true permeability model. Unfortunately, accurate information on the permeability is unavailable, which greatly jeopardizes our ability to predict CO2 plume behavior. To overcome this problem, we estimate the permeability from time-lapse seismic data via a coupled inversion methodology that improve as more monitoring data becomes available over time."
+  },
+  {
+    "objectID": "yin2023IMAGEend2end/abstract.html#methods-procedures-process-1500-characters",
+    "href": "yin2023IMAGEend2end/abstract.html#methods-procedures-process-1500-characters",
+    "title": "Coupled physics inversion for geological carbon storage monitoring",
+    "section": "Methods, Procedures, Process (1500 characters)",
+    "text": "Methods, Procedures, Process (1500 characters)\nTo estimate the spatial permeability distribution, we adopt a coupled physics inversion framework that involves three kinds of physics, namely two-phase fluid-flow, rock, and wave physics. The fluid-flow equations model the time evolution of the CO2 concentration and pressure given the permeability distribution. The rock physics modeling converts the time-varying CO2 concentration into the acoustic wavespeed. Finally, seismic modeling generates time-lapse seismic data for each vintage based on the wavespeed of the rocks. A schematic of this multiphysics forward model is shown in Figure 1.\nGiven observed time-lapse seismic data, we then directly invert for the permeability through the fully nested physics modeling operators. The inverted permeability can be used to generate time-varying CO2 concentration snapshots that match observed time-lapse seismic data. Aside from obtaining estimates for the CO2 plume’s past and current behavior, constrained by the two-phase flow equations, the proposed inversion methodology is also capable of producing reliable CO2 forecasts from the inverted permeability. These forecasts can be produced for different injection scenarios allowing for in-situ interventions designed to optimize productivity and minimize risks."
+  },
+  {
+    "objectID": "yin2023IMAGEend2end/abstract.html#results-observations-conclusions-1500-characters",
+    "href": "yin2023IMAGEend2end/abstract.html#results-observations-conclusions-1500-characters",
+    "title": "Coupled physics inversion for geological carbon storage monitoring",
+    "section": "Results, Observations, Conclusions (1500 characters)",
+    "text": "Results, Observations, Conclusions (1500 characters)\nWe conduct a realistic numerical study based on the North Sea Compass model whose geology is very similar to sites currently being considered as a potential site for geological carbon storage. We convert the wavespeed in the model to log-permeability values to make up alternating high- and low-permeability layers in the reservoir with a seal on top. We inject CO2 in a highly permeable layer for 25 years. During and after injection, the CO2 tends to move into high permeability layers and move up due to buoyancy effects. To monitor the CO2 plume seismically, we shoot 5 surveys of crosswell data every 5th year, using a Ricker wavelet with a central frequency of 20 Hz.\nWe start the inversion with homogenous permeability values in the reservoir. After 10 data passes of gradient descent, the CO2 plume recovery from the inverted permeability is shown in Figure 2(a). The extent of the plume looks drastically different from the initial prediction based on the homogeneous permeability, but reasonably similar to the ground truth CO2 plumes. As expected, we only obtain information on the permeability from regions within the CO2 plume during the first 25 years of injection, shown in Figure 2(b). While the inverted permeability captures only part of the true permeability model, it improves drastically on plume forecasts for the next 25 years compared to those obtained from the starting model for the permeability. More information is in https://github.com/slimgroup/IMAGE2023."
+  },
+  {
+    "objectID": "yin2023IMAGEend2end/abstract.html#significancenovelty-600-characters",
+    "href": "yin2023IMAGEend2end/abstract.html#significancenovelty-600-characters",
+    "title": "Coupled physics inversion for geological carbon storage monitoring",
+    "section": "Significance/Novelty (600 characters)",
+    "text": "Significance/Novelty (600 characters)\nTo our knowledge, this is the first numerical study that applies a multiphysics inversion framework to a realistic geological carbon storage site. The fluid-flow simulations and sensitivity calculations are conducted using state-of-the-art solvers in JutulDarcy.jl, which accounts for capillary effects and residual trapping (purple colors). Also, the simulations are based on a proxy permeability model derived from real imaged seismic and well data. Experiment shows that the proposed methodology can be applied to geological carbon storage projects to estimate and forecast CO2 plume evolution.\n\n\n\n\n\n\n\nfig1\n\n\n\n\nFigure 1: Figure 1\n\n\n\n\n\n\n\n\n\nfig2\n\n\n\n\nFigure 2: Figure 2"
+  },
+  {
+    "objectID": "SequentialBayes/abstract.html",
+    "href": "SequentialBayes/abstract.html",
+    "title": "Monitoring Subsurface CO2 Plumes with Sequential Bayesian Inference",
+    "section": "",
+    "text": "\\[\n    \\newcommand{\\pluseq}{\\mathrel{+}=}\n\\]"
+  },
+  {
+    "objectID": "SequentialBayes/abstract.html#objectives-and-scope-597600-characters",
+    "href": "SequentialBayes/abstract.html#objectives-and-scope-597600-characters",
+    "title": "Monitoring Subsurface CO2 Plumes with Sequential Bayesian Inference",
+    "section": "OBJECTIVES AND SCOPE (597/600 characters)",
+    "text": "OBJECTIVES AND SCOPE (597/600 characters)\nTo monitor and predict CO2 plume dynamics during geological carbon storage, reservoir engineers usually perform two-phase flow simulations. While these simulations may provide useful insights, their usefulness is limited due to numerous complicating factors including uncertainty in the dynamics of the plume itself. To study this phenomenon, we consider stochasticity in the dynamic caused by unknown random changes in the injection rate. By conditioning the CO2 plume predictions on seismic observations, we correct the CO2 plume predictions and quantify uncertainty with machine learning."
+  },
+  {
+    "objectID": "SequentialBayes/abstract.html#methods-procedures-process-14431500-characters",
+    "href": "SequentialBayes/abstract.html#methods-procedures-process-14431500-characters",
+    "title": "Monitoring Subsurface CO2 Plumes with Sequential Bayesian Inference",
+    "section": "METHODS, PROCEDURES, PROCESS (1443/1500 characters)",
+    "text": "METHODS, PROCEDURES, PROCESS (1443/1500 characters)\nWe propose a method where at each timestep conditional neural networks are trained to generate samples of the CO2 saturation conditioned on current time-lapse seismic data. The method proceeds by generating training pairs consisting of the current CO2 saturation, which is simulated with a random injection rate from the previous timestep, and the associated reverse-time migration seismic image computed from simulated surface data. Given these training pairs, an amortized conditional normalizing flow (NF) is trained to approximate the posterior distribution for the saturation given seismic images. After training, the network is capable of drawing samples from the posterior distribution of the saturation given observed time-lapse seismic data at the current timestep. In turn, these samples for the CO2 saturation serve as input to two-phase flow simulations to predict the CO2 plume at the next timestep and the process repeats itself, recursively.\nCompared to more traditional data assimilation techniques, our approach has the distinct advantage that it does not make simplifying assumptions on the statistics and linearity of the CO2 plume dynamics and its coupling to time-lapse seismic data. The proposed method is also likelihood free. It only needs to be able to run simulations of the plume dynamics that may contain hidden stochastic terms. In our case, this stochastic term in the randomly varying injection rate.\n\n\n\n\n\n\n\n\n(a)\n\n\n\n\nFigure 1: Schematic of training process for a single timestep."
+  },
+  {
+    "objectID": "SequentialBayes/abstract.html#results-observations-conclusions-11461500-characters",
+    "href": "SequentialBayes/abstract.html#results-observations-conclusions-11461500-characters",
+    "title": "Monitoring Subsurface CO2 Plumes with Sequential Bayesian Inference",
+    "section": "RESULTS, OBSERVATIONS, CONCLUSIONS (1146/1500 characters)",
+    "text": "RESULTS, OBSERVATIONS, CONCLUSIONS (1146/1500 characters)\nWe make CO2 plume predictions using both conditioned by seismic and unconditioned simulations. The conditional mean of the posterior samples is used for the seismic-conditioned predictions, while the unconditioned predictions are given by the ensemble mean over the different simulations at each timestep. Figure 2 shows that seismic-conditioned predictions are more accurate in predicting the ground truth and have a smaller conditional sample variance than the unconditioned ensemble mean predictions.\nBy examining the difference between the ground truth and predictions, we characterize the uncertainties. For the seismic-conditioned predictions, the uncertainties are located near the injection well. In addition, the plume’s boundary is well-predicted by the seismic-conditioned method while the unconditioned simulations have, as expected, an increasing uncertainty at the boundary over time and tend to consistently over-estimate the plume extent.\nOverall, we conclude that the unconditioned simulation poorly predicts the CO2 plume. Our seismic-conditioned framework assimilates information and learns over time, which improves the CO2 forecasting and characterizes uncertainties.\n\n\n\n\n\n\n\n(a)\n\n\n\n\nFigure 2: Results from our method compared with unconditional ensemble variogram."
+  },
+  {
+    "objectID": "SequentialBayes/abstract.html#significancenovelty-238600-characters",
+    "href": "SequentialBayes/abstract.html#significancenovelty-238600-characters",
+    "title": "Monitoring Subsurface CO2 Plumes with Sequential Bayesian Inference",
+    "section": "SIGNIFICANCE/NOVELTY (238/600 characters)",
+    "text": "SIGNIFICANCE/NOVELTY (238/600 characters)\nTo our understanding, the seismic-conditioned framework is the first geological carbon storage monitoring model that continuously assimilates information with seismic observations, updates the CO2 plume predictions, and characterizes uncertainties on the plume itself. Because or prediction are conditioned by the physics, we expect this method to extend to larger and more realistic model sources of uncertainty (permeability, topology, …)."
   },
   {
     "objectID": "BayesianFWI/abstract.html",
@@ -189,66 +217,38 @@
     "text": "Probabilistic approaches to Full-Waveform Inversion (FWI), such as Bayesian ones, traditionally require expensive computations involving numerous wave-equation solves. To reduce this computational burden at test time, we propose to amortize the computational cost with offline training. After training, we aim to efficiently generate accurate probabilistic FWI solutions with uncertainty. This aim is achieved by exploiting the ability of networks (i.e Normalizing Flows) to learn distributions, such as the Bayesian posterior. The posterior uncertainty is used during training to optimize the receiver sampling.\n\n\n\nNormalizing flows (NFs) are generative networks that can learn to sample from conditional distributions, here our desired Bayesian posterior p(x|y) where x are earth models and y is seismic data. To train NFs, we require training pairs of those earth models and seismic data. We use pairs from the open source dataset OPENFWI. The earth models are .7km by .7km and the seismic data is simulated with 5 sources with 15Hz frequency and 20dB noise. We use the CurveFault_B dataset from OPENFWI that contains 55k pairs and split the pairs for training, validation, and testing 90%/5%/5% respectively.\nTo learn to sample from the conditional distribution, the network learns to transform the earth models to Gaussian normal noise while conditioned on the acoustic data. By construction the network is invertible, thus after training we sample Gaussian normal noise and apply the inverse network to generate samples from the posterior, again conditioned by the seismic data. The training and testing processes are illustrated schematically in Figure 1.\nThe NFs training objective has been shown to be equivalent to maximizing the information gain (as defined by Bayesian OED) of the conditioned data. Thus, we propose to jointly optimize for a receiver sampling mask M and the network parameters during NF training to simultaneously learn the Bayesian posterior and the optimal minimal receiver geometry.\n\n\n\n\n\n\n\n(a)\n\n\n\n\nFigure 1: Schematic of full training process and test time evaluation of our method.\n\n\n\n\n\nAfter training, our method generates posterior samples at the cost of one neural network inverse pass (10ms on our GPU). Seen in Figure 2, the posterior samples are realistic earth models that could plausibly correspond to the seismic data. The variations between the posterior samples are due to the FWI problem being ill-posed and because of noise in the indirect observations at the surface (20dB noise). To study these variations, we take the sample variance as our uncertainty quantification. We observe that the uncertainty is concentrated on steep and deeper structures. Both these types of structures are difficult to invert for with FWI showing that our uncertainty correlates with the expected error making our uncertainty realistic and interpretable.\nTo make a single high-quality solution, we take the mean of the posterior samples. This posterior mean shows high-quality metrics that surpass previous OPENFWI benchmarks while producing Bayesian uncertainty not available in OPENFWI.\nThe optimal receiver sampling obtained with our method (red? circles in Figure 1){ML: Don’t see those} matches prior expectations that the most important information is contained in the short offsets. This result was independently discovered by the Bayesian optimization routine. <-ML: This is a very dangerous statement, 99% of practitionners and survey design of the last decades has been to get as far offset as possible for turning waves, this will have a lot of reviewrs say this is BS->\nOur method is amortized since the previously mentioned computational debt associated with probabilistic FWI is paid by modeling the training pairs (x,y) and the cost of training the network. After these costs are incurred offline, our method can efficiently sample from the Bayesian posterior for many unseen seismic datasets without wave-equation solves.\n\n\n\n\n\n\n\n(a)\n\n\n\n\nFigure 2: Results from our method compared with exponential variogram. Our method produces realistic samples of earth models that when averaged produce high quality point estimates.\n\n\n\n\n\nTo our knowledge, this is the first demonstration of conditional normalizing flows applied to amortized FWI with Bayesian uncertainty quantification. We also showed a practical application of the uncertainty towards optimal experimental design of acquisition geometry. While the open source dataset used has small models, NFs are memory efficient due to their intrinsic invertibility and are set to scale to realistic sized problems and field datasets."
   },
   {
-    "objectID": "yin2023IMAGEend2end/abstract.html",
-    "href": "yin2023IMAGEend2end/abstract.html",
-    "title": "Coupled physics inversion for geological carbon storage monitoring",
-    "section": "",
-    "text": "Continuous understanding CO2 plume behavior is key to the success of geological carbon storage projects. While two-phase flow equations provide a good model to make predictions on future CO2 plume behavior, these equations rely on having access to the true permeability model. Unfortunately, accurate information on the permeability is unavailable, which greatly jeopardizes our ability to predict CO2 plume behavior. To overcome this problem, we estimate the permeability from time-lapse seismic data via a coupled inversion methodology that improve as more seismic monitoring data becomes available over time."
-  },
-  {
-    "objectID": "yin2023IMAGEend2end/abstract.html#methods-procedures-process-250-words",
-    "href": "yin2023IMAGEend2end/abstract.html#methods-procedures-process-250-words",
-    "title": "Coupled physics inversion for geological carbon storage monitoring",
-    "section": "Methods, Procedures, Process (250 words)",
-    "text": "Methods, Procedures, Process (250 words)\nTo estimate the spatial permeability distribution, we adopt a coupled physics inversion framework that involves three kinds of physics, namely two-phase fluid-flow, rock, and wave physics. The fluid-flow equations model the time evolution of the CO2 saturation and pressure given the permeability distribution. The rock physics modeling converts the time-varying CO2 saturation into the acoustic wavespeed. Finally, seismic modeling generates time-lapse seismic data for each vintage based on the wavespeed of the rocks. A schematic of this multiphysics forward model is shown in Figure 1.\nGiven observed time-lapse seismic data, we then directly invert for the permeability through the fully nested physics modeling operators. The inverted permeability can be used to generate time-varying CO2 concentration snapshots that match observed time-lapse seismic data. Aside from obtaining estimates for the CO2 plume’s past and current behavior, constrained by the two-phase flow equations, the proposed inversion methodology is also capable of producing reliable CO2 forecasts from the inverted permeability. These forecasts can be produced for different injection scenarios allowing for in-situ interventions designed to optimize productivity and minimize risks."
-  },
-  {
-    "objectID": "yin2023IMAGEend2end/abstract.html#results-observations-conclusions-250-words",
-    "href": "yin2023IMAGEend2end/abstract.html#results-observations-conclusions-250-words",
-    "title": "Coupled physics inversion for geological carbon storage monitoring",
-    "section": "Results, Observations, Conclusions (250 words)",
-    "text": "Results, Observations, Conclusions (250 words)\nTo gain insight on the performance of our inversion scheme, we conduct a realistic numerical study based on the North Sea Compass model whose geology is very similar to sites currently being considered as a potential site for geological carbon storage. For this purpose, we convert the compressional wavespeed in the model to log-permeability values to make up alternating high- and low-permeability layers in the reservoir with a seal on top. We inject 1 million metric ton CO2 per year in a highly permeable layer for 25 years. During and after injection, the CO2 tends to move into high permeability layers (over 1000 millidarcies) and move up due to buoyancy effects. To monitor the CO2 plume seismically, we shoot 5 surveys of crosswell data every 5th year, using a Ricker wavelet with a central frequency of 20 Hz.\nWe start the inversion with homogenous permeability values in the reservoir. After 12 data passes of gradient descent, the CO2 plume recovery from the inverted permeability is shown in Figure 2 (a). The extent of the plume looks drastically different from the initial prediction based on the homogeneous permeability, but reasonably similar to the ground truth CO2 plumes simulated from the true unknown permeability distribution. As expected, we only obtain information on the permeability from regions within the CO2 plume during the first 25 years of injection. While the inverted permeability captures only part of the true permeability distribution, it improves drastically on plume forecasts for the next 25 years compared to those obtained from the starting model for the permeability."
-  },
-  {
-    "objectID": "yin2023IMAGEend2end/abstract.html#significancenovelty-100-words",
-    "href": "yin2023IMAGEend2end/abstract.html#significancenovelty-100-words",
-    "title": "Coupled physics inversion for geological carbon storage monitoring",
-    "section": "Significance/Novelty (100 words)",
-    "text": "Significance/Novelty (100 words)\nTo our knowledge, this is a first numerical study where a multiphysics inversion framework is applied to a realistic geological carbon storage site. Not only are the fluid-flow simulations based on a proxy model for the permeability derived from real imaged seismic and well data but the simulations, including sensitivity calculations, are carried out with a state-of-the art solvers ([JutulDarcy.jl]), which accounts for capillary effects and residual trapping (purple colors). From this example, we observe that the proposed inversion methodology can be applied to geological carbon storage projects to estimate and forecast CO2 plume evolution.\n\n\n\n\n\n\n\nfig1\n\n\n\n\nFigure 1: Figure 1\n\n\n\n\n\n\n\n\n\nfig2\n\n\n\n\nFigure 2: Figure 2"
-  },
-  {
-    "objectID": "zhang2023IMAGEsg/abstract.html",
-    "href": "zhang2023IMAGEsg/abstract.html",
-    "title": "3D seismic survey design by maximizing the spectral gap",
-    "section": "",
-    "text": "The massive cost of 3D seismic acquisition calls for methods to reduce the number of receivers in the acquisition by designing optimal receiver sampling masks. Recent studies on 2D seismic showed that maximizing the spectral gap of the subsampling mask leads to better wavefield reconstruction results supported by expander graph theory. We enrich the current study by proposing a simulation-free method to automatically generate optimal 3D seismic acquisition by maximizing the spectral gap of the subsampling mask via a simulated annealing algorithm. Numerical experiments confirm improvement of the proposed acquisition design method over receiver sampling locations obtained by jittered sampling."
-  },
-  {
-    "objectID": "zhang2023IMAGEsg/abstract.html#methods-procedures-process-250-words",
-    "href": "zhang2023IMAGEsg/abstract.html#methods-procedures-process-250-words",
-    "title": "3D seismic survey design by maximizing the spectral gap",
-    "section": "Methods, Procedures, Process (250 words)",
-    "text": "Methods, Procedures, Process (250 words)\nThe spectral gap ratio is the ratio of the first and second singular values of a binary subsampling mask (binary matrix). It is a cheap-to-compute measure to predict wavefield reconstruction quality from acquisition geometry only. Motivated by recent success on 2D seismic survey design methods driven by spectral gap ratio minimization, we consider 3D seismic survey design where receivers are missing and sources are fully sampled. We propose a 3D seismic survey design method via minimizing the spectral gap ratio of 3D source sampling mask.\nBecause 3D wavefield reconstruction based on low-rank matrix completion relies on the non-canonical Source-X/Receiver-X (columns) Source Y/Receiver Y (rowws) organization of the data into a matrix, we aim to minimize the spectral gap ratio of the subsampling mask in that domain. Fortunately, when sources are fully sampled, each single-receiver block of the global sampling matrix is either fully sampled or empty depending on if that specific receiver is sampled. Consequently, the block structure of the global matrix leads to the exact same singular values than of a single-source receiver sampling mask. We can therefore optimize a single-source mask to obtain the global optimized mask. The main computational cost of this algorithm is computing the first two singular values of the subsampling mask, which is negligible compared to approaches that require wave simulations. The resulting optimal mask with the lowest spectral gap ratio indicates the receiver sampling locations that favor 3D wavefield reconstruction via matrix completion in the non-cononical organization."
-  },
-  {
-    "objectID": "zhang2023IMAGEsg/abstract.html#results-observations-conclusions-250-words",
-    "href": "zhang2023IMAGEsg/abstract.html#results-observations-conclusions-250-words",
-    "title": "3D seismic survey design by maximizing the spectral gap",
-    "section": "Results, Observations, Conclusions (250 words)",
-    "text": "Results, Observations, Conclusions (250 words)\nTo illustrate the efficacy of our method via a numerical experiment on a simulated 3D marine dataset over the compass model. The data volume consists of 501 time samples, 1681 sources and 10k receivers. The distance between the adjacent sources and receivers are 150m and 25m in each direction, respectively, with a time sampling interval of 0.01s. By removing 90% of receivers using jittered subsampling, we obtain a binary matrix with the spectral gap ratio 0.507 in the non-canonical domain. After applying simulated annealing algorithm, the spectral gap ratio of mask effectively decreases to 0.328. To validate the efficacy of our acquisition design method, we perform data reconstruction on a frequency slice at 16.8Hz via weighted matrix completion for the two subsampled datasets with jittered subsampling mask and the proposed mask, with results shown in Figure 2. The reconstruction signal-to-noise ratio from the observed data at proposed source locations is 12.27 dB, which is about 1.4 dB higher than the reconstruction signal-to-noise ratio 10.88 dB achieved from data observed at jittered sampled source locations. This confirms that the proposed optimized sources sampling locations result in a superior seismic survey that leads to better wavefield reconstruction performance."
-  },
-  {
-    "objectID": "zhang2023IMAGEsg/abstract.html#significancenovelty-100-words",
-    "href": "zhang2023IMAGEsg/abstract.html#significancenovelty-100-words",
-    "title": "3D seismic survey design by maximizing the spectral gap",
-    "section": "Significance/Novelty (100 words)",
-    "text": "Significance/Novelty (100 words)\nThis is the first numerical case study that applies spectral gap ratio minimization techniques to seismic acquisition design that favors 3D wavefield reconstruction. Rather than requiring costly wave simulations, the proposed method only relies on a single binary matrix optimization which is computationally inexpensive. Experiments demonstrate that the proposed method generates an improved 3D seismic survey better suitable for 3D wavefield reconstruction.\n\n\n\n\n\n\n\nfig1\n\n\n\n\nFigure 1: Figure 1\n\n\n\n\n\n\n\n\n\nfig2\n\n\n\n\nFigure 2: Figure 2"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Image2023",
     "section": "",
     "text": "This is a Quarto website.\nAll submissions to the Image23 conference with additional figures, references, …\nList of abstracts:\n\nLearned one-shot imaging Learned non-linear simultenous source and corresponding supershot for seismic imaging.\nSequential Bayesian Inference Plume Monitoring with Learned Sequential Bayesian Inference\nCoupled inversion Coupled physics inversion for geological carbon storage monitoring.\nBayesian FWI Amortized Bayesian Full Waveform Inversion and Experimental Design with Normalizing Flows\nBayesian Kriging Generative Seismic Kriging with Normalizing Flows\nDetectability with Vision Classification Analysis of CO2 Leakage Detectability via Vision Classifier\n3D survey design 3D seismic survey design by maximizing the spectral gap"
+  },
+  {
+    "objectID": "DetectabilityWithVision/abstract.html",
+    "href": "DetectabilityWithVision/abstract.html",
+    "title": "Analysis of CO2 Leakage Detectability via Vision Classifier",
+    "section": "",
+    "text": "In previous work, we have shown that neural classifiers can be trained to detect CO2 leakage from time-lapse seismic images. While such result is key to the global deployment of geological carbon storage (GCS), it success depended on relatively dense non-replicated time-lapse data acquisition. We will show that by augmenting the training set with various coarse receiver samplings, we can improve the CO2 leakage detection capabilities and accuracy while increasing the robustness with respect to low-cost coarse non-replicated receiver samplings, e.g. with ocean bottom nodes (OBNs)."
+  },
+  {
+    "objectID": "DetectabilityWithVision/abstract.html#methods-procedures-process-250-words-1500",
+    "href": "DetectabilityWithVision/abstract.html#methods-procedures-process-250-words-1500",
+    "title": "Analysis of CO2 Leakage Detectability via Vision Classifier",
+    "section": "Methods, Procedures, Process (250 words, 1500)",
+    "text": "Methods, Procedures, Process (250 words, 1500)\nTo create a suitable training set, we derive permeability models from 2D proxy models with a geology representative for potential GCS sites in the South of the North Sea. These models are derived from 3D imaged seismic and well-log data and contain realistic heterogeneity. Given these permeability models, we create a training set of seismically imaged CO2 plumes that behave regularly (without leakage) and irregularly (with leakage). After generating the baseline and monitor surveys, time-lapse seismic images of the plume are created with reverse time migration (RTM). The CO2 plumes themselves are modeled with two-phase flow equations.\nTo create high-fidelity images, we deploy 162 receivers and 32 jittered sources {ML: I’d put the sampling in meters, this could be anything}. Given these images we train our visual classifier based on a Vision Transformer network. As we can observe from Figure 1(a), this classifier meets our ultimate purpose of distinguishing between regular and irregular plumes by performing binary classification. While encouraging the training and test images all rely on high-fidelity imaging obtained with densely sampled OBNs. Unfortunately, in practice we can not rely on dense receiver sampling because of the associated high costs and the classifier performance on seismic images obtained form coarse receiver sampling drastically deteriorates (Figure 1(b)). To overcome this problem, we augment the training dataset with time-lapse seismic images computed from a plurality of acquisition geometries with varying coarse receiver samplings."
+  },
+  {
+    "objectID": "DetectabilityWithVision/abstract.html#results-observations-conclusions-250-words-1500",
+    "href": "DetectabilityWithVision/abstract.html#results-observations-conclusions-250-words-1500",
+    "title": "Analysis of CO2 Leakage Detectability via Vision Classifier",
+    "section": "Results, Observations, Conclusions (250 words, 1500)",
+    "text": "Results, Observations, Conclusions (250 words, 1500)\nFrom Figure 2(a), we observe that the testing accuracy of the network trained initially on 162 receiver setting performs well for acquisition geometries with more receivers but its accuracy degrades gradually when the number of receivers becomes smaller rendering the classifier untrustworthy for less 100 receivers. On the other hand, we see in Figure (2a) that the network trained with the augmented dataset containing images from coarse receiver sampling provides higher accuracy for all receiver geometries and better robustness to coarse acquisition. Moreover, the confusion matrix performance metrics (precision, recall and F-1 score) also improved substantially showing the improved trustworthiness new network\n\nThese results show that dataset augmentation can indeed enhance the generalization of our neural classifier and contributes to its leakage detection accuracy. In terms of practical usage, this work suggests a dataset based on a particular seismic time-lapse acquisition geometry can easily be made applicable to different geometries by adding time-lapse seismic images obtained with complementary random acquisition geometries to the training dataset."
+  },
+  {
+    "objectID": "DetectabilityWithVision/abstract.html#significancenovelty-100-words-600",
+    "href": "DetectabilityWithVision/abstract.html#significancenovelty-100-words-600",
+    "title": "Analysis of CO2 Leakage Detectability via Vision Classifier",
+    "section": "Significance/Novelty (100 words, 600)",
+    "text": "Significance/Novelty (100 words, 600)\nTo our knowledge, this is a first study how to make neural classifiers for CO2 leakage detection more robust with respect to variations in receiver geometry and density. To achieve this, we propose a simple dataset augmentation technique that improves generalization of the network to changes in the acquisition geometry. The results suggest that our study has the potential to lower dataset collection costs while training classifiers capable of automatic leakage detection from time-lapse seismic images computed from non-replicated surveys with varying coarse receiver density."
   }
 ]
