@@ -32,7 +32,7 @@
     "href": "OneShot/abstract.html#significance",
     "title": "Learned one-shot imaging",
     "section": "Significance",
-    "text": "Significance\nWe introduced the first instance of learned nonlinear simultaneous-source encoding, enabling one-shot simultaneous-source seismic imaging. After incurring initial training costs, the method is capable of producing high-fidelity images at the cost of migrating a single shot record, which entails a drastic reduction in migration costs. We introduced supervised and unsupervised training formulations, the latter of which does not require knowledge of true subsurface images and only relies on a dataset of shot records from several seismic surveys, making it applicable in realistic settings."
+    "text": "Significance\nWe introduced the first instance of learned nonlinear simultaneous-source encoding, enabling one-shot seismic imaging. After incurring initial training costs, the method is capable of producing high-fidelity images at the cost of migrating a single shot record, which entails a drastic reduction in migration costs. We introduced supervised and unsupervised training formulations, the latter of which only relies on a dataset of shot records from several seismic surveys, making it applicable in realistic settings. Additional material is available at https://slimgroup.github.io/IMAGE2023/."
   },
   {
     "objectID": "OneShot/abstract.html#introduction",
