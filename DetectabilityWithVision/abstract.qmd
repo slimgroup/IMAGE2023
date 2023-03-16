@@ -23,6 +23,15 @@ To create a suitable training set, we derive permeability models from 2D proxy m
 To create high-fidelity images, we deploy 162 receivers and 32 jittered sources {ML: I'd put the sampling in meters, this could be anything}. Given these images we train our visual classifier based on a Vision Transformer network. As we can observe from Figure 1(a), this classifier meets our ultimate purpose of distinguishing between regular and irregular plumes by performing binary classification. While encouraging the training and test images all rely on high-fidelity imaging obtained with densely sampled OBNs. 
 Unfortunately, in practice we can not rely on dense receiver sampling because of the associated high costs and the classifier performance on seismic images obtained form coarse receiver sampling drastically deteriorates (Figure 1(b)). To overcome this problem, we augment the training dataset with time-lapse seismic images computed from a plurality of acquisition geometries with varying coarse receiver samplings.
 
+
+::: {#fig-1 layout-ncol=1}
+
+![(a)](figs/figure_1_draft.jpg){width=100%}
+
+Workflow. 
+
+:::
+
 ## Results, Observations, Conclusions (250 words, 1500)
 
 From Figure 2(a), we observe that the testing accuracy of the network trained initially on 162 receiver setting performs well for acquisition geometries with more receivers but its accuracy degrades gradually when the number of receivers becomes smaller rendering the classifier untrustworthy for less 100 receivers.
@@ -36,23 +45,15 @@ To compensate for this loss in performance and to improve its overall performanc
 
 These results show that dataset augmentation can indeed enhance the generalization of our neural classifier and contributes to its leakage detection accuracy. In terms of practical usage, this work suggests a dataset based on a particular seismic time-lapse acquisition geometry can easily be made applicable to different geometries by adding time-lapse seismic images obtained with complementary random acquisition geometries to the training dataset.
 
+::: {#fig-2 layout-ncol=1}
+
+![(a)](figs/figure_2_draft.jpg){width=100%}
+
+Classification Results. 
+
+:::
+
 ## Significance/Novelty (100 words, 600)
 
 To our knowledge, this is a first study how to make neural classifiers for CO~2~ leakage detection more robust with respect to variations in receiver geometry and density. To achieve this, we propose a simple dataset augmentation technique that improves generalization of the network to changes in the acquisition geometry. The results suggest that our study has the potential to lower dataset collection costs while training classifiers capable of automatic leakage detection from time-lapse seismic images computed from non-replicated surveys with varying coarse receiver density.
 
-
-<!-- ::: {#fig-1 layout-ncol=1}
-
-![fig1](figs/fig1.png){width=100%}
-
-Figure 1
-
-:::
-
-::: {#fig-2 layout-ncol=1}
-
-![fig2](figs/fig2.png){width=100%}
-
-Figure 2
-
-::: -->
