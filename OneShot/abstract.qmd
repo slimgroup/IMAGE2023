@@ -56,7 +56,7 @@ Unsupervised Learned supershot and simultenous sources on a testing slice. We sh
 
 ## Significance
 
-We introduced the first instance of learned nonlinear simultaneous-source encoding, enabling one-shot simultaneous-source seismic imaging. After incurring initial training costs, the method is capable of producing high-fidelity images at the cost of migrating a single shot record, which entails a drastic reduction in migration costs. We introduced supervised and unsupervised training formulations, the latter of which does not require knowledge of true subsurface images and only relies on a dataset of shot records from several seismic surveys, making it applicable in realistic settings.
+We introduced the first instance of learned nonlinear simultaneous-source encoding, enabling one-shot seismic imaging. After incurring initial training costs, the method is capable of producing high-fidelity images at the cost of migrating a single shot record, which entails a drastic reduction in migration costs. We introduced supervised and unsupervised training formulations, the latter of which only relies on a dataset of shot records from several seismic surveys, making it applicable in realistic settings. Additional material is available at https://slimgroup.github.io/IMAGE2023/.
 
 
 # Supplementary material
