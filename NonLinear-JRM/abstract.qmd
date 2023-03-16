@@ -1,5 +1,5 @@
 ---
-title: "Time-lapse seismic monitoring of geological carbon storage using non-linear joint recovery model"
+title: "Time-lapse seismic monitoring of geological carbon storage with the nonlinear joint recovery model"
 author:
   - name: Abhinav Prakash Gahlot
     affiliations:
@@ -12,20 +12,25 @@ author:
       name: Georgia Institute of Technology
 ---
 
+<!-- I would refrain from including the equation in the text because the system has very limited capabilities. I would do what the others have done and put the equation w/ the figures. Figures are too big. Results for the replicated acquisition do NOT make sense. You need to use the same seed for the random source selection during the inversion, which I suspect you did not. Differences in time-lapse are difficult to see. Consider to take out replicated experiment and split Figure 2 into two. Use bold for vectors and operators. I suspect there is also a screw up in the notation. When the surveys are not replicated, the forward operators are NOT the same. Needs to be fixed.-->
+
 ## Objectives/Scope (100 words, 600 characters)
 
-In time-lapse seismic monitoring, weak 4D signal below the level of inversion or migration artifacts pose challenge to the robustness of time-lapse imaging. To address these challenges, low-cost randomized non-replicated acquisitions and linear joint recovery model (JRM) have been introduced which takes advantage of the fact that the time-lapse seismic data and subsurface structure undergoing localized changes share information between different vintages of seismic data. Since the relationship between seismic data and subsurface properties is seldom linear, we propose a non-linear JRM which is an extension of linear JRM with non-linear forward modeling operator.
+During time-lapse seismic monitoring, weak 4D signal below the level of inversion or migration artifacts poses challenges. To address these, low-cost randomized non-replicated acquisitions and linear joint recovery model (JRM) have been introduced that take advantage of the fact that time-lapse seismic data and subsurface structure undergoing localized changes share information between different vintages. Since the relationship between seismic data and subsurface properties is seldomly linear, we propose a more versatile nonlinear JRM, which extends linear JRM to nonlinear forward modeling.
 
 ## Methods, Procedures, Process (250 words, 1500)
 
-In linear JRM, for two vintages of seismic data, three unknown parameters are inverted - common component $m_0$ and two innovations ($\delta m_1$ & $\delta m_2$) with respect to this common component and there is a linear relationship between the parameters and seismic data. But in non-linear JRM, we take advantage of the full non-linear relation, $\textrm{F}$, between them such that our minimization objective becomes 
-$$
+During linear JRM, for two seismic vintages, three unknown parameters are inverted, namely the common component, $m_0$, and innovation components, $\delta m_1$ and $\delta m_2$, with respect to this common component and there is a linear relationship between these components and seismic data. But during the proposed nonlinear JRM (nJRM), we take advantage of the full nonlinear relation between these components and time-lapse data resulting in minimization of the objective included in Figure 1. After mathematical manipulations on the expression for the gradients, the computational costs of minimizing this joint objective can be reducing significantly so it becomes tractable. 
+
+<!-- $$
 \min_{m_0, \delta m_1, \delta m_2} \Phi(m_0, \delta m_1, \delta m_2) = \frac{1}{2} || \textrm{F}(m_0 + \delta m_1)  - d_b ||_2^2 + \frac{1}{2} || \textrm{F}(m_0 + \delta m_2)  - d_m ||_2^2
 $$
 
-where $\textrm{F}$ is the non-linear forward modeling operator, $d_{b}$ and $d_{m}$ are baseline and monitor seismic data and $||$ is the $\ell_2$ norm operator. This is a standard least squares problem that can be solved by gradient-based stochastic optimization. Although the gradients with respect to three parameters require PDE solves and seems quite expensive, the complexity reduces drastically with some mathematical simplifications of the gradients and the optimization becomes tractable.
+where $\textrm{F}$ is the non-linear forward modeling operator, $d_{b}$ and $d_{m}$ are baseline and monitor seismic data and $||$ is the $\ell_2$ norm operator. This is a standard least squares problem that can be solved by gradient-based stochastic optimization. -->
 
-In the experimental setup for CO~2~ monitoring, we took a 2D velocity slice from the Compass model, simulated two-phase flow and obtained a time-lapse change in the subsurface. In order to image this change, we simulated randomized non-replicated time-lapse seismic data and inverted it using non-linear JRM. The dimension of the model was 5970m X 1545m. The source and receiver intervals were 100m and 60m respectively. The total number of sources used was 48. 
+To demonstrate the advocacy of the proposed nonlinear extension, we consider an experimental setup involving CO~2~ monitoring. To model a time-lapse change in the monitor survey, we simulated two-phase flow in a 2D slice from the Compass model (See Figure XXX) <!--show the plume in the model--> followed by simulating time-lapse seismic data for the baseline and monitor surveys. 
+
+ <!-- ,and obtained a time-lapse change in the subsurface. In order to image this change, we simulated randomized non-replicated time-lapse seismic data and inverted it using non-linear JRM. The dimension of the model was 5970m X 1545m. The source and receiver intervals were 100m and 60m respectively. The total number of sources used was 48.  -->
 
 ## Results, Observations, Conclusions (250 words, 1500)
 
@@ -36,6 +41,8 @@ The recovery of the vintages and their time-lapse difference is measured by the 
 ## Significance/Novelty (100 words, 600)
 
 To our knowledge, this is the first study on the application of non-linear JRM with non-replicated time-lapse data for geological carbon storage. The current paradigm vouch for independent imaging and replicated time-lapse surveys which is expensive and often require uneconomical dense sampling of the wavefields. But with the proposed new technique, we argue that there is no need for a fully replicated expensive time-lapse survey, rather non-replicated surveys are sufficient to provide an artifact-free time-lapse signal with JRM. More information on this work is in (https://github.com/slimgroup/IMAGE2023).
+
+<!-- Too long. Need to mention that it is extendible to >2 vintages -->
 
 ::: {#fig-1 layout-ncol=1}
 ![fig1](Figures/Replicate_Image23.png){width=100%}
