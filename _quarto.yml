@@ -30,6 +30,8 @@ website:
           file: DetectabilityWithVision/abstract.qmd
         - text: "3D survey design"
           file: zhang2023IMAGEsg/abstract.qmd
+        - text: "NonLinear JRM"
+          file: NonLinear-JRM/abstract.qmd
   page-footer:
     center:
       - file: license.qmd

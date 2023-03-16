@@ -21,3 +21,5 @@ List of abstracts:
 
 - [Detectability with Vision Classification](DetectabilityWithVision/abstract.qmd) Analysis of CO2 Leakage Detectability via Vision Classifier
 - [3D survey design](zhang2023IMAGEsg/abstract.qmd) 3D seismic survey design by maximizing the spectral gap
+
+- [NonLinear JRM](NonLinear-JRM/abstract.qmd) Time-lapse seismic monitoring of geological carbon storage using non-linear joint recovery model.
