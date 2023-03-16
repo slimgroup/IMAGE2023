@@ -246,6 +246,21 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="methods-procedures-process-250-words-1500">Methods, Procedures, Process (250 words, 1500)</h2>
 <p>To create a suitable training set, we derive permeability models from 2D proxy models with a geology representative for potential GCS sites in the South of the North Sea. These models are derived from 3D imaged seismic and well-log data and contain realistic heterogeneity. Given these permeability models, we create a training set of seismically imaged CO<sub>2</sub> plumes that behave regularly (without leakage) and irregularly (with leakage). After generating the baseline and monitor surveys, time-lapse seismic images of the plume are created with reverse time migration (RTM). The CO<sub>2</sub> plumes themselves are modeled with two-phase flow equations.</p>
 <p>To create high-fidelity images, we deploy 162 receivers and 32 jittered sources {ML: I’d put the sampling in meters, this could be anything}. Given these images we train our visual classifier based on a Vision Transformer network. As we can observe from Figure 1(a), this classifier meets our ultimate purpose of distinguishing between regular and irregular plumes by performing binary classification. While encouraging the training and test images all rely on high-fidelity imaging obtained with densely sampled OBNs. Unfortunately, in practice we can not rely on dense receiver sampling because of the associated high costs and the classifier performance on seismic images obtained form coarse receiver sampling drastically deteriorates (Figure 1(b)). To overcome this problem, we augment the training dataset with time-lapse seismic images computed from a plurality of acquisition geometries with varying coarse receiver samplings.</p>
+<div id="fig-1" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/figure_1_draft.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">(a)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Workflow.</figcaption><p></p>
+</figure>
+</div>
 </section>
 <section id="results-observations-conclusions-250-words-1500" class="level2">
 <h2 class="anchored" data-anchor-id="results-observations-conclusions-250-words-1500">Results, Observations, Conclusions (250 words, 1500)</h2>
@@ -255,25 +270,25 @@ Repetetion of above, removed
 
 To compensate for this loss in performance and to improve its overall performance, we augment the training dataset with time-lapse difference images obtained for acquisition geometries with randomly varying numbers of receivers (BETWEEN WHAT AND WHAT?????). After training with the augmented dataset, we observe that the classification accuracy for all configurations has been increased significantly as  shown in Figure (2a). Moreover, the confusion matrix performance metrics(precision, recall and F-1 score) have also improved substantially.-->
 <p>These results show that dataset augmentation can indeed enhance the generalization of our neural classifier and contributes to its leakage detection accuracy. In terms of practical usage, this work suggests a dataset based on a particular seismic time-lapse acquisition geometry can easily be made applicable to different geometries by adding time-lapse seismic images obtained with complementary random acquisition geometries to the training dataset.</p>
+<div id="fig-2" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/figure_2_draft.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">(a)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Classification Results.</figcaption><p></p>
+</figure>
+</div>
 </section>
 <section id="significancenovelty-100-words-600" class="level2">
 <h2 class="anchored" data-anchor-id="significancenovelty-100-words-600">Significance/Novelty (100 words, 600)</h2>
 <p>To our knowledge, this is a first study how to make neural classifiers for CO<sub>2</sub> leakage detection more robust with respect to variations in receiver geometry and density. To achieve this, we propose a simple dataset augmentation technique that improves generalization of the network to changes in the acquisition geometry. The results suggest that our study has the potential to lower dataset collection costs while training classifiers capable of automatic leakage detection from time-lapse seismic images computed from non-replicated surveys with varying coarse receiver density.</p>
-<!-- ::: {#fig-1 layout-ncol=1}
-
-![fig1](figs/fig1.png){width=100%}
-
-Figure 1
-
-:::
-
-::: {#fig-2 layout-ncol=1}
-
-![fig2](figs/fig2.png){width=100%}
-
-Figure 2
-
-::: -->
 
 
 </section>
