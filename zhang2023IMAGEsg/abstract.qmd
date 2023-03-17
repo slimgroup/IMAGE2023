@@ -5,8 +5,12 @@ author:
     affiliations:
       name: Georgia Institute of Technology
   - name: Ziyi Yin
+    orcid: "0000-0002-5024-8771"
+    email: ziyi.yin@gatech.edu
+    url: https://ziyiyin97.github.io
     affiliations:
       name: Georgia Institute of Technology
+      url: https://slim.gatech.edu/
   - name: Oscar Lopez
     affiliations:
       name: Florida Atlantic University
