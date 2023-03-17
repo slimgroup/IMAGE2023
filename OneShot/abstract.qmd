@@ -11,6 +11,9 @@ author:
     affiliations:
       - ref: gatech
   - name: Ali Siahkoohi
+    orcid: "0000-0001-8779-2247"
+    email: alisk@rice.edu
+    url: https://alisiahkoohi.github.io/
     affiliations:
       name: Rice University
   - name: Felix J. Herrmann
