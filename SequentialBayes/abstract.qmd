@@ -2,6 +2,7 @@
 title: "Monitoring Subsurface CO~2~ Plumes with Sequential Bayesian Inference"
 author:
   - name: Ting-Ying Yu
+  orcid: "0009-0008-9481-4588"
     affiliations:
       name: Georgia Institute of Technology
   - name: Rafael Orozco
