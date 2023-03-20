@@ -28,7 +28,7 @@ Unfortunately, in practice we can not rely on dense receiver sampling because of
 
 ::: {#fig-1 layout-ncol=1}
 
-![(a)](figs/figure_1_draft.jpg){width=100%}
+![(a)](figs/figure_1.jpg){width=100%}
 
 Workflow. 
 
