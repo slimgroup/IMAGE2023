@@ -44,7 +44,7 @@ The spectral gap ratio is the ratio of the first and second singular values of a
 
 ## Results, Observations, Conclusions (1500 characters)
 
-To illustrate the efficacy of our method via a numerical experiment on a simulated 3D marine dataset over the compass model. The data volume consists of 501 time samples, 1681 sources and 10k receivers. The distance between the adjacent sources and receivers are 150m and 25m in each direction, respectively, with a time sampling interval of 0.01s. By removing 90% of receivers using jittered subsampling, we obtain a binary matrix with the spectral gap ratio 0.507 in the non-canonical domain. After applying simulated annealing algorithm, the spectral gap ratio of mask effectively decreases to 0.328. To validate the efficacy of our acquisition design method, we perform data reconstruction on a frequency slice at 16.8Hz via weighted matrix completion for the two subsampled datasets with jittered subsampling mask and the proposed mask, with results shown in Figure 2. The reconstruction signal-to-noise ratio from the observed data at proposed receiver locations is 12.27 dB, which is about 1.4 dB higher than the reconstruction signal-to-noise ratio 10.88 dB achieved from data observed at jittered sampled receiver locations. This confirms that the proposed optimized receiver sampling locations result in a superior seismic survey that leads to better wavefield reconstruction performance. More information is in https://github.com/slimgroup/IMAGE2023.
+To illustrate the efficacy of our method via a numerical experiment on a simulated 3D marine dataset over the compass model. The data volume consists of 501 time samples, 1681 sources and 10k receivers. The distance between the adjacent sources and receivers are 150m and 25m in each direction, respectively, with a time sampling interval of 0.01s. By removing 90% of receivers using jittered subsampling, we obtain a binary matrix with the spectral gap ratio 0.507 in the non-canonical domain. After applying simulated annealing algorithm, the spectral gap ratio of mask effectively decreases to 0.328. To validate the efficacy of our acquisition design method, we perform data reconstruction on a frequency slice at 16.8Hz via weighted matrix completion for the two subsampled datasets with jittered subsampling mask and the proposed mask, with results shown in Figure 2. The reconstruction signal-to-noise ratio from the observed data at proposed receiver locations is 12.27 dB, which is about 1.4 dB higher than the reconstruction signal-to-noise ratio 10.88 dB achieved from data observed at jittered sampled receiver locations. This confirms that the proposed optimized receiver sampling locations result in a superior seismic survey that leads to better wavefield reconstruction performance. More information is in slimgroup.github.io/IMAGE2023.
 
 ## Significance/Novelty (600 characters)
 
@@ -52,16 +52,16 @@ This is the first numerical case study that applies spectral gap ratio minimizat
 
 ::: {#fig-1 layout-ncol=1}
 
-![fig1](figs/fig1.png){width=100%}
+![](figs/fig1.png){width=100%}
 
-Figure 1
+The spectral gap ratio in non-canonical organization domain is the same as the spectral gap ratio for a single-source receiver sampling mask.
 
 :::
 
 ::: {#fig-2 layout-ncol=1}
 
-![fig2](figs/fig2.png){width=100%}
+![](figs/fig2.png){width=100%}
 
-Figure 2
+Wavefield reconstruction of a single frequency slice.
 
 :::
