@@ -50,13 +50,13 @@ We start the inversion with homogenous permeability values in the reservoir. Aft
 To our knowledge, this is the first numerical study that applies a multiphysics inversion framework to a realistic geological carbon storage site. The fluid-flow simulations and sensitivity calculations are conducted using state-of-the-art solvers in JutulDarcy.jl, which accounts for compressibility and residual trapping effects (purple colors). Also, the simulations are based on a proxy permeability model derived from real imaged seismic and well data. Experiment shows that the proposed methodology can be applied to geological carbon storage projects to estimate and forecast CO~2~ plume evolution.
 
 ::: {#fig-1 layout-ncol="1"}
-![fig1](figs/fig1.png){width="100%"}
+![](figs/fig1.png){width="100%"}
 
-Figure 1
+Multi-physics forward modeling.
 :::
 
 ::: {#fig-2 layout-ncol="1"}
-![fig2](figs/fig2.png){width="100%"}
+![](figs/fig2.png){width="100%"}
 
-Figure 2
+End-to-end inversion results. *(a)* shows the CO~2~ plume snapshots at every 10th year for the initial prediction, ground truth ones, and the prediction from inverted permeability model. *(b)* shows the initial, inverted and ground truth permeability model.
 :::
