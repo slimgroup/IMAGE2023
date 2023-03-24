@@ -11,7 +11,6 @@
 <meta name="author" content="Ziyi Yin">
 <meta name="author" content="Mathias Louboutin">
 <meta name="author" content="Felix J. Herrmann">
-<meta name="description" content="empty">
 
 <title>Image2023 - Monitoring Subsurface CO2 Plumes with Sequential Bayesian Inference</title>
 <style>
@@ -186,10 +185,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objectives-and-scope-597600-characters" id="toc-objectives-and-scope-597600-characters" class="nav-link active" data-scroll-target="#objectives-and-scope-597600-characters">OBJECTIVES AND SCOPE (597/600 characters)</a></li>
-  <li><a href="#methods-procedures-process-14431500-characters" id="toc-methods-procedures-process-14431500-characters" class="nav-link" data-scroll-target="#methods-procedures-process-14431500-characters">METHODS, PROCEDURES, PROCESS (1443/1500 characters)</a></li>
-  <li><a href="#results-observations-conclusions-11461500-characters" id="toc-results-observations-conclusions-11461500-characters" class="nav-link" data-scroll-target="#results-observations-conclusions-11461500-characters">RESULTS, OBSERVATIONS, CONCLUSIONS (1146/1500 characters)</a></li>
-  <li><a href="#significancenovelty-238600-characters" id="toc-significancenovelty-238600-characters" class="nav-link" data-scroll-target="#significancenovelty-238600-characters">SIGNIFICANCE/NOVELTY (238/600 characters)</a></li>
+  <li><a href="#objectives-and-scope" id="toc-objectives-and-scope" class="nav-link active" data-scroll-target="#objectives-and-scope">OBJECTIVES AND SCOPE</a></li>
+  <li><a href="#methods-procedures-process" id="toc-methods-procedures-process" class="nav-link" data-scroll-target="#methods-procedures-process">METHODS, PROCEDURES, PROCESS</a></li>
+  <li><a href="#results-observations-conclusions" id="toc-results-observations-conclusions" class="nav-link" data-scroll-target="#results-observations-conclusions">RESULTS, OBSERVATIONS, CONCLUSIONS</a></li>
+  <li><a href="#significancenovelty" id="toc-significancenovelty" class="nav-link" data-scroll-target="#significancenovelty">SIGNIFICANCE/NOVELTY</a></li>
   </ul>
 </nav>
     </div>
@@ -201,11 +200,6 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title d-none d-lg-block">Monitoring Subsurface CO<sub>2</sub> Plumes with Sequential Bayesian Inference</h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>empty</p>
-  </div>
-</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Authors</div>
@@ -266,12 +260,6 @@ ul.task-list li input[type="checkbox"] {
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="abstract-title">Abstract</div>
-    <p>empty</p>
-  </div>
-</div>
 
 </header>
 
@@ -280,12 +268,14 @@ ul.task-list li input[type="checkbox"] {
     \newcommand{\pluseq}{\mathrel{+}=}
 \]</span></p>
 </div>
-<section id="objectives-and-scope-597600-characters" class="level2">
-<h2 class="anchored" data-anchor-id="objectives-and-scope-597600-characters">OBJECTIVES AND SCOPE (597/600 characters)</h2>
+<section id="objectives-and-scope" class="level2">
+<h2 class="anchored" data-anchor-id="objectives-and-scope">OBJECTIVES AND SCOPE</h2>
+<!-- (597/600 characters)  -->
 <p>To monitor and predict CO<sub>2</sub> plume dynamics during geological carbon storage, reservoir engineers usually perform two-phase flow simulations. While these simulations may provide useful insights, their usefulness is limited due to numerous complicating factors including uncertainty in the dynamics of the plume itself. To study this phenomenon, we consider stochasticity in the dynamic caused by unknown random changes in the injection rate. By conditioning the CO<sub>2</sub> plume predictions on seismic observations, we correct the CO<sub>2</sub> plume predictions and quantify uncertainty with machine learning.</p>
 </section>
-<section id="methods-procedures-process-14431500-characters" class="level2">
-<h2 class="anchored" data-anchor-id="methods-procedures-process-14431500-characters">METHODS, PROCEDURES, PROCESS (1443/1500 characters)</h2>
+<section id="methods-procedures-process" class="level2">
+<h2 class="anchored" data-anchor-id="methods-procedures-process">METHODS, PROCEDURES, PROCESS</h2>
+<!-- (1443/1500 characters)  -->
 <p>We propose a method where at each timestep conditional neural networks are trained to generate samples of the CO<sub>2</sub> saturation conditioned on current time-lapse seismic data. The method proceeds by generating training pairs consisting of the current CO<sub>2</sub> saturation, which is simulated with a random injection rate from the previous timestep, and the associated reverse-time migration seismic image computed from simulated surface data. Given these training pairs, an amortized conditional normalizing flow (NF) is trained to approximate the posterior distribution for the saturation given seismic images. After training, the network is capable of drawing samples from the posterior distribution of the saturation given observed time-lapse seismic data at the current timestep. In turn, these samples for the CO<sub>2</sub> saturation serve as input to two-phase flow simulations to predict the CO<sub>2</sub> plume at the next timestep and the process repeats itself, recursively.</p>
 <p>Compared to more traditional data assimilation techniques, our approach has the distinct advantage that it does not make simplifying assumptions on the statistics and linearity of the CO<sub>2</sub> plume dynamics and its coupling to time-lapse seismic data. The proposed method is also likelihood free. It only needs to be able to run simulations of the plume dynamics that may contain hidden stochastic terms. In our case, this stochastic term is the randomly varying injection rate.</p>
 <!-- We generate the prior x_0, a dataset with 128 CO~2~ saturation data (x) each with a size of 64x64 . Each prior data has a circular initial CO~2~ plume with a uniformed CO~2~ saturation s \sim N(0.2,0.8). Besides the prior, two physics models, the transition model (M) and seismic observation model (H), are used for all experiments. The stochastic transition model to calculate the evolution of CO~2~ saturation data over each timestep with fluid flow physics with a randomized injection rate I \sim N(0,0.2). The seismic model made observations (y) based on the simulated acoustic measurements at the surface. 
@@ -299,20 +289,16 @@ Our seismic-conditioned simulation involves four main processes: transitioning, 
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
 <p><img src="figures/schematic.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">(a)</figcaption><p></p>
-</figure>
-</div>
 </div>
 </div>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: Schematic of training process for a single timestep.</figcaption><p></p>
 </figure>
 </div>
 </section>
-<section id="results-observations-conclusions-11461500-characters" class="level2">
-<h2 class="anchored" data-anchor-id="results-observations-conclusions-11461500-characters">RESULTS, OBSERVATIONS, CONCLUSIONS (1146/1500 characters)</h2>
+<section id="results-observations-conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="results-observations-conclusions">RESULTS, OBSERVATIONS, CONCLUSIONS</h2>
+<!-- (1199/1500 characters)  -->
 <p>We make CO<sub>2</sub> plume predictions using both conditioned by seismic and unconditioned simulations. The conditional mean of the posterior samples is used for the seismic-conditioned predictions, while the unconditioned predictions are given by the ensemble mean over the different simulations at each timestep. Figure 2 shows that seismic-conditioned predictions are more accurate in predicting the ground truth and have a smaller conditional sample variance than the unconditioned ensemble mean predictions.</p>
 <p>By examining the difference between the ground truth and predictions, we characterize the uncertainties. For the seismic-conditioned predictions, the uncertainties are located near the injection well. In addition, the plume’s boundary is well-predicted by the seismic-conditioned method while the unconditioned simulations have, as expected, an increasing uncertainty at the boundary over time and tend to consistently over-estimate the plume extent.</p>
 <p>Overall, we conclude that the unconditioned simulation poorly predicts the CO<sub>2</sub> plume. Our seismic-conditioned framework assimilates information and learns over time, which improves the CO<sub>2</sub> forecasting and characterizes uncertainties.</p>
@@ -320,21 +306,17 @@ Our seismic-conditioned simulation involves four main processes: transitioning, 
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
 <p><img src="figures/results.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">(a)</figcaption><p></p>
-</figure>
-</div>
 </div>
 </div>
 <p></p><figcaption class="figure-caption">Figure&nbsp;2: Results from our method compared with unconditional ensemble variogram.</figcaption><p></p>
 </figure>
 </div>
 </section>
-<section id="significancenovelty-238600-characters" class="level2">
-<h2 class="anchored" data-anchor-id="significancenovelty-238600-characters">SIGNIFICANCE/NOVELTY (238/600 characters)</h2>
-<p>To our understanding, the seismic-conditioned framework is the first geological carbon storage monitoring model that continuously assimilates information with seismic observations, updates the CO<sub>2</sub> plume predictions, and characterizes uncertainties on the plume itself. Because or prediction are conditioned by the physics, we expect this method to extend to larger and more realistic model sources of uncertainty (permeability, topology, …).</p>
+<section id="significancenovelty" class="level2">
+<h2 class="anchored" data-anchor-id="significancenovelty">SIGNIFICANCE/NOVELTY</h2>
+<!-- (429/600 characters)  -->
+<p>To our understanding, this framework is the first geological carbon storage monitoring model that continuously assimilates information with seismic observations, updates the CO<sub>2</sub> plume predictions, and characterizes uncertainties on the plume itself. Because our predictions are conditioned by the physics, we expect this method to extend to larger and more realistic model sources of uncertainty (permeability, topology, etc).</p>
 
 
 </section>
