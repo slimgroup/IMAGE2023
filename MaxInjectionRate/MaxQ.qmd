@@ -1,0 +1,67 @@
+---
+title: "Maximizing CO2 injection rate without exceeding the fracture pressure via gradient based optimization method."
+author:
+  - name: Haoyun Li
+    orcid: 
+    email: hli853@gatech.edu
+    url: 
+    affiliations:
+      name: Georgia Institute of Technology
+      url: https://slim.gatech.edu/
+  - name: Ziyi Yin
+    orcid: "0000-0002-5024-8771"
+    email: ziyi.yin@gatech.edu
+    url: https://ziyiyin97.github.io
+    affiliations:
+      name: Georgia Institute of Technology
+      url: https://slim.gatech.edu/
+  - name: Thomas Grady
+    affiliations:
+      - name: Georgia Institute of Technology
+        url: https://slim.gatech.edu/
+  - name: Felix J. Herrmann
+    orcid: "0000-0003-1180-2167"
+    affiliations:
+      - name: Georgia Institute of Technology
+        url: https://slim.gatech.edu/
+---
+
+## Objectives/Scope (600 characters)
+Increasing the CO2 injection rate improves the efficiency of the geological carbon storage. But if we increase too fast, it is likely to exceed the fracture pressure and cause the burst of the reservior, even lead to earthquake. Therefore, it is important to maximize the CO2 injection rate within the boundary of fracture pressure, which can be formulated as an unconstrained optimization problem. To tackle this unconstrained and ill-conditioned optimization problem, we adpot the gradient-based optimization method, since other methods without gradient, like local search method, are highly likely to be stuck at the local minimum. 
+
+## Methods, Procedures, Process (1500 characters)
+We are trying maximizing the injection rate over a time period and the pressure at each time cannot exceed the pressure limit. The optimization problem can be formulated as,
+$$
+\max_{q(t)} \int_{t=0}^{T} q(t) dt \ \ s.t. \ \ p_x(S(K, q(t))) < p_{max}, \forall x \in Seal, \ t \in [0, T]
+$$
+Here, $q(t)$ is the injection rate at time $t$, $p_x$ is the pressure at location $x$, $S$ is the two-phase flow simulator, $K$ is the permeablity, $p_{max}$ is the fracture pressure, $Seal$ is the set of all the points on the seal, $T$ is the total injected period. \
+To better solve above the unconstrained optimization problem, we reformulate the it via log barrier method and calculate the integral via sum over discrete time points, which is,
+$$
+\min_{q(t)} [-\sum_{t=t_0}^{t_n} q(t) dt - \sum_{t=t_0}^{t_n} \sum_{x \in Seal} \log(p_{max}-p_x(S(K, q(t)))) ]
+$$
+And the second log penalty term will be boomed to positive infinity if the input of log function is negative, which means we exceed the fracture pressure. \
+Since the first term of sum of the injected amount and the second log penalty term have different physical quantity, we tune a weight term $R$ to balance the two terms on a validation set. The $R$ turns to be in the range of $2 \times 10^7$ to $4 \times 10^7$. And with the weight term $R$, the objective function is,
+$$
+\min_{q(t)} [- \frac{1}{R} \sum_{t=t_0}^{t_n} q(t) dt - \sum_{t=t_0}^{t_n} \sum_{x \in Seal} \log(p_{max}-p_x(S(K, q(t))))]
+$$
+Then, we use our gradient-based optimzation method, which can choose the right step size to do the gradient descent, to find the injection rate which reaches the mimnimum of the objective function. This injection rate is the possible maximum injection rate without going over the pressure limit. \
+And the gradient of objective function w.r.t. injection rate is calculated by finite difference method, since $S$, the two phase simulator, is a quite complex function, which is hard to express in clear formulas.
+
+## Results, Observations, Conclusions (1500 characters)
+We simulate the injection scenario with the North Sea Compass model, which has the geological feature very close to  the real CO2 injection sites. We inject the CO2 for $250$ days, and set the fracture pressure to be $2 \times 10^7$. The permeability slice(in millidarcy) and injection location is displayed in Figure 2(a). \
+We try with three types of injection rate, constant injection rate(one time step), injetion rate varying in two time steps, injection rate varying in five time steps. All these types of injection rate are initialized be small(between 0 and 1) at first, then we run our gradient-based optimization method on the objective function with weight to find the maximum injection rate. The optimal(maximum) injection rate of these three types are shown in Figure 2(b). (Some analyses for the injection rate behavior. The storage capacities for the final injection for these three types are separately, will add this part later.) \
+The gradient-based algorithm runs 20 iterations for finding the optimal injection rate for two time steps injection rate, I plot the saturation and pressure plots at initial(0th iteration) middle(5th iteration) and final(20th iteration)in Figure 1. It is clear that the gradient-based algorithm works well to quickly find the maximmum injection rate in few iterations. Also, the trend of the increasing pressure at seal points is obvious. More information is in slimgroup.github.io/IMAGE2023.
+
+::: {#fig-1 }
+![](figs/fig1.png){width="100%"}
+
+Change of saturation and pressure on two time steps vector over iterations.
+
+:::
+
+::: {#fig-2 }
+![](figs/fig2.png){width="100%"}
+
+*(a)* displays the permeability slice and injection location. *(b)* displays the optimal injection rate for one time step, two time steps, three time steps injection rate.
+
+:::
