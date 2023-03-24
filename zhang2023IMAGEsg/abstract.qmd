@@ -54,7 +54,7 @@ This is the first numerical case study that applies spectral gap ratio minimizat
 
 ![](figs/fig1.png){width=100%}
 
-The spectral gap ratio in non-canonical organization domain is the same as the spectral gap ratio for a single-source receiver sampling mask.
+Spectral gap ratio of the data matrix in the non-canonical Source-X/Receiver-X (columns) Source-Y/Receiver-Y (rows) domain is the same as the spectral gap ratio of the single-source receiver sampling matrix.
 
 :::
 
@@ -62,6 +62,6 @@ The spectral gap ratio in non-canonical organization domain is the same as the s
 
 ![](figs/fig2.png){width=100%}
 
-Wavefield reconstruction of a single frequency slice.
+Comparison of data reconstruction performance for receiver locations sampled by the jittered method and the proposed method. There is about 1.4 dB SNR improvement.
 
 :::
