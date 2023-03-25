@@ -47,6 +47,13 @@ After training, we input an unseen well log y (5 wells) and produce posterior sa
 
 Our baseline, is an exponential variogram from the package PyKrige. The variogram parameters are automatically selected by the well log data. We manually set the anisotropy angle to 0 to match the overall horizontally layered structures of Compass.
 
+::: {#fig-1 layout-ncol=1}
+
+![](figures/full_schematic.png){width=100%}
+
+Schematic of full training process and test time evaluation of our method. 
+
+:::
 
 ## RESULTS, OBSERVATIONS, CONCLUSIONS 
 <!-- (1495/1500 characters)  -->
@@ -58,22 +65,17 @@ The table in Figure 2 shows the quantitative performance of our method. Our meth
 
 This method has learned long range structures in the training survey area and can extrapolate them further. Generalization to other survey areas is out of the scope of this project but future work will explore it. We conclude that our method is a promising option for creating realistic earth models that match observed data wells and that it offers quantitative advantages over traditional approaches.
 
-## SIGNIFICANCE/NOVELTY  
-<!-- (593/600 characters)  -->
-We introduce the use of normalizing flows for kriging. While previous implementations of normalizing flows have struggled on high dimensional models, we demonstrated our implementation allows for learning on large realistic models. This method is set to scale to 3D models in future work to further enable the application of these methods to real-world seismic problems. In contrast with traditional variograms, our method produces realistic models, that is particularly important for downstream tasks in reservoir engineering and other applications where multiple plausible models are needed.
-
-::: {#fig-1 layout-ncol=1}
-
-![fig1](figures/full_schematic.png){width=100%}
-
-Schematic of full training process and test time evaluation of our method. 
-
-:::
-
 ::: {#fig-2 layout-ncol=1}
 
-![fig2](figures/results.png){width=100%}
+![](figures/results.png){width=100%}
 
 Results from our method compared with exponential variogram. Our method produces realistic samples of earth models that when averaged produce high quality point estimates. 
 
 :::
+
+## SIGNIFICANCE/NOVELTY  
+<!-- (593/600 characters)  -->
+We introduce the use of normalizing flows for kriging. While previous implementations of normalizing flows have struggled on high dimensional models, we demonstrated our implementation allows for learning on large realistic models. This method is set to scale to 3D models in future work to further enable the application of these methods to real-world seismic problems. In contrast with traditional variograms, our method produces realistic models, that is particularly important for downstream tasks in reservoir engineering and other applications where multiple plausible models are needed.
+
+
+
