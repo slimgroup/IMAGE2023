@@ -52,7 +52,7 @@ To our knowledge, this is the first numerical study that applies a multiphysics 
 ::: {#fig-1 layout-ncol="1"}
 ![](figs/fig1.png){width="100%"}
 
-Multi-physics forward modeling.
+Multiphysics forward modeling operators.
 :::
 
 ::: {#fig-2 layout-ncol="1"}
