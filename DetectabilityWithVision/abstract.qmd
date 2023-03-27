@@ -9,6 +9,12 @@ author:
     orcid: "0009-0008-7580-1220"
     affiliations:
     - name: Georgia Institute of Technology
+  - name: Mathias Louboutin
+    orcid: "0000-0002-1255-2107"
+    email: mlouboutin3@gatech.edu
+    url: https://mloubout.github.io
+    affiliations:
+      - name: Georgia Institute of Technology
   - name: Felix J. Herrmann
     orcid: "0000-0003-1180-2167"
     affiliations:
@@ -17,17 +23,17 @@ author:
 ---
 
 ## Objectives/Scope 
-<!-- (591/600 characters) -->
-In previous work, we have shown that neural classifiers can be trained to detect CO~2~ leakage from time-lapse seismic images. While this result is crucial to the global deployment of geological carbon storage (GCS), its success depends on relatively dense non-replicated time-lapse data acquisition. In this study, we will show that by augmenting the training set with various coarse receiver samplings, we can improve the CO~2~ leakage detection capabilities and accuracy while increasing the robustness with respect to low-cost coarse receiver samplings, e.g., with ocean bottom nodes (OBNs).
+<!-- (600/600 characters) -->
+Previous work showed that neural classifiers can be trained to detect CO~2~ leakage from time-lapse seismic images. While this result is crucial to the global deployment of geological carbon storage (GCS), its success depends on relatively dense non-replicated time-lapse data acquisition. In this study, we show that by augmenting the training set with various coarse receiver samplings and corresponding seismic images, we can improve the leakage detection capabilities and accuracy while increasing the robustness with respect to low-cost coarse receiver samplings, e.g. ocean bottom nodes (OBNs).
 
 ## Methods, Procedures, Process 
-<!-- (1499/1500 characters) -->
+<!-- (1496/1500 characters) -->
 
 To create a suitable training set, we derive permeability models from 2D proxy velocity models with a geology representative of potential GCS sites in the South of the North Sea. These models are derived from 3D imaged seismic and well-log data with realistic heterogeneity. Given these permeability models, we create a training set of seismically imaged CO~2~ plumes that behave regularly (without leakage) and irregularly (with leakage). After generating baseline and monitor surveys, time-lapse seismic images of the plume are created with reverse time migration (RTM). The CO~2~ plumes themselves are modeled with two-phase flow equations.
 
-To create high-fidelity images, we deploy 162 receivers (25m apart)  and 32 jittered sources (125m apart). Given these images, we train our neural classifier based on a Vision Transformer network. As shown in Figure 1a, the classifier meets our ultimate purpose of distinguishing between regular and irregular plumes by performing classification. 
+To create high-fidelity images, we deploy 162 receivers (25m apart) and 32 jittered sources (~125m apart). Given these images, we train our neural classifier based on a Vision Transformer network. As shown in Figure 1a, the classifier meets our ultimate purpose of distinguishing between regular and irregular plumes. 
 
-While the results are encouraging, the training and test images use high-fidelity imaging obtained with densely sampled OBNs. Unfortunately, in practice, we can not rely on dense receiver sampling due to the associated high costs and classifier performance deteriorates on images obtained from coarse receiver samplings. To overcome these issues, we augment the training dataset with time-lapse images computed from a plurality of acquisition geometries with varying coarse receiver samplings, shown in Figure 2b.
+While the results are encouraging, the training and test images use high-fidelity imaging obtained with densely sampled OBNs. Unfortunately, in practice, we can not rely on dense receiver sampling due to the associated high costs and classifier performance deteriorates on images obtained from coarse receiver samplings. To overcome these issues, we augment the training dataset with time-lapse images computed from multiple acquisition geometries with coarse receiver samplings (between 25m and 200m spacing), shown in Figure 2b.
 
 ::: {#fig-1 layout-ncol=1}
 
@@ -38,7 +44,7 @@ Training procedure and results of RTM on different receiver configurations. In (
 :::
 
 ## Results, Observations, Conclusions
-<!-- (1500/1500 characters) -->
+<!-- (1499/1500 characters) -->
 <!--
 Figure 2 shows that the testing accuracy of the network trained initially on 162 receiver configuration performs well for acquisition geometries with more receivers. However, its accuracy degrades when the number of receivers becomes smaller, rendering the classifier untrustworthy for less than 110 receivers.
 On the other hand, we see in Figure 2 that the network trained with the augmented dataset containing images from coarse receiver sampling provides higher accuracy for all receiver geometries and better robustness to coarse acquisition. Moreover, the confusion matrix metrics such as true negative have substantially increased, where positives and negatives are irregular and regular plume images, respectively, showing the improved
@@ -49,11 +55,11 @@ Repetetion of above, removed
 
 To compensate for this loss in performance and to improve its overall performance, we augment the training dataset with time-lapse difference images obtained for acquisition geometries with randomly varying numbers of receivers (BETWEEN WHAT AND WHAT?????). After training with the augmented dataset, we observe that the classification accuracy for all configurations has been increased significantly as  shown in Figure (2a). Moreover, the confusion matrix performance metrics(precision, recall and F-1 score) have also improved substantially.-->
 
-Figure 2 shows that the network trained initially on 162 receiver configuration achieves high testing accuracy for acquisition geometries with more receivers. However, its performance degrades when the number of receivers decreases, rendering the classifier untrustworthy for less than 100 receivers. To compensate for this performance loss, we augment the training dataset with time-lapse difference images obtained from acquisition geometries with randomly varying numbers of receivers between 20 and 160.
-çç
-We observe in Figure 2 that the network trained with the augmented dataset, containing images from coarse receiver samplings, provides higher accuracy for all receiver geometries and better robustness to coarse acquisition. Moreover, the confusion matrix metrics such as true negative have substantially increased, where positives and negatives are irregular and regular plume images, respectively, showing the improved trustworthiness of the new network to different receiver configurations. 
+Figure 2 shows that the network trained initially on 162 receiver configuration achieves high testing accuracy for acquisition geometries with more receivers. However, its performance degrades when the number of receivers decreases, rendering the classifier untrustworthy for less than 100 receivers. To compensate for this performance loss, we augment the training dataset with time-lapse difference images obtained from migrating the coarse datasets with between 20 and 160 random receivers.
 
-These results demonstrate that dataset augmentation enhances the generalization of our classifier and contributes to its leakage detection accuracy. In terms of practical usage, this work suggests that a dataset based on a particular seismic time-lapse acquisition geometry can be readily made adaptable to different geometries by adding time-lapse seismic images obtained from complementary random acquisition geometries to the training dataset. More information is in slimgroup.github.io/IMAGE2023.
+We observe in Figure 2 that the network trained with the augmented dataset, containing those time-lapse images, provides higher accuracy for all receiver geometries and better robustness to coarse acquisition. Moreover, the confusion matrix metrics such as true negative have substantially increased, where positives and negatives are irregular and regular plume images, respectively, showing the improved trustworthiness of the new network to coarse and dense receiver configurations.
+
+These results demonstrate that dataset augmentation enhances the generalization of our classifier and contributes to its leakage detection accuracy and trustworthiness. In terms of practical usage, this work suggests that a dataset based on a particular seismic time-lapse acquisition geometry can be readily made adaptable to different geometries by augmenting the dataset with time-lapse seismic images obtained from complementary random acquisition geometries. More information is in slimgroup.github.io/IMAGE2023.
 
 ::: {#fig-2 layout-ncol=1}
 
@@ -64,7 +70,7 @@ Classification Results. Right: The graph shows the accuracy performance of two m
 :::
 
 ## Significance/Novelty 
-<!-- (600/600 characters) -->
+<!-- (597/600 characters) -->
 
-To our knowledge, this is the first study that targets the question of how to make neural classifiers for CO~2~ leakage detection more robust concerning receiver geometry and density variations. To answer it, we propose a simple dataset augmentation technique that improves the network's generalization to changes in the acquisition geometry. The results suggest that our study has the potential to lower dataset collection cost while training classifiers capable of automatic leakage detection from time-lapse seismic images computed from non-replicated surveys with varying coarse receiver densities.
+To our knowledge, this is the first study that generalizes and increases robustness of neural classifiers for CO~2~ leakage detection to receiver geometries of varying sampling density. We proposed an augmentation of the dataset with migrations from coarse geometries that improves the network's generalization to changes in the receiver sampling. The results show that our study has the potential to lower dataset collection cost while training classifiers capable of automatic leakage detection from time-lapse seismic images computed from non-replicated surveys with low-cost receiver sampling.
 
