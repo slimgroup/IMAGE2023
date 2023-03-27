@@ -39,7 +39,7 @@ While the results are encouraging, the training and test images use high-fidelit
 
 ![](figs/figure1_final.png){width=100%}
 
-Training procedure and results of RTM on different receiver configurations. In (a) multiple different time-lapse difference images of CO~2~ plumes are created with RTM (1000 regular and 1000 irregular plumes). The resulting images are used to train the classifier in binary classification setting. In (b) we can see three different receiver geometries and the resulting RTM time-lapse difference images.
+Training procedure and results of RTM on different receiver configurations. In (a), multiple different time-lapse difference images of CO~2~ plumes are created with RTM (1000 regular and 1000 irregular plumes). The resulting images are used to train the classifier in binary classification setting. In (b), we can see three different receiver geometries and the resulting RTM time-lapse difference images.
 
 :::
 
