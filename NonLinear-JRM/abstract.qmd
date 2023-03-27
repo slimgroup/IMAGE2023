@@ -35,7 +35,7 @@ We show in Figures 1 (b) and (e), the independent and in Figures 1 (c) and (f), 
 
 ## Significance/Novelty (100 words, 600)
 
-To our knowledge, this is the first introduction of a non-linear extension to the traditionally linear JRM ap;lied to time-lapse inversion. Through a realistic 2D synthetic study of GCS, we showed that the proposed new technique, which is trivially extendible to more than two vintages, confirms that non-replication can be beneficial to time-lapse imaging of the subsurface making seismic monitoring of GCS less costly for long term sustainability of the technology. Additional material is available at https://slimgroup.github.io/IMAGE2023/.
+To our knowledge, this is the first introduction of a non-linear extension to the traditionally linear JRM applied to time-lapse inversion. Through a realistic 2D synthetic study of GCS, we showed that the proposed new technique, which is trivially extendible to more than two vintages, confirms that non-replication can be beneficial to time-lapse imaging of the subsurface making seismic monitoring of GCS less costly for long term sustainability of the technology. Additional material is available at https://slimgroup.github.io/IMAGE2023/.
 
 ::: {#fig-1 layout-ncol=1}
 ![fig1](Figures/Fig1_NonLinear_JRM.png){width=100%}
