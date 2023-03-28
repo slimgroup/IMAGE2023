@@ -15,7 +15,7 @@ author:
     affiliations:
       - name: Georgia Institute of Technology
         url: https://slim.gatech.edu/
-  - name: Olav Mønyer
+  - name: Olav Møyner
     orcid: "0000-0001-9993-3879"
     email: olav.moyner@sintef.no
     url: https://www.olavmoyner.com/
