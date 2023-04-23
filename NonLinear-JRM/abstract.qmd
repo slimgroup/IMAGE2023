@@ -21,7 +21,7 @@ author:
         url: https://slim.gatech.edu/
 ---
 
-## Objectives/Scope (593/600 characters)
+## Objectives/Scope (589/600 characters)
 
 During time-lapse seismic monitoring, weak 4D signal below the level of inversion or migration artifacts poses challenges. To address these, low-cost randomized non-replicated acquisitions and linear joint recovery model (JRM) have been introduced to take advantage of the shared information between different vintages in the time-lapse seismic data and subsurface structure undergoing localized changes. Since the relationship between seismic data and subsurface properties is seldomly linear, we propose a more versatile nonlinear JRM to invert for the squared slowness of the vintages. 
 <!--
