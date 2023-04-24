@@ -21,22 +21,22 @@ author:
         url: https://slim.gatech.edu/
 ---
 
-## Objectives/Scope (589/600 characters)
+## Objectives/Scope
 
 During time-lapse seismic monitoring, weak 4D signal below the level of inversion or migration artifacts poses challenges. To address these, low-cost randomized non-replicated acquisitions and linear joint recovery model (JRM) have been introduced to take advantage of the shared information between different vintages in the time-lapse seismic data and subsurface structure undergoing localized changes. Since the relationship between seismic data and subsurface properties is seldomly linear, we propose a more versatile nonlinear JRM to invert for the squared slowness of the vintages. 
 <!--
 It extends linear JRM to nonlinear forward modeling.
 -->
 
-## Methods, Procedures, Process (1495/1500 characters)
+## Methods, Procedures, Process
 
 During linear JRM, for two seismic vintages, three unknown parameters are inverted, namely the common component, $m_0$, and innovation components, $\delta m_1$ and $\delta m_2$, with respect to this common component and there is a linear relationship between these components and seismic data. We proposed here an alternative nonlinear JRM (nJRM) that take advantage of the full nonlinear relation between these components and time-lapse data through the wave equation. We then minimize a joint misfit that takes full advantage of the shared information in the background model as shown in Figure 1. Additionally, careful derivation of the gradient shows that only one gradient computation per vintage is necessary making the computational cost equivalent to independent recovery. To demonstrate the advantage of the proposed nonlinear joint inversion, we consider an experimental setup involving CO~2~ monitoring and consider the seismic time-lapse in the subsurface incurred by a CO~2~ reservoir and use a realistic synthetic model representing North Sea (Figure 1(a)). We invert two vintages with the proposed nJRM to obtain baseline and monitor images and their difference gives the time-lapse change due to CO~2~ plume. Similar to the conventional linear method, nJRM should trivially extend to more than two vintages as well. Finally, we show the robustness of our method against non replicated acquisition compared to traditional independent recovery known to rely heavily on replication.
 
-## Results, Observations, Conclusions (1490/1500 characters)
+## Results, Observations, Conclusions
 
 We show in Figures 1 (b) and (e), the independent and in Figures 1 (c) and (f), the nJRM recovery obtained with the proposed method. We observe that both the baseline and monitor are well recovered individually. In Figures 2 (a), (b) and (c) we show the ground truth time-lapse, independent recovery time-lapse and nJRM time-lapse difference respectively for a non-replicated acquisition, mimicking sparse OBNs, highlighted with red/green dots on the model. In these figures, time-lapse differences inverted with nonlinear JRM are more accurate and contain less artifacts and noise thanks to exploiting common information between surveys (the background model) and small localized time-lapse differences. Moreover, independent recovery suffers consequently from non-replication with clear artifacts in the shallow area (Figure 2(b)) while nonlinear JRM stays relatively focused on the time-lapse difference with dimmer and less structured artifacts. These results are consistent with the linear JRM literature, strengthens the argument for a low-cost randomized non-replicated acquisition in the time-lapse seismic survey for GCS rather than expensive replicated surveys. Finally, we measure the degree of repeatability of the recovery of the vintages and their time-lapse difference with the traditional normalized root mean square (NRMS). In this study, the NRMS value for the independent and nJRM recoveries are 1.05% and 0.46%, respectively showing a clear advantage for joint recovery.
 
-## Significance/Novelty (543/600 characters)
+## Significance/Novelty
 
 To our knowledge, this is the first introduction of a non-linear extension to the traditionally linear JRM applied to time-lapse inversion. Through a realistic 2D synthetic study of GCS, we showed that the proposed new technique, which is trivially extendible to more than two vintages, confirms that non-replication can be beneficial to time-lapse imaging of the subsurface making seismic monitoring of GCS less costly for long term sustainability of the technology. Additional material is available at https://slimgroup.github.io/IMAGE2023/.
 
