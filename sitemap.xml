@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/OneShot/abstract.html</loc>
-    <lastmod>2023-03-29T21:14:48.349Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/SequentialBayes/abstract.html</loc>
-    <lastmod>2023-03-29T21:14:50.465Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/DetectabilityWithVision/abstract.html</loc>
-    <lastmod>2023-03-29T21:14:50.885Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/BayesianKrig/abstract.html</loc>
-    <lastmod>2023-03-29T21:14:51.293Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/license.html</loc>
-    <lastmod>2023-03-29T21:14:51.601Z</lastmod>
+    <loc>https://github.com/slimgroup/IMAGE2023/index.html</loc>
+    <lastmod>2023-04-24T16:05:44.416Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/slimgroup/IMAGE2023/BayesianFWI/abstract.html</loc>
-    <lastmod>2023-03-29T21:14:52.001Z</lastmod>
+    <lastmod>2023-04-24T16:05:46.564Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/yin2023IMAGEend2end/abstract.html</loc>
-    <lastmod>2023-03-29T21:14:52.409Z</lastmod>
+    <loc>https://github.com/slimgroup/IMAGE2023/BayesianKrig/abstract.html</loc>
+    <lastmod>2023-04-24T16:05:47.032Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/zhang2023IMAGEsg/abstract.html</loc>
-    <lastmod>2023-03-29T21:14:52.817Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/slimgroup/IMAGE2023/index.html</loc>
-    <lastmod>2023-03-29T21:14:53.165Z</lastmod>
+    <loc>https://github.com/slimgroup/IMAGE2023/OneShot/abstract.html</loc>
+    <lastmod>2023-04-24T16:05:47.584Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/slimgroup/IMAGE2023/NonLinear-JRM/abstract.html</loc>
-    <lastmod>2023-03-29T21:14:53.545Z</lastmod>
+    <lastmod>2023-04-24T16:05:47.976Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/slimgroup/IMAGE2023/yin2023IMAGEend2end/abstract.html</loc>
+    <lastmod>2023-04-24T16:05:48.400Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/slimgroup/IMAGE2023/SequentialBayes/abstract.html</loc>
+    <lastmod>2023-04-24T16:05:48.848Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/slimgroup/IMAGE2023/DetectabilityWithVision/abstract.html</loc>
+    <lastmod>2023-04-24T16:05:49.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/slimgroup/IMAGE2023/zhang2023IMAGEsg/abstract.html</loc>
+    <lastmod>2023-04-24T16:05:49.676Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/slimgroup/IMAGE2023/license.html</loc>
+    <lastmod>2023-04-24T16:05:50.024Z</lastmod>
   </url>
 </urlset>
