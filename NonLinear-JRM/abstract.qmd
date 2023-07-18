@@ -53,7 +53,7 @@ Independent and nJRM recovery of baseline and monitor vintages
 Independent and nJRM recovery of time-lapse differences
 :::
 
-# Supplmentary material
+# Supplementary material
 
 In this work, we used Compass model [@eageBGCompass] which is a representative model of the geology of North sea. The reason for choosing this model is that it has all the essential components of a geological carbon storage site such as a high permeable reservoir, a very low permeable seal and a low permeable overburden. We injected CO~2~ at the rate of 7 Mt/yr for 30 years in the reservoir which creates CO~2~ plume as it is visible in Figure 1(d). We conducted non-replicated time-lapse seismic surveys with 180 sources and 100 receivers with source spacing of 35m and receiver spacing of 60m using [JUDI.jl](https://github.com/slimgroup/JUDI.jl). The time-lapse data is inverted for the squared slowness ([s/km]^2) of baseline and monitor survey using non-linear JRM. 
 
@@ -97,7 +97,7 @@ J_{m_0}(m_0 + \delta m_1)^T \delta d = \sum_t \ddot{u}(m_0 + \delta m_1) v(m_0 +
 \end{equation}
 $$
 
-where $v$ correponds to the forward wavefields and \ddot{u} corresponds to the second temporal derivative of the adjoint wavefields. Similarly, we perform this  for the second vintage. Thus, we see that we need to consider only two Jacobians $J_{1}$ and $J_{2}$, one for each velocity $(m_0 + \delta m_1$ and $(m_0 + \delta m_2$. These mathematical simplifications drastically reduces the computation of the gradient updates as we now need only two gradients which is similar to the number of gradient required for the original inpdependent recovery problem. However, compared to the independent recovery problem, the nJRM formulation is much more stringent as it relies on the large common component as the main contributer to the inverse problem since the time-lapse changes are relatively samll. Putting these equation in the matrix form, we see that the gradient looks very similar to the linear JRM problem (@segziyi2021)
+where $v$ correponds to the forward wavefields and $\ddot{u}$ corresponds to the second temporal derivative of the adjoint wavefields. Similarly, we perform this  for the second vintage. Thus, we see that we need to consider only two Jacobians $J_{1}$ and $J_{2}$, one for each velocity $(m_0 + \delta m_1$ and $(m_0 + \delta m_2$. These mathematical simplifications drastically reduces the computation of the gradient updates as we now need only two gradients which is similar to the number of gradient required for the original inpdependent recovery problem. However, compared to the independent recovery problem, the nJRM formulation is much more stringent as it relies on the large common component as the main contributer to the inverse problem since the time-lapse changes are relatively samll. Putting these equation in the matrix form, we see that the gradient looks very similar to the linear JRM problem (@segziyi2021)
 $$
 \begin{equation}
 \begin{aligned}
@@ -106,3 +106,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+## Acknowledgement {.appendix}
+
+This research was carried out with the support of Georgia Research Alliance and partners of the ML4Seismic Center.
