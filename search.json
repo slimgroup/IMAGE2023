@@ -334,5 +334,12 @@
     "title": "Time-lapse seismic monitoring of geological carbon storage with the nonlinear joint recovery model",
     "section": "Significance/Novelty",
     "text": "Significance/Novelty\nTo our knowledge, this is the first introduction of a non-linear extension to the traditionally linear JRM applied to time-lapse inversion. Through a realistic 2D synthetic study of GCS, we showed that the proposed new technique, which is trivially extendible to more than two vintages, confirms that non-replication can be beneficial to time-lapse imaging of the subsurface making seismic monitoring of GCS less costly for long term sustainability of the technology. Additional material is available at https://slimgroup.github.io/IMAGE2023/.\n\n\n\n\n\n\n\nFigure 1: Independent and nJRM recovery of baseline and monitor vintages\n\n\n\n\n\n\n\n\n\nFigure 2: Independent and nJRM recovery of time-lapse differences"
+  },
+  {
+    "objectID": "NonLinear-JRM/abstract.html#acknowledgement",
+    "href": "NonLinear-JRM/abstract.html#acknowledgement",
+    "title": "Time-lapse seismic monitoring of geological carbon storage with the nonlinear joint recovery model",
+    "section": "Acknowledgement",
+    "text": "Acknowledgement\n\nThis research was carried out with the support of Georgia Research Alliance and partners of the ML4Seismic Center."
   }
 ]
